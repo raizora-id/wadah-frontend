@@ -1,7 +1,6 @@
 {
-  "name": "@raizora/lp-hadirmu",
-  "version": "23.12.26",
-  "description": "An Astro template for building apps.",
+  "name": "@raizora/lp-dihadiri",
+  "version": "0.1.0",
   "author": "engineering@raizora.com",
   "license": "MIT",
   "scripts": {
@@ -20,19 +19,19 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "catalog:",
+    "react-dom": "catalog:",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss": "^3.4.16",
-    "tailwindcss-animate": "^1.0.7",
-    "@monorepo/components": "workspace:^",
-    "@monorepo/tailwind-config": "workspace:^"
+    "tailwindcss": "catalog:",
+    "tailwindcss-animate": "catalog:",
+    "@packages/astro-ui": "workspace:^",
+    "@packages/tailwind-config": "workspace:^"
   },
   "devDependencies": {
     "@types/node": "^22.10.1",
-    "@types/react": "^18.2.14",
-    "@types/react-dom": "^18.2.7",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
     "prettier": "^3.4.2",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.6.9",

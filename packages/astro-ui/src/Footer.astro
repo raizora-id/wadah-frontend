@@ -1,0 +1,208 @@
+---
+interface Props {
+  selectedProduct?: 'klolatoko' | 'klolakos' | 'dihadiri' | 'digital-points';
+}
+
+const { selectedProduct } = Astro.props;
+
+// Import Lucide icons if you have @astrojs/lucide installed
+import { Facebook, Instagram, Linkedin, Twitter, Youtube } from 'lucide-astro'
+
+const footerLinks = {
+  produk: [
+    { id: 'klolatoko', name: 'Klolatoko', href: '#' },
+    { id: 'klolakos', name: 'Klolakos', href: '#' },
+    { id: 'dihadiri', name: 'Dihadiri', href: '#' },
+    { id: 'digital-points', name: 'Digital Points', href: '#' }
+
+  ],
+  perusahaan: [
+    { name: 'Tentang Kami', href: '#' },
+    { name: 'Raizora Indonesia', href: '#' },
+    { name: 'Karir', href: '#', highlight: "We're Hiring!" },
+    { name: 'Hubungi Kami', href: '#' },
+    { name: 'Pemberitahuan Privasi', href: '#' },
+    { name: 'Syarat & Ketentuan', href: '#' },
+    { name: 'Keamanan', href: '#' },
+    { name: 'Blog', href: '#' },
+    { name: 'Sitemap', href: '#' },
+  ],
+  solusi: [
+    { name: 'Landing Page', href: '#' },
+    { name: 'Company Profile', href: '#' },
+    { name: 'Web Development', href: '#' },
+    { name: 'App Development', href: '#' },
+  ],
+}
+---
+
+<footer class="w-full bg-white px-6 py-12">
+  <div class="mx-auto max-w-7xl">
+    {/* Mobile Layout */}
+    <div class="md:hidden">
+      {/* Logo */}
+      <div class="mb-8">
+        <a href="/" class="inline-flex items-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#7829F9]">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 1.5C16.5 4.7325 13.845 7.35 10.5 7.35C7.155 7.35 4.5 4.7325 4.5 1.5H1.5C1.5 6.405 5.595 10.35 10.5 10.35C15.405 10.35 19.5 6.405 19.5 1.5H16.5ZM10.5 13.65C5.595 13.65 1.5 17.595 1.5 22.5H4.5C4.5 19.2675 7.155 16.65 10.5 16.65C13.845 16.65 16.5 19.2675 16.5 22.5H19.5C19.5 17.595 15.405 13.65 10.5 13.65Z" fill="currentColor"/>
+          </svg>
+          <span class="ml-2 text-lg font-semibold">mekari</span>
+        </a>
+      </div>
+
+      {/* Mobile Links */}
+      <div class="mb-16 space-y-8">
+        {/* Produk Section */}
+        <div>
+          <h3 class="mb-3 text-sm font-medium">Produk</h3>
+          <ul class="space-y-2.5">
+            {footerLinks.produk.map((link) => (
+              <li>
+                <a 
+                  href={link.href} 
+                  class:list={[
+                    "text-[13px] hover:text-gray-900 transition-colors",
+                    selectedProduct === link.id ? "text-[#7829F9] font-medium" : "text-gray-600"
+                  ]}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Perusahaan Section */}
+        <div>
+          <h3 class="mb-3 text-sm font-medium">Perusahaan</h3>
+          <ul class="space-y-2.5">
+            {footerLinks.perusahaan.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="inline-flex items-center gap-1.5 text-[13px] text-gray-600 hover:text-gray-900"
+                >
+                  {link.name}
+                  {link.highlight && (
+                    <span class="text-[#7829F9]">{link.highlight}</span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Solusi Section */}
+        <div>
+          <h3 class="mb-3 text-sm font-medium">Solusi</h3>
+          <ul class="space-y-2.5">
+            {footerLinks.solusi.map((link) => (
+              <li>
+                <a href={link.href} class="text-[13px] text-gray-600 hover:text-gray-900">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* Desktop Layout */}
+    <div class="hidden md:flex md:justify-between">
+      {/* Logo */}
+      <div>
+        <a href="/" class="inline-flex items-center">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-[#7829F9]">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 1.5C16.5 4.7325 13.845 7.35 10.5 7.35C7.155 7.35 4.5 4.7325 4.5 1.5H1.5C1.5 6.405 5.595 10.35 10.5 10.35C15.405 10.35 19.5 6.405 19.5 1.5H16.5ZM10.5 13.65C5.595 13.65 1.5 17.595 1.5 22.5H4.5C4.5 19.2675 7.155 16.65 10.5 16.65C13.845 16.65 16.5 19.2675 16.5 22.5H19.5C19.5 17.595 15.405 13.65 10.5 13.65Z" fill="currentColor"/>
+          </svg>
+          <span class="ml-2 text-lg font-semibold">mekari</span>
+        </a>
+      </div>
+
+      {/* Desktop Links Grid */}
+      <div class="grid grid-cols-[repeat(3,auto)] gap-x-16">
+        <div>
+          <h3 class="mb-3 text-sm font-medium">Produk</h3>
+          <ul class="space-y-2.5">
+            {footerLinks.produk.map((link) => (
+              <li>
+                <a 
+                  href={link.href} 
+                  class:list={[
+                    "text-[13px] hover:text-gray-900 transition-colors",
+                    selectedProduct === link.id ? "text-[#7829F9] font-medium" : "text-gray-600"
+                  ]}
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-3 text-sm font-medium">Layanan</h3>
+          <ul class="space-y-2.5">
+            {footerLinks.solusi.map((link) => (
+              <li>
+                <a href={link.href} class="text-[13px] text-gray-600 hover:text-gray-900">
+                  {link.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="mb-3 text-sm font-medium">Perusahaan</h3>
+          <ul class="space-y-2.5">
+            {footerLinks.perusahaan.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="inline-flex items-center gap-1.5 text-[13px] text-gray-600 hover:text-gray-900"
+                >
+                  {link.name}
+                  {link.highlight && (
+                    <span class="text-[#7829F9]">{link.highlight}</span>
+                  )}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    {/* Bottom Section */}
+    <div class="border-t border-gray-100 pt-8">
+      <div class="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
+        <div class="flex gap-6">
+          <a href="https://www.linkedin.com/company/raizora" class="text-gray-400 hover:text-gray-600">
+            <Linkedin class="h-5 w-5" />
+          </a>
+          <a href="https://www.instagram.com/ketuju_creative/" class="text-gray-400 hover:text-gray-600">
+            <Instagram class="h-5 w-5" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-600">
+            <Twitter class="h-5 w-5" />
+          </a>
+          <a href="#" class="text-gray-400 hover:text-gray-600">
+            <Facebook class="h-5 w-5" />
+          </a>
+          <a href="https://www.youtube.com/@ketujucreative" class="text-gray-400 hover:text-gray-600">
+            <Youtube class="h-5 w-5" />
+          </a>
+        </div>
+        
+        <div class="text-[13px] text-gray-600">
+          <div class="mb-1 font-bold">Yogyakarta</div>
+          <address class="not-italic leading-relaxed">
+            Jalan Sunan Kudus,Gamping Kidul Ambarketawang Gamping, Geblagan, Tamantirto, Kec. Kasihan, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55184
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
