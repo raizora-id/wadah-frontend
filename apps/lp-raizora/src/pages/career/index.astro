@@ -1,0 +1,37 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+const allPosts = await getCollection("jobs");
+import ServicesEntries from "@/components/services/ServicesEntries.astro";
+---
+
+<BaseLayout>
+  <section>
+    <div class="p-8 max-w-7xl mx-auto border-x border-b border-gray lg:py-32">
+      <div class="max-w-2xl">
+        <h1 class="text-neutral-400 font-light">
+          Careers at Raizora - Join Our Innovative Team
+        </h1>
+        <h3 class="text-white mt-6 text-2xl font-light">
+          At Raizora, we seek top talents to join our dedicated team in crafting cutting-edge, 
+          future-ready digital solutions across diverse sectors including pet care, hobbies, and travel. 
+          Together, we push the boundaries of creativity and innovation to bring visionary digital experiences to life.
+        </h3>
+      </div>
+    </div>
+  </section>
+<section>
+  <div class="max-w-7xl mx-auto border-x border-gray border-b">
+    <div class="text-white grid grid-cols-1 divide-y divide-gray">
+      {
+        allPosts.map((post) => (
+          <ServicesEntries
+            url={"/career/" + post.slug}
+            service={post.data.service}
+          />
+        ))
+      }
+    </div>
+  </div>
+</section>
+</BaseLayout>
