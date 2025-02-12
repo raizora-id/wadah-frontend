@@ -1,0 +1,12 @@
+{
+    "extends": "@tooling/typescript-config/base.json",
+    "compilerOptions": {
+        "baseUrl": "."
+    },
+    "include": [
+        "."
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

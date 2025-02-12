@@ -1,0 +1,4 @@
+@source "../app/**/*.{ts,tsx}"; /* Current app */
+@source "../../../packages/ui/**/*.{ts,tsx}";
+@source "../../../../apps/web/**/*.{ts,tsx}";
+@source "../../../../packages/ui/**/*.{ts,tsx}";
