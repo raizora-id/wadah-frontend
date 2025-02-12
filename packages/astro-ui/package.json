@@ -1,0 +1,7 @@
+{
+  "name": "@packages/astro-ui",
+  "version": "1.0.0",
+  "dependencies": {
+    "lucide-astro": "^0.469.0"
+  }
+}

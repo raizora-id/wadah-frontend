@@ -1,9 +1,9 @@
 module.exports.siteMetadata = {
-    title: 'Red Ant Colony',
-    description: 'Base Boilerplate RAC.',
+    title: 'Himajin Hobbies',
+    description: 'Bring your lovable pat into your home!',
     language: 'en-us',
     theme: 'system',
-    siteUrl: 'https://redantcolony.com',
+    siteUrl: 'https://himajinhobby.com',
     siteRepo: '',
     socialBanner: '/images/social.png',
     locale: 'en-US'
