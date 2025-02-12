@@ -1,0 +1,21 @@
+'use client';
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/registry/default/ui/card';
+import { Button } from '@rac/ui/components/ui/button';
+
+export default function Component() {
+    return (
+        <Card x-chunk='dashboard-07-chunk-5'>
+            <CardHeader>
+                <CardTitle>Archive Product</CardTitle>
+                <CardDescription>Lipsum dolor sit amet, consectetur adipiscing elit.</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <div></div>
+                <Button size='sm' variant='secondary'>
+                    Archive Product
+                </Button>
+            </CardContent>
+        </Card>
+    );
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "moduleResolution": "bundler",
+    "module": "ESNext",
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "types": [
+      "node"
+    ],
+    "paths": {
+      "@packages/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@packages/utils/*": [
+        "../../packages/utils/src/*"
+      ],
+      "@packages/analytics/*": [
+        "../../packages/analytics/*"
+      ],
+      "@packages/kv/*": [
+        "../../packages/kv/src/*"
+      ],
+    },
+  }
+}

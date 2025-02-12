@@ -1,0 +1,30 @@
+{
+  "extends": "@tooling/typescript-config/react-library.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "ui/*": [
+        "./*"
+      ],
+      "ui/components/ui/*": [
+        "src/components/ui/*"
+      ],
+      "ui/hooks/*": [
+        "./hooks/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.tsx",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".turbo"
+  ]
+}
