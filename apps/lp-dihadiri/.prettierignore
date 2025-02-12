@@ -1,5 +1,2 @@
-dist/
-node_modules/
-.netlify/
-.astro/
-pnpm-lock.yaml
+README.MD
+CHANGELOG.md

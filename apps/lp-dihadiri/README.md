@@ -1,42 +1,130 @@
-# Astro Shadcn UI Template
+# Next.js 15 Starter (shadcn) [[LIVE DEMO](https://nextjs-15-starter-shadcn.vercel.app/)]
 
-This template helps you build apps with Astro, Tailwind CSS, and Shadcn UI.
+*This is the Tailwind version for Next.js 15 Starter, you may be interested in other templates too -*
+- [**Next.js 15 Starter Core**](https://github.com/SiddharthaMaity/nextjs-15-starter-core)
+- [**Next.js 15 Starter with Tailwind CSS**](https://github.com/SiddharthaMaity/nextjs-15-starter-tailwind)
 
-## Getting Started
+Welcome to the **Next.js 15 Starter** repository! This starter template is built with Next.js 15, React 19, TypeScript 5, Tailwind CSS 3, Shadcn UI and comes packed with several powerful tools and configurations to accelerate your project setup and streamline development workflows using VS Code.
 
-To get started with this application, make sure you have Node.js v18+ installed on your system. Then, follow these steps:
+![Next.js 15 Starter Shadcn](public/images/screenshot1.png)
+
+![Next.js 15 Starter Shadcn](public/images/screenshot2.png)
+
+## 🚀 What's Included
+
+- **Next.js 15 (Stable)**
+- **React 19 (Stable)**
+- **TypeScript 5**
+- **ESLint 9**
+- **Prettier 3**
+- **Tailwind CSS 3**
+- **Shadcn UI**
+- **App Directory**
+- **System, Light & Dark Mode**
+- **Next.js Bundle Analyzer**
+- **Dockerfile** with Node.js 22.13.1 (Alpine)
+
+### 🛠️ ESLint Plugins
+
+- [**@eslint/js**](https://www.npmjs.com/package/@eslint/js)
+- [**typescript-eslint**](https://github.com/typescript-eslint/typescript-eslint)
+- [**eslint-plugin-react**](https://github.com/jsx-eslint/eslint-plugin-react)
+- [**@next/eslint-plugin-next**](https://github.com/vercel/next.js)
+- [**eslint-config-prettier**](eslint-config-prettier)
+- [**eslint-plugin-tailwindcss**](https://github.com/francoismassart/eslint-plugin-tailwindcss)
+- [**eslint-plugin-import**](https://github.com/import-js/eslint-plugin-import)
+- [**eslint-plugin-promise**](https://github.com/eslint-community/eslint-plugin-promise)
+
+### ✨ Prettier Plugins
+
+- [**@trivago/prettier-plugin-sort-imports**](https://github.com/trivago/prettier-plugin-sort-imports)
+- [**prettier-plugin-tailwindcss**](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+
+### 💻 VS Code Extensions (Recommended)
+
+To enhance development experience, install the following VS Code extensions:
+
+- [**Auto Close Tag**](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag)
+- [**Better Comments**](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
+- [**DotENV**](https://marketplace.visualstudio.com/items?itemName=mikestead.dotenv)
+- [**EditorConfig for VS Code**](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+- [**ESLint**](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [**formate: CSS/LESS/SCSS formatter**](https://marketplace.visualstudio.com/items?itemName=MikeBovenlander.formate)
+- [**Git History**](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+- [**Import Cost**](https://marketplace.visualstudio.com/items?itemName=wix.vscode-import-cost)
+- [**JavaScript Booster**](https://marketplace.visualstudio.com/items?itemName=sburg.vscode-javascript-booster)
+- [**npm Intellisense**](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+- [**Prettier - Code formatter**](https://marketplace.visualstudio.com/items?itemName=esbenp)
+- [**Todo Tree**](https://marketplace.visualstudio.com/items?itemName=Gruntfuggly.todo-tree)
+- [**Turbo Console Log**](https://marketplace.visualstudio.com/items?itemName=ChakrounAnas.turbo-console-log)
+- [**Package Json Upgrade**](https://marketplace.visualstudio.com/items?itemName=codeandstuff.package-json-upgrade)
+- [**Visual Studio Code Commitizen Support**](https://marketplace.visualstudio.com/items?itemName=KnisterPeter.vscode-commitizen)
+- [**Markdown All in One**](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one)
+
+
+## 🏁 Getting Started
+
+### Prerequisites
+
+- **Node.js**: Version 20.18.0 or higher
+- **Docker**: For containerized deployment (optional but recommended)
+
+### Installation
+
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/yourusername/nextjs-15-starter-shadcn.git
+    cd nextjs-15-starter-shadcn
+    ```
+    To get the code without example change branch to without-example
+    ```bash
+    git checkout without-example
+    ```
+
+2. **Install Dependencies**:
+    ```bash
+    npm install
+    # or with Yarn
+    yarn install
+    ```
+
+3. **Run Development Server**:
+    ```bash
+    npm run dev
+    # or with Yarn
+    yarn dev
+    ```
+
+4. **Build for Production**:
+    ```bash
+    npm run build
+    ```
+
+### 🐳 Docker Setup
+
+To use Docker, make sure Docker is installed on your machine. Then, build and run the Docker container:
 
 ```bash
-git clone --depth=1 https://github.com/AREA44/astro-shadcn-ui-template
-cd astro-shadcn-ui-template
-pnpm install
-pnpm dev
+docker build -t nextjs-starter .
+docker run -p 3000:3000 nextjs-starter
 ```
 
-Now, you can open your browser and navigate to http://localhost:4321 to see the application running.
+### ☁ Try it in the Cloud
 
-## Features
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://vscode.dev/github/SiddharthaMaity/nextjs-15-starter-shadcn)
 
-- [Astro](https://astro.build): A modern static site builder that allows you to write components using familiar web standards like HTML, CSS, and JavaScript.
-- [Tailwind CSS](https://tailwindcss.com): A utility-first CSS framework that provides a set of pre-designed styling classes to rapidly build user interfaces.
-- [shadcn/ui](https://ui.shadcn.com): A collection of reusable UI components for building responsive and accessible interfaces.
-- The template includes support for a theme toggle, allowing users to switch between light and dark themes.
+[![Open in GitHub Codespaces](https://img.shields.io/badge/Open%20in-GitHub%20Codespaces-blue?logo=github)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=SiddharthaMaity/nextjs-15-starter-shadcn)
 
-## How to add components
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/SiddharthaMaity/nextjs-15-starter-shadcn)
 
-Shadcn UI is a collection of re-usable components that can be easily integrated into your applications. It is not a component library, but rather a set of components that you can copy and paste into your projects.
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/SiddharthaMaity/nextjs-15-starter-shadcn)
 
-To add a new component to your application, please refer to the [configuration guide](https://ui.shadcn.com/docs/installation/astro#thats-it).
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz_small.svg)](https://stackblitz.com/github/SiddharthaMaity/nextjs-15-starter-shadcn)
 
-> [!NOTE]
-> In Astro, an [island](https://docs.astro.build/en/concepts/islands/) refers to any interactive UI component on the page. To add an interactive component like [Accordion](https://ui.shadcn.com/docs/components/accordion), [Dialog](https://ui.shadcn.com/docs/components/dialog) and more you have a couple of solutions available: [Add a Shadcn UI Component - Space Madness](https://spacemadness.dev/docs/add-a-shadcn-ui-component) or [shadcn-ui/ui#2890](https://github.com/AREA44/astro-shadcn-ui-template/issues/66).
+[![Open in Repl.it](https://replit.com/badge/github/SiddharthaMaity/nextjs-15-starter-shadcn)](https://replit.com/github/SiddharthaMaity/nextjs-15-starter-shadcn)
 
-For detailed documentation on using Shadcn UI, please visit the [full documentation](https://ui.shadcn.com/docs).
+[![Open in Glitch](https://img.shields.io/badge/Open%20in-Glitch-blue?logo=glitch)](https://glitch.com/edit/#!/import/github/SiddharthaMaity/nextjs-15-starter-shadcn)
 
-Shadcn UI is primarily built for the React framework. If you are unfamiliar with framework components in Astro, we recommend reading the [framework components guide](https://docs.astro.build/en/core-concepts/framework-components/) to get started.
+### License
 
-Feel free to explore the various components and enhance your application with Shadcn UI!
-
-## License
-
-Licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
