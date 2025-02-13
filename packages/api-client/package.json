@@ -1,0 +1,17 @@
+{
+  "name": "@packages/api-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tanstack/react-query": "catalog:",
+    "cookies-next": "catalog:",
+    "next-auth": "catalog:"
+  },
+  "devDependencies": {
+    "@tooling/typescript-config": "workspace:"
+  },
+  "exports": {
+    "./axiosClient": "./src/axiosClient.ts",
+    "./queryClient": "./src/queryClient.ts"
+  }
+}

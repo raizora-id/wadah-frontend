@@ -105,6 +105,9 @@ importers:
       '@next/third-parties':
         specifier: 'catalog:'
         version: 15.1.6(next@15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      '@packages/api-client':
+        specifier: workspace:*
+        version: link:../../packages/api-client
       '@packages/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -889,6 +892,22 @@ importers:
       '@types/react-dom':
         specifier: 'catalog:'
         version: 19.0.3(@types/react@19.0.8)
+
+  packages/api-client:
+    dependencies:
+      '@tanstack/react-query':
+        specifier: 'catalog:'
+        version: 5.66.0(react@19.0.0)
+      cookies-next:
+        specifier: 'catalog:'
+        version: 5.1.0(next@15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      next-auth:
+        specifier: 'catalog:'
+        version: 4.24.11(next@15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+    devDependencies:
+      '@tooling/typescript-config':
+        specifier: 'workspace:'
+        version: link:../../tooling/typescript-config
 
   packages/astro-ui:
     dependencies:
