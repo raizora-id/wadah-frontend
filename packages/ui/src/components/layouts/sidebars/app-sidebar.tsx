@@ -2,16 +2,7 @@
 
 import * as React from "react"
 import {
-  AudioWaveform,
-  BookOpen,
-  Bot,
-  Command,
-  Frame,
-  GalleryVerticalEnd,
-  Map,
-  PieChart,
-  Settings2,
-  SquareTerminal,
+  type LucideIcon
 } from "lucide-react"
 
 import { NavMain } from "./nav-main"
@@ -27,153 +18,71 @@ import {
   SidebarRail,
 } from "../../ui/sidebar"
 
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  teams: [
-    {
-      name: "Acme Inc",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
-    },
-    {
-      name: "Acme Corp.",
-      logo: AudioWaveform,
-      plan: "Startup",
-    },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
-  ],
-  navMain: [
-    {
-      title: "Playground",
-      url: "#",
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
+export type User = {
+  name: string
+  email: string
+  avatar: string
 }
 
+export type Team = {
+  name: string
+  logo: LucideIcon
+  plan: string
+}
+
+export type SubNavItem = {
+  title: string
+  url: string
+}
+
+export type NavItem = {
+  title: string
+  url: string
+  icon: LucideIcon
+  isActive?: boolean
+  items?: SubNavItem[]
+}
+
+export type Project = {
+  name: string
+  url: string
+  icon: LucideIcon
+}
+
+// Props interface
+interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
+  user?: User
+  teams?: Team[]
+  navItems?: NavItem[]
+  projects?: Project[]
+}
+
+
 export function AppSidebar(
-  { ...props }: React.ComponentProps<typeof Sidebar>
+  { ...props }: AppSidebarProps
 ) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
-      </SidebarHeader>
+      {
+        props.teams && (
+          <SidebarHeader>
+          <TeamSwitcher teams={props.teams} />
+        </SidebarHeader>
+        )
+      }
 
       <SidebarContent>
-        <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+        {props.navItems && <NavMain items={props.navItems} />}
+        {props.projects && <NavProjects projects={props.projects} />}
       </SidebarContent>
 
-
-      <SidebarFooter>
-        <NavUser user={data.user} />
-      </SidebarFooter>
+      {
+        props.user && ( 
+        <SidebarFooter>
+          <NavUser user={props.user} />
+        </SidebarFooter>
+        )
+      }
       <SidebarRail />
     </Sidebar>
   )
