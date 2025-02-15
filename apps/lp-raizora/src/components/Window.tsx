@@ -1,4 +1,6 @@
-import { useState } from 'react';
+'use client';
+
+import { useRef, useState } from 'react';
 
 import useMobile from '@/hooks/useMobile';
 import useWindow from '@/hooks/useWindow';
@@ -45,6 +47,9 @@ export default function Window({ id, type, title, props, priority, maximized, mi
 
     const { close, focus, maximize, minimize } = useWindow(id);
 
+    // Create ref with correct type for react-draggable
+    const nodeRef = useRef<HTMLDivElement>(null);
+
     const defaultSize = {
         width: props.window?.width || ('width' in app.config && app?.config?.width) || 400,
         height: props.window?.height || ('height' in app.config && app?.config?.height) || 400
@@ -62,6 +67,7 @@ export default function Window({ id, type, title, props, priority, maximized, mi
     if (!app || !App) return null;
     return (
         <Draggable
+            nodeRef={nodeRef as React.RefObject<HTMLElement>}
             disabled={mobile}
             position={maximized ? { x: 0, y: titlebar } : position}
             bounds={{
@@ -104,7 +110,7 @@ export default function Window({ id, type, title, props, priority, maximized, mi
             }}
             handle='.handle'
             defaultClassName={`window-${id} ${minimized ? 'pointer-events-none' : ''}`}>
-            <div style={{ zIndex: Layer.zIndex('window') + priority }} className='fixed'>
+            <div ref={nodeRef} style={{ zIndex: Layer.zIndex('window') + priority }} className='fixed'>
                 <Resizable
                     minWidth={300}
                     minHeight={150}
@@ -131,9 +137,11 @@ export default function Window({ id, type, title, props, priority, maximized, mi
                             y: dir.includes('top') ? latest.y - delta.height : latest.y
                         };
 
-                        (document.querySelector(`.window-${id}`) as HTMLDivElement).style.transform = `translate(${
-                            dir.includes('left') ? latest.x - delta.width : latest.x
-                        }px, ${dir.includes('top') ? latest.y - delta.height : latest.y}px)`;
+                        if (nodeRef.current) {
+                            nodeRef.current.style.transform = `translate(${
+                                dir.includes('left') ? latest.x - delta.width : latest.x
+                            }px, ${dir.includes('top') ? latest.y - delta.height : latest.y}px)`;
+                        }
 
                         setPosition(pos);
                     }}

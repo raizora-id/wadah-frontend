@@ -30,7 +30,6 @@ export default function Index({ config }: IndexProps) {
                 </>
             ) : (
                 <>
-                    {page == 'POWER' && <Seo />}
                     <Head />
                     <Router />
                 </>

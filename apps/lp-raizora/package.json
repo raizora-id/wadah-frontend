@@ -4,12 +4,10 @@
     "private": false,
     "license": "MIT",
     "scripts": {
-        "dev": "next dev --turbopack",
+        "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+        "lint": "next lint"
     },
     "dependencies": {
         "@heroicons/react": "^2.2.0",

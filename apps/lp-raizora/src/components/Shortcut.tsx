@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import useMobile from '@/hooks/useMobile';
 import useWindow from '@/hooks/useWindow';
 import Layer from '@/utils/layer';
@@ -16,9 +18,11 @@ export default function Shortcut(shortcut: {
     const mobile = useMobile();
     const { id, type, name } = shortcut.app;
 
-    const { titlebar } = useTitleBar();
     const { selected, setSelected } = useSelected();
     const { open } = useWindow(id);
+
+    // Add ref for Draggable component
+    const nodeRef = useRef<HTMLButtonElement>(null);
 
     const app = Apps[type];
     const width = mobile ? window.innerWidth / 4 : 100;
@@ -48,12 +52,14 @@ export default function Shortcut(shortcut: {
     if (!app) return null;
     return (
         <Draggable
+            nodeRef={nodeRef as React.RefObject<HTMLElement>}
             defaultPosition={{ x: 0, y: 0 }}
             bounds={'#desktop'}
             grid={[width, height]}
             disabled={mobile || shortcut.draggable == false ? true : false}
             defaultClassNameDragging='opacity-50'>
             <button
+                ref={nodeRef}
                 id={id}
                 onClick={(e) => {
                     onClick(e.shiftKey);
