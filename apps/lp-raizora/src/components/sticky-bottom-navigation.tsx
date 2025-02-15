@@ -17,14 +17,14 @@ function StickyBottomNavigation() {
         setLearnVisible(!learnVisible);
     };
 
-    const handleClick = (e) => {
+    const handleClick = (e: { preventDefault: () => void }) => {
         e.preventDefault();
         if (learnVisible) {
-            root?.style.setProperty('--border-radius--menu-wrapper', '50px');
-            root.style.setProperty('--border-radius--menu-link', '192px');
+            document.documentElement.style.setProperty('--border-radius--menu-wrapper', '50px');
+            document.documentElement.style.setProperty('--border-radius--menu-link', '192px');
         } else {
-            root.style.setProperty('--border-radius--menu-wrapper', '32px');
-            root.style.setProperty('--border-radius--menu-link', '23px');
+            document.documentElement.style.setProperty('--border-radius--menu-wrapper', '32px');
+            document.documentElement.style.setProperty('--border-radius--menu-link', '23px');
         }
         toggleLearnVisibility();
     };

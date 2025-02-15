@@ -9,8 +9,10 @@ import Layer from '@/utils/layer';
 import { useSelected, useTitleBar } from '@/utils/state';
 import { cn } from '@/utils/styles';
 
+import DockDemo from './dock/dock';
 import { AnimatedGridPattern } from './motions/animated-grid-pattern';
 import { MorphingText } from './motions/text-morph';
+import StickyBottomNavigation from './sticky-bottom-navigation';
 
 interface Position {
     x: number;
@@ -134,7 +136,6 @@ export default function Desktop() {
                     )}
                 />
             </div>
-            <Shortcuts />
             <div
                 onPointerDown={mobile ? undefined : onPointerDown}
                 onPointerUp={mobile ? undefined : onPointerUp}
