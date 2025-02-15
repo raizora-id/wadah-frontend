@@ -65,15 +65,7 @@ export default function TitleBar() {
                 )}
                 <Clock small />
                 <div className='flex space-x-3'>
-                    {mobile && <Theme />}
-                    <button id='btn-inbox' onClick={() => setInbox(!inbox)} className='text-text/70 hover:text-text'>
-                        <BellIcon className='w-5' />
-                    </button>
-                    {!mobile && (
-                        <button onClick={() => setPage('LOGIN')} className='text-text/70 hover:text-text'>
-                            <ArrowLeftEndOnRectangleIcon className='w-5' />
-                        </button>
-                    )}
+                    <Clock small />
                     <button onClick={() => setPage('POWER')} className='text-text/70 hover:text-text'>
                         <PowerIcon className='w-5' />
                     </button>
