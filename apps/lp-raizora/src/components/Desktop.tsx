@@ -9,6 +9,7 @@ import Layer from '@/utils/layer';
 import { useSelected, useTitleBar } from '@/utils/state';
 import { cn } from '@/utils/styles';
 
+import Dock from './dock/dock';
 import { AnimatedGridPattern } from './motions/animated-grid-pattern';
 import { MorphingText } from './motions/text-morph';
 
@@ -135,6 +136,7 @@ export default function Desktop() {
                 />
             </div>
             <Shortcuts />
+            <Dock />
             <div
                 onPointerDown={mobile ? undefined : onPointerDown}
                 onPointerUp={mobile ? undefined : onPointerUp}
