@@ -29,9 +29,8 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
     return (
         // ? https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
         // ? https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
-        <html suppressHydrationWarning lang='en'>
+        <html lang='en'>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
-                <GoogleAnalytics gaId={'G-F0WBE47V4M'} />
                 <ThemeProvider attribute='class'>{children}</ThemeProvider>
             </body>
         </html>
