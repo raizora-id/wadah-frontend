@@ -6,7 +6,7 @@ import React, { useRef } from 'react';
 import { cn } from '@/utils/styles';
 
 import { type VariantProps, cva } from 'class-variance-authority';
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, MotionValue, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
     className?: string;
@@ -15,6 +15,13 @@ export interface DockProps extends VariantProps<typeof dockVariants> {
     direction?: 'top' | 'middle' | 'bottom';
     children: React.ReactNode;
 }
+
+export interface DockIconProps {
+    mouseX?: MotionValue<number>;
+    magnification?: number;
+    distance?: number;
+    [key: string]: any; // For any other props
+  }
 
 const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
@@ -40,8 +47,8 @@ const Dock = React.forwardRef<HTMLDivElement, DockProps>(
         const renderChildren = () => {
             return React.Children.map(children, (child) => {
                 if (React.isValidElement(child) && child.type === DockIcon) {
-                    return React.cloneElement(child, {
-                        ...child.props,
+                    return React.cloneElement(child as React.ReactElement<DockIconProps>, {
+                        ...(child.props || {}),
                         mouseX,
                         magnification,
                         distance
@@ -74,7 +81,7 @@ export interface DockIconProps {
     size?: number;
     magnification?: number;
     distance?: number;
-    mouseX?: any;
+    mouseX?: MotionValue<number>;
     className?: string;
     children?: React.ReactNode;
     props?: PropsWithChildren;
@@ -91,7 +98,7 @@ function DockIcon({
 }: DockIconProps) {
     const ref = useRef<HTMLDivElement>(null);
 
-    const distanceCalc = useTransform(mouseX, (val: number) => {
+    const distanceCalc = useTransform(mouseX as MotionValue<number>, (val: number) => {
         const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
 
         return val - bounds.x - bounds.width / 2;
