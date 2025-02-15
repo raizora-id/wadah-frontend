@@ -13,13 +13,16 @@ interface SeoProps {
     level?: number;
 }
 
+type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+
 export default function Seo(props: SeoProps) {
     const router = useRouter();
     const { route } = useRoute();
 
     const level = props.level ? props.level : route ? 0 : 1;
     const Wrapper = level == 0 ? Fragment : 'div';
-    const Heading = `h${level + 1}` as keyof JSX.IntrinsicElements;
+    const safeLevel = Math.min(Math.max(1, level + 1), 6) as HeadingLevel;
+    const Heading = `h${safeLevel}` as `h${HeadingLevel}`;
 
     let { seo, apps } = useConfig();
 

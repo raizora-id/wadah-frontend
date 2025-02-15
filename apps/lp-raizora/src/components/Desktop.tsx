@@ -1,3 +1,5 @@
+'use client';
+
 import { MouseEvent as ReactMouseEvent, useEffect, useState } from 'react';
 
 import Clock from '@/components/Clock';
