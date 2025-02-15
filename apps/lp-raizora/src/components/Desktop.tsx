@@ -7,6 +7,10 @@ import Shortcuts from '@/components/Shortcuts';
 import useMobile from '@/hooks/useMobile';
 import Layer from '@/utils/layer';
 import { useSelected, useTitleBar } from '@/utils/state';
+import { cn } from '@/utils/styles';
+
+import { AnimatedGridPattern } from './motions/animated-grid-pattern';
+import { MorphingText } from './motions/text-morph';
 
 interface Position {
     x: number;
@@ -117,7 +121,19 @@ export default function Desktop() {
             className={`relative flex w-screen flex-col justify-start overflow-x-hidden overflow-y-auto ${
                 mobile ? '' : 'p-8 pr-2'
             }`}>
-            {mobile && <Clock />}
+            <div className='bg-background fixed top-0 left-0 flex h-full w-full content-center items-center justify-center overflow-hidden rounded-lg border p-20'>
+                <MorphingText texts={['Mengakar', 'Kuat', 'Bertumbuh', 'Bersama']} />
+                <AnimatedGridPattern
+                    numSquares={30}
+                    maxOpacity={0.1}
+                    duration={3}
+                    repeatDelay={1}
+                    className={cn(
+                        '[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]',
+                        'inset-x-0 inset-y-[-30%] h-[200%] skew-y-12'
+                    )}
+                />
+            </div>
             <Shortcuts />
             <div
                 onPointerDown={mobile ? undefined : onPointerDown}

@@ -40,12 +40,7 @@ export default function Clock({ small }: ClockProps) {
         return time.replace(/ AM| PM/gm, '');
     }
 
-    if (small)
-        return (
-            <p className={`text-text/70 text-sm select-none ${!mobile ? 'absolute left-1/2 -translate-x-1/2' : ''}`}>
-                {time}
-            </p>
-        );
+    if (small) return <p className={`text-text/70 text-sm select-none ${!mobile ? '' : ''}`}>{time}</p>;
     return (
         <div style={{ paddingTop: titlebar }} className='flex flex-col items-center justify-center'>
             <p className='mt-12 text-7xl font-extrabold'>{time}</p>
