@@ -35,8 +35,6 @@ const Page = () => {
             <Features />
             <Templates />
             <Revenue />
-            <Content />
-            <Freelance />
             <Testimonials />
             <Footer />
         </>
