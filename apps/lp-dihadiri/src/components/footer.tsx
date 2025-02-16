@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
+import { Footer as FooterKetuju } from '@packages/ui/components/layouts/footers/footer-ketuju';
 import { TextClipPath } from '@packages/ui/components/motions/text-clip-path';
 
 import { MotionValue, motion, useScroll, useTransform } from 'framer-motion';
@@ -13,19 +14,8 @@ interface LogosProps {
 const Logos: React.FC<LogosProps> = ({ scrollProgress }) => {
     const y = useTransform(scrollProgress, [0, 1], [-700, 0]);
     return (
-        <div className='h-[250px] overflow-hidden bg-black'>
-            <motion.div style={{ y }} className='flex h-full items-center justify-center gap-10 bg-black p-10'>
-                {[...Array(5)].map((_, i) => {
-                    return (
-                        <img
-                            key={`img_${i}`}
-                            alt={`logo ${i + 1}`}
-                            className='h-[80px] w-[80px]'
-                            src={`/medias/${i + 1}.jpg`}
-                        />
-                    );
-                })}
-            </motion.div>
+        <div className='h-[350px] overflow-hidden'>
+            <FooterKetuju />
         </div>
     );
 };
