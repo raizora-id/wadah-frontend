@@ -8,6 +8,7 @@ import useMobile from '@/hooks/useMobile';
 import Layer from '@/utils/layer';
 import { useSelected, useTitleBar } from '@/utils/state';
 import { cn } from '@/utils/styles';
+import { useInkCursor } from '@packages/ui/components/motions/ink-cursor';
 
 import Dock from './dock/dock';
 import { AnimatedGridPattern } from './motions/animated-grid-pattern';
@@ -112,6 +113,8 @@ export default function Desktop() {
         });
     }
 
+    const inkCursor = useInkCursor();
+
     return (
         <div
             id='desktop'
@@ -137,6 +140,7 @@ export default function Desktop() {
             </div>
             <Shortcuts />
             <Dock />
+            <div className='fixed top-0 left-0 z-[9]'>{inkCursor}</div>
             <div
                 onPointerDown={mobile ? undefined : onPointerDown}
                 onPointerUp={mobile ? undefined : onPointerUp}
