@@ -36,6 +36,12 @@ catalogs:
     date-fns:
       specifier: ^4.1.0
       version: 4.1.0
+    framer-motion:
+      specifier: ^11.12.0
+      version: 11.18.2
+    motion:
+      specifier: ^12.4.3
+      version: 12.4.3
     next:
       specifier: 15.1.6
       version: 15.1.6
@@ -837,7 +843,7 @@ importers:
         specifier: ^4.3.1
         version: 4.3.1
       framer-motion:
-        specifier: ^11.12.0
+        specifier: 'catalog:'
         version: 11.18.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       jotai:
         specifier: ^2.11.3
@@ -846,7 +852,7 @@ importers:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
       motion:
-        specifier: ^12.4.3
+        specifier: 'catalog:'
         version: 12.4.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       nanoid:
         specifier: ^5.1.0
@@ -1208,7 +1214,7 @@ importers:
         specifier: ^8.5.2
         version: 8.5.2(react@19.0.0)
       framer-motion:
-        specifier: ^11.12.0
+        specifier: 'catalog:'
         version: 11.18.2(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       input-otp:
         specifier: ^1.4.2
@@ -1219,6 +1225,9 @@ importers:
       lucide-react:
         specifier: ^0.475.0
         version: 0.475.0(react@19.0.0)
+      motion:
+        specifier: 'catalog:'
+        version: 12.4.3(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       next:
         specifier: 'catalog:'
         version: 15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
