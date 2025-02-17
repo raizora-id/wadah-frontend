@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import { Badge } from '@packages/ui/components/ui/badge';
-import { Button } from '@packages/ui/components/ui/button';
-import { Card, CardContent } from '@packages/ui/components/ui/card';
+import { Badge } from '@packages/ui/components/base/badge';
+import { Button } from '@packages/ui/components/base/button';
+import { Card, CardContent } from '@packages/ui/components/base/card';
 
 import { Plus } from 'lucide-react';
 

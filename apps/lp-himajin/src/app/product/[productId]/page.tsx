@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 import { BackHeader } from '@/components/back-header';
 import { SellerProducts } from '@/components/seller-products';
-import { Button } from '@packages/ui/components/ui/button';
-import { Separator } from '@packages/ui/components/ui/separator';
+import { Button } from '@packages/ui/components/base/button';
+import { Separator } from '@packages/ui/components/base/separator';
 
 export default function ProductDetail() {
     // Sample data - in a real app this would come from an API

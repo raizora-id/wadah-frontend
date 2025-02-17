@@ -2,8 +2,9 @@ import { CategoryIcon } from '@/components/category-icon';
 import { Header } from '@/components/header';
 import { ProductCard } from '@/components/product-card';
 import { SpecialToday } from '@/components/special-today';
-import { Button } from '@packages/ui/components/ui/button';
-import { Card, CardContent } from '@packages/ui/components/ui/card';
+import ProductFeatures from '@/modules/product/components/product-features';
+import { Button } from '@packages/ui/components/base/button';
+import { Card, CardContent } from '@packages/ui/components/base/card';
 
 export default function Home() {
     const categories = [
@@ -25,20 +26,9 @@ export default function Home() {
     return (
         <div className='min-h-screen bg-gray-50'>
             <Header />
-
             <main className='mx-auto mt-24 max-w-[480px] space-y-4 px-4 py-4'>
                 {/* Banner Promo */}
-                <Card className='overflow-hidden border-none bg-green-50'>
-                    <CardContent className='p-3'>
-                        <div className='flex flex-col items-start gap-2'>
-                            <h1 className='text-lg font-bold text-green-800'>Transaksi Pertama Diskon 50%!</h1>
-                            <p className='text-sm text-green-700'>Gunakan kode SAYURHEMAT</p>
-                            <Button size='sm' className='bg-green-500 text-xs text-white hover:bg-green-600'>
-                                Belanja Sekarang
-                            </Button>
-                        </div>
-                    </CardContent>
-                </Card>
+                <ProductFeatures />
 
                 {/* Special Hari Ini */}
                 <SpecialToday />
