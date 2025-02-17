@@ -13,7 +13,7 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "../../ui/avatar"
+} from "../../base/avatar"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,13 +22,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "../../ui/dropdown-menu"
+} from "../../base/dropdown-menu"
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "../../ui/sidebar"
+} from "../../base/sidebar"
 
 export function NavUser({
   user,

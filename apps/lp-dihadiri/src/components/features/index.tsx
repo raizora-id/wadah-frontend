@@ -1,6 +1,6 @@
 'use client';
 
-import { CarouselIndicator, type Item } from '@packages/ui/components/ui/carousel-indicator';
+import { CarouselIndicator, type Item } from '@packages/ui/components/base/carousel-indicator';
 
 import { ChatInterface } from './chat-interface';
 import { Languages, LineChart, MapPin, MessageSquareMore, Plus, Settings, Sparkles } from 'lucide-react';

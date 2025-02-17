@@ -16,7 +16,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "../../ui/sidebar"
+} from "../../base/sidebar"
 
 export type User = {
   name: string

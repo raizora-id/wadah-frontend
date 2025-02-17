@@ -4,10 +4,10 @@ import { HTMLAttributes, useState } from 'react';
 
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from '@packages/ui/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@packages/ui/components/ui/form';
-import { Input } from '@packages/ui/components/ui/input';
-import { PasswordInput } from '@packages/ui/components/ui/password-input';
+import { Button } from '@packages/ui/components/base/button';
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@packages/ui/components/base/form';
+import { Input } from '@packages/ui/components/base/input';
+import { PasswordInput } from '@packages/ui/components/base/password-input';
 
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';

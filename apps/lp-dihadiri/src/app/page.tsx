@@ -1,9 +1,5 @@
-import { Brands } from '@/components/brands';
-import { Content } from '@/components/content';
 import { Features } from '@/components/features';
 import Footer from '@/components/footer';
-import { Freelance } from '@/components/freelance';
-import { Hero } from '@/components/hero';
 import LogoIntro from '@/components/logo-intro';
 import { Revenue } from '@/components/revenue';
 import { PageSEO } from '@/components/seo';
