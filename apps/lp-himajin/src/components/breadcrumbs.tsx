@@ -10,7 +10,7 @@ import {
     BreadcrumbList,
     BreadcrumbPage,
     BreadcrumbSeparator
-} from '@packages/ui/components/ui/breadcrumb';
+} from '@packages/ui/components/base/breadcrumb';
 
 import { Slash } from 'lucide-react';
 

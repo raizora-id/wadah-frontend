@@ -26,6 +26,7 @@
         "jotai": "^2.11.3",
         "lucide-react": "^0.475.0",
         "next": "catalog:",
+        "next-auth": "^4.24.11",
         "next-themes": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
