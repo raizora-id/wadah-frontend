@@ -1,9 +1,9 @@
 'use client';
 
+import { ScrollArea, ScrollBar } from '@packages/ui/components/base/scroll-area';
+import { Separator } from '@packages/ui/components/base/separator';
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '@packages/ui/components/base/sidebar';
 import { AppSidebar } from '@packages/ui/components/layouts/sidebars/app-sidebar';
-import { ScrollArea, ScrollBar } from '@packages/ui/components/ui/scroll-area';
-import { Separator } from '@packages/ui/components/ui/separator';
-import { SidebarInset, SidebarProvider, SidebarTrigger } from '@packages/ui/components/ui/sidebar';
 
 import { NavBreadcrumb } from './nav-sidebar/nav-breadcrumb';
 
