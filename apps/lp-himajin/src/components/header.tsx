@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Input } from '@packages/ui/components/ui/input';
+import { Input } from '@packages/ui/components/base/input';
 
 import { Search, ShoppingCart, User } from 'lucide-react';
 

@@ -29,6 +29,7 @@
         "next-themes": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
+        "react-wrap-balancer": "^1.1.1",
         "schema-dts": "^1.1.2",
         "tailwind-merge": "catalog:",
         "tailwindcss": "catalog:",
