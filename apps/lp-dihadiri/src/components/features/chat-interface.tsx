@@ -1,5 +1,5 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@packages/ui/components/ui/avatar';
-import { Card } from '@packages/ui/components/ui/card';
+import { Avatar, AvatarFallback, AvatarImage } from '@packages/ui/components/base/avatar';
+import { Card } from '@packages/ui/components/base/card';
 
 import { Globe, MapPin, MessageSquareMore, Settings } from 'lucide-react';
 

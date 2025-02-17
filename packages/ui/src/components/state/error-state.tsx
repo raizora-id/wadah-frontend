@@ -1,4 +1,4 @@
-import { Button } from "../ui/button";
+import { Button } from "../base/button";
 
 export const ErrorState = ({ error }: { error: Error }) => (
   <div className='flex grow flex-col items-center justify-center space-y-4 p-16' >

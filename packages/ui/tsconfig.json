@@ -30,7 +30,7 @@
         "./*"
       ],
       "ui/components/ui/*": [
-        "src/components/ui/*"
+        "src/components/base/*"
       ],
       "ui/hooks/*": [
         "./hooks/*"

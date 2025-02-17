@@ -2,7 +2,7 @@
 'use client';
 
 import { useRouter } from "next/navigation";
-import { buttonVariants } from "../ui/button";
+import { buttonVariants } from "../base/button";
 import { cn } from '@/lib/utils'
 
 type NotFoundProps = {
