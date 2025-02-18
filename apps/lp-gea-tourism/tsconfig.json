@@ -29,7 +29,7 @@
                 "./src/*"
             ]
         },
-        "target": "ES2023"
+        "target": "ES2022"
     },
     "include": [
         "next-env.d.ts",
