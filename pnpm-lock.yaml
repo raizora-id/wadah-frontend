@@ -193,6 +193,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.5
         version: 4.0.5
+      '@tooling/nextjs-config':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs-config
       '@tooling/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
