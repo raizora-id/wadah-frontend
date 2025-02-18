@@ -1,9 +1,17 @@
 {
-  "name": "Carhive",
-  "short_name": "Carhive",
+  "name": "GEA Tourism",
+  "short_name": "GEA",
   "icons": [
-    { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
-    { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
   ],
   "theme_color": "#ffffff",
   "background-color": "#ffffff",
