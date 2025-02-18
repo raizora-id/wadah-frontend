@@ -15,6 +15,9 @@ catalogs:
     '@tanstack/react-query':
       specifier: ^5.66.0
       version: 5.66.0
+    '@types/node':
+      specifier: ^22.13.1
+      version: 22.13.1
     '@types/react':
       specifier: 19.0.8
       version: 19.0.8
@@ -474,6 +477,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.5
         version: 4.0.5
+      '@tooling/nextjs-config':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs-config
       '@tooling/typescript-config':
         specifier: workspace:*
         version: link:../../tooling/typescript-config
@@ -616,6 +622,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.5
         version: 4.0.5
+      '@tooling/nextjs-config':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs-config
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.5.0)
@@ -752,6 +761,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.5
         version: 4.0.5
+      '@tooling/nextjs-config':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs-config
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.5.0)
@@ -930,6 +942,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4.0.5
         version: 4.0.5
+      '@tooling/nextjs-config':
+        specifier: workspace:*
+        version: link:../../tooling/nextjs-config
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^5.2.2
         version: 5.2.2(prettier@3.5.0)
@@ -1316,6 +1331,19 @@ importers:
         version: 5.7.3
 
   tooling/biome-config: {}
+
+  tooling/nextjs-config:
+    dependencies:
+      next:
+        specifier: 'catalog:'
+        version: 15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+    devDependencies:
+      '@types/node':
+        specifier: 'catalog:'
+        version: 22.13.1
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.3
 
   tooling/typescript-config: {}
 
