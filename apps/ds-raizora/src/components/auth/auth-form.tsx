@@ -10,15 +10,15 @@ import { Label } from '@packages/ui/components/base/label';
 import { signIn } from 'next-auth/react';
 
 export function LoginForm({ className, ...props }: React.ComponentProps<'form'>) {
-    const [name, setName] = useState<undefined | string>('admin@example.com');
-    const [password, setPassword] = useState<undefined | string>('admin');
+    const [userName, setUsername] = useState<undefined | string>('emilys');
+    const [password, setPassword] = useState<undefined | string>('emilyspass');
 
     function HandleSubmit(e: FormEvent) {
         e.preventDefault();
-        console.log('jalan');
         signIn('credentials', {
-            username: name,
-            password
+            username: userName,
+            password,
+            callbackUrl: '/dashboard'
         });
     }
 
@@ -32,13 +32,13 @@ export function LoginForm({ className, ...props }: React.ComponentProps<'form'>)
             </div>
             <div className='grid gap-6'>
                 <div className='grid gap-2'>
-                    <Label htmlFor='email'>Email</Label>
+                    <Label htmlFor='username'>Email</Label>
                     <Input
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                        id='email'
-                        type='email'
-                        placeholder='admin@example.com'
+                        onChange={(e) => setUsername(e.target.value)}
+                        value={userName}
+                        id='username'
+                        type='text'
+                        placeholder=''
                     />
                 </div>
                 <div className='grid gap-2'>

@@ -1,49 +1,59 @@
-import { type NextAuthOptions } from 'next-auth';
+import NextAuth, { NextAuthOptions } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import GithubProvider from 'next-auth/providers/github';
 
 export const authOptions: NextAuthOptions = {
     providers: [
-        GithubProvider({
-            clientId: process.env.GITHUB_ID!,
-            clientSecret: process.env.GITHUB_SECRET!
-        }),
         CredentialsProvider({
             name: 'Credentials',
             credentials: {
-                username: {
-                    label: 'Username',
-                    type: 'text',
-                    placeholder: 'Enter username'
-                },
+                username: { label: 'Username', type: 'text' },
                 password: { label: 'Password', type: 'password' }
             },
             async authorize(credentials) {
-                console.log('trigeerd');
-                const user = {
-                    id: '1',
-                    name: 'Admin',
-                    email: 'admin@example.com',
-                    image: 'https://avatars.githubusercontent.com/u/80968727?v=4',
-                    username: 'admin@example.com',
-                    password: 'admin'
-                };
-                if (credentials?.username == user.username && credentials.password == user.password) {
+                const res = await fetch('https://dummyjson.com/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        username: credentials?.username,
+                        password: credentials?.password,
+                        expiresInMins: 30
+                    })
+                });
+
+                const user = await res.json();
+                if (res.ok && user) {
                     return user;
-                } else {
-                    return null;
                 }
+
+                console.log('ssini', user);
+
+                return null;
             }
         })
     ],
     session: {
         strategy: 'jwt'
     },
-    jwt: {
-        secret: process.env.JWT_SECRET!
+    callbacks: {
+        async jwt({ token, user }) {
+            if (user) {
+                token.id = user.id;
+                token.email = user.email;
+            }
+
+            return token;
+        },
+        async session({ session, token }) {
+            console.log('ngecek', session);
+            session.user.id = token.id as string;
+            session.user.email = token.email as string;
+
+            return session;
+        }
     },
     pages: {
         signIn: '/auth'
-    },
-    secret: process.env.AUTH_SECRET!
+    }
 };
+
+export default NextAuth(authOptions);

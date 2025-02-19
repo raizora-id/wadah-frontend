@@ -2,38 +2,41 @@ import type { ReactNode } from 'react';
 
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Head from 'next/head';
 
 import { ThemeProvider } from 'next-themes';
 
+import { appConfig } from '@/config/app';
 import ReactQueryProvider from '@/providers/react-query-provider';
-import AuthProvider from '@/providers/session-provider';
 import { Toaster } from '@packages/ui/components/base/toaster';
 import '@packages/ui/globals.css';
 
 const geistSans = localFont({
-    src: './fonts/GeistVF.woff',
+    src: '../../../src/app/fonts/GeistVF.woff',
     variable: '--font-geist-sans',
     weight: '100 900'
 });
+
 const geistMono = localFont({
-    src: './fonts/GeistMonoVF.woff',
+    src: '../../../src/app/fonts/GeistMonoVF.woff',
     variable: '--font-geist-mono',
     weight: '100 900'
 });
 
 export const metadata: Metadata = {
-    title: 'ERP',
-    description: 'One Stop Solution to your bussiness!'
+    title: appConfig.appName,
+    description: appConfig.description
 };
 
-const Layout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+const GuestLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
     return (
         <html suppressHydrationWarning lang='en'>
+            <Head>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            </Head>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
-                <ThemeProvider attribute='data-theme' defaultTheme='zycas'>
-                    <ReactQueryProvider>
-                        <AuthProvider>{children}</AuthProvider>
-                    </ReactQueryProvider>
+                <ThemeProvider attribute='class'>
+                    <ReactQueryProvider>{children}</ReactQueryProvider>
                 </ThemeProvider>
                 <Toaster />
             </body>
@@ -41,4 +44,4 @@ const Layout = async ({ children }: Readonly<{ children: ReactNode }>) => {
     );
 };
 
-export default Layout;
+export default GuestLayout;
