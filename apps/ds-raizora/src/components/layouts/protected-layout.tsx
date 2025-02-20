@@ -6,9 +6,6 @@ import { useSession } from 'next-auth/react';
 
 const ProtectedLayout = ({ children }: { children: ReactNode }) => {
     const { data: session, status } = useSession();
-
-    console.log('ini data ', session, status);
-
     if (status !== 'loading' && !session) {
         redirect('/auth');
     }
