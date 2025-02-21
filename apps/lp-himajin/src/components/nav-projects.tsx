@@ -6,7 +6,7 @@ import {
     DropdownMenuItem,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from '@packages/ui/components/ui/dropdown-menu';
+} from '@packages/ui/components/base/dropdown-menu';
 import {
     SidebarGroup,
     SidebarGroupLabel,
@@ -15,7 +15,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-} from '@packages/ui/components/ui/sidebar';
+} from '@packages/ui/components/base/sidebar';
 
 import { Folder, Forward, type LucideIcon, MoreHorizontal, Trash2 } from 'lucide-react';
 

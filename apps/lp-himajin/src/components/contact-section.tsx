@@ -1,5 +1,5 @@
-import { Button } from '@packages/ui/components/ui/button';
-import { Card, CardContent } from '@packages/ui/components/ui/card';
+import { Button } from '@packages/ui/components/base/button';
+import { Card, CardContent } from '@packages/ui/components/base/card';
 
 export function ContactSection() {
     return (

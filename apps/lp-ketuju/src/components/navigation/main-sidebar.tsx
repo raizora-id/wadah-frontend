@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 import { cn } from '@/lib/utils';
-import { Button } from '@packages/ui/components/ui/button';
-import { ScrollArea } from '@packages/ui/components/ui/scroll-area';
+import { Button } from '@packages/ui/components/base/button';
+import { ScrollArea } from '@packages/ui/components/base/scroll-area';
 
 import { BookOpen, FileText, FolderIcon, Gift, Home, type LucideIcon, Settings, ShoppingBag } from 'lucide-react';
 

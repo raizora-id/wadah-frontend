@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils';
-import { Input } from '@packages/ui/components/ui/input';
+import { Input } from '@packages/ui/components/base/input';
 
 import { Mic, Search } from 'lucide-react';
 

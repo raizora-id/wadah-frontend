@@ -4,8 +4,8 @@ import * as React from 'react';
 
 import { useTheme } from 'next-themes';
 
-import { Button } from '@packages/ui/components/ui/button';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@packages/ui/components/ui/tooltip';
+import { Button } from '@packages/ui/components/base/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@packages/ui/components/base/tooltip';
 import { MoonIcon, SunIcon } from '@radix-ui/react-icons';
 
 export function ModeToggle() {

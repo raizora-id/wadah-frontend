@@ -4,7 +4,7 @@ import { useState } from 'react';
 import type React from 'react';
 
 import { cn } from '@/lib/utils';
-import { Button } from '@packages/ui/components/ui/button';
+import { Button } from '@packages/ui/components/base/button';
 
 import { PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 

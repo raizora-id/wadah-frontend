@@ -3,9 +3,9 @@
 import * as React from 'react';
 
 import { cn } from '@/lib/utils';
-import { Button } from '@packages/ui/components/ui/button';
-import { Calendar } from '@packages/ui/components/ui/calendar';
-import { Popover, PopoverContent, PopoverTrigger } from '@packages/ui/components/ui/popover';
+import { Button } from '@packages/ui/components/base/button';
+import { Calendar } from '@packages/ui/components/base/calendar';
+import { Popover, PopoverContent, PopoverTrigger } from '@packages/ui/components/base/popover';
 import { CalendarIcon } from '@radix-ui/react-icons';
 
 import { addDays, format } from 'date-fns';

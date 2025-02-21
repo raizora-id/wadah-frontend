@@ -3,9 +3,9 @@ import type React from 'react';
 import Link from 'next/link';
 
 import { cn } from '@/utils/styles';
-import { buttonVariants } from '@packages/ui/components/ui/button';
-import { Separator } from '@packages/ui/components/ui/separator';
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@packages/ui/components/ui/tooltip';
+import { buttonVariants } from '@packages/ui/components/base/button';
+import { Separator } from '@packages/ui/components/base/separator';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@packages/ui/components/base/tooltip';
 
 import { DockIcon, Dock as InnerDock } from './inner-dock';
 import { CalendarIcon, HomeIcon, MailIcon, PencilIcon } from 'lucide-react';

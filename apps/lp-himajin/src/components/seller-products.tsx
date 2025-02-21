@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Button } from '@packages/ui/components/ui/button';
-import { Card } from '@packages/ui/components/ui/card';
+import { Button } from '@packages/ui/components/base/button';
+import { Card } from '@packages/ui/components/base/card';
 
 interface Product {
     id: string;

@@ -1,6 +1,6 @@
 'use client';
 
-import { Avatar, AvatarFallback, AvatarImage } from '@packages/ui/components/ui/avatar';
+import { Avatar, AvatarFallback, AvatarImage } from '@packages/ui/components/base/avatar';
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -9,8 +9,8 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger
-} from '@packages/ui/components/ui/dropdown-menu';
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@packages/ui/components/ui/sidebar';
+} from '@packages/ui/components/base/dropdown-menu';
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from '@packages/ui/components/base/sidebar';
 
 import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Sparkles } from 'lucide-react';
 
