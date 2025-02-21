@@ -1,33 +1,41 @@
-import { NoteContent } from '@/components/notes/note-content';
-import { NotesLayout } from '@/components/notes/notes-layout';
-import { NotesList } from '@/components/notes/notes-list';
-import { Sidebar } from '@/components/notes/sidebar';
-import { PageSEO } from '@/components/seo';
-import { siteMetadata } from '@/data/site-metadata';
+export default function HomePage() {
+  return (
+    <div className="p-6 space-y-6">
+      <div>
+        <h1 className="text-2xl font-bold mb-2">Welcome Back!</h1>
+        <p className="text-muted-foreground">Your personal space for notes and blogs.</p>
+      </div>
 
-/**
- * The main page component that renders the HomePage component.
- *
- * @returns {JSX.Element} The rendered HomePage component.
- */
-const Page = () => {
-    const content = `
-    It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way...
+      <div className="grid gap-4">
+        <div className="rounded-lg border bg-card p-4">
+          <h2 className="font-semibold mb-2">Quick Stats</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="rounded-md bg-muted p-3">
+              <div className="text-2xl font-bold">12</div>
+              <div className="text-xs text-muted-foreground">Total Notes</div>
+            </div>
+            <div className="rounded-md bg-muted p-3">
+              <div className="text-2xl font-bold">8</div>
+              <div className="text-xs text-muted-foreground">Total Blogs</div>
+            </div>
+          </div>
+        </div>
 
-    There were a king with a large jaw and a queen with a plain face, on the throne of England; there were a king with a large jaw and a queen with a fair face, on the throne of France. In both countries it was clearer than crystal to the lords of the State preserves of loaves and fishes, that things in general were settled for ever.
+        <div className="rounded-lg border bg-card p-4">
+          <h2 className="font-semibold mb-2">Recent Activity</h2>
+          <div className="space-y-2">
+            <div className="text-sm">
+              <div className="font-medium">Meeting Notes Updated</div>
+              <div className="text-xs text-muted-foreground">2 hours ago</div>
+            </div>
+            <div className="text-sm">
+              <div className="font-medium">New Blog Post Created</div>
+              <div className="text-xs text-muted-foreground">5 hours ago</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
-    It was the year of Our Lord one thousand seven hundred and seventy-five. Spiritual revelations were conceded to England at that favoured period, as at this. Mrs. Southcott had recently attained her five-and-twentieth blessed birthday, of whom a prophetic private in the Life Guards had heralded the sublime appearance by announcing that arrangements were made for the swallowing up of London and Westminster. Even the Cock-lane ghost had been laid only a round dozen of years, after rapping out its messages, as the spirits of this very year last past (supernaturally deficient in originality) rapped out theirs. Mere messages in the earthly order of events had lately come to the English Crown and People, from a congress of British subjects in America...
-  `;
-    return (
-        <>
-            <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-            <NotesLayout
-                sidebar={<Sidebar />}
-                list={<NotesList />}
-                content={<NoteContent title='A Tale of Two Cities' author='Charles Dickens' content={content} />}
-            />
-        </>
-    );
-};
-
-export default Page;

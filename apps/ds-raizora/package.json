@@ -37,7 +37,8 @@
         "tailwind-merge": "catalog:",
         "tailwindcss": "catalog:",
         "vaul": "^1.1.2",
-        "zod": "^3.24.1"
+        "zod": "^3.24.1",
+        "firebase": "catalog:"
     },
     "devDependencies": {
         "@tooling/typescript-config": "workspace:*",
