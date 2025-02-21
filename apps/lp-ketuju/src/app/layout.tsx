@@ -1,40 +1,38 @@
-import type { ReactNode } from 'react';
+import type React from 'react';
 
 import type { Metadata } from 'next';
-import localFont from 'next/font/local';
+import { Inter } from 'next/font/google';
 
-import { ThemeProvider } from 'next-themes';
-
-import { siteMetadata } from '@/data/site-metadata';
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { BaseLayout } from '@/components/layouts/base-layout';
+import { TooltipProvider } from '@/components/ui/tooltip';
 import '@packages/ui/globals.css';
 
-const geistSans = localFont({
-    src: './fonts/GeistVF.woff',
-    variable: '--font-geist-sans',
-    weight: '100 900'
-});
-const geistMono = localFont({
-    src: './fonts/GeistMonoVF.woff',
-    variable: '--font-geist-mono',
-    weight: '100 900'
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-    title: siteMetadata.title,
-    description: siteMetadata.description
+    title: 'Notes App',
+    description: 'Your personal note taking app',
+    generator: 'v0.dev'
 };
 
-const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
+export default function RootLayout({
+    children,
+    list,
+    detail
+}: {
+    children: React.ReactNode;
+    list: React.ReactNode;
+    detail: React.ReactNode;
+}) {
     return (
-        // ? https://github.com/pacocoursey/next-themes?tab=readme-ov-file#with-app
-        // ? https://react.dev/reference/react-dom/client/hydrateRoot#suppressing-unavoidable-hydration-mismatch-errors
-        <html suppressHydrationWarning lang='en'>
-            <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
-                <ThemeProvider attribute='class'>{children}</ThemeProvider>
+        <html lang='en'>
+            <body className={inter.className}>
+                <TooltipProvider>
+                    <BaseLayout list={list} detail={detail}>
+                        {children}
+                    </BaseLayout>
+                </TooltipProvider>
             </body>
         </html>
     );
-};
-
-export default Layout;
+}
