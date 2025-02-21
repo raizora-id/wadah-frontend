@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import SetupDetails from '@/components/SetupDetails';
-import { Button } from '@packages/ui/components/ui/button';
+import { Button } from '@packages/ui/components/base/button';
 
 const HomePage: React.FC = () => {
     return (

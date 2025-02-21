@@ -1,6 +1,6 @@
 'use client';
 
-import { Input } from '@packages/ui/components/ui/input';
+import { Input } from '@packages/ui/components/base/input';
 
 import { Button } from './ui/button';
 import { useKBar } from 'kbar';

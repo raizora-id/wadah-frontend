@@ -1,4 +1,4 @@
-import { ScrollArea } from '@packages/ui/components/ui/scroll-area';
+import { ScrollArea } from '@packages/ui/components/base/scroll-area';
 
 interface NoteContentProps {
     title: string;

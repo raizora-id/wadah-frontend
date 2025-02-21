@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 import { useControllableState } from '@/hooks/use-controllable-state';
 import { cn, formatBytes } from '@/lib/utils';
-import { Button } from '@packages/ui/components/ui/button';
-import { Progress } from '@packages/ui/components/ui/progress';
-import { ScrollArea } from '@packages/ui/components/ui/scroll-area';
+import { Button } from '@packages/ui/components/base/button';
+import { Progress } from '@packages/ui/components/base/progress';
+import { ScrollArea } from '@packages/ui/components/base/scroll-area';
 
 import { CrossIcon, UploadIcon } from 'lucide-react';
 import Dropzone, { type DropzoneProps, type FileRejection } from 'react-dropzone';

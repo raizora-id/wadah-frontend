@@ -2,8 +2,8 @@ import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 import { Header } from '@/components/header';
 import { ServiceSection } from '@/components/service-section';
-import { Button } from '@packages/ui/components/ui/button';
-import { Card, CardContent } from '@packages/ui/components/ui/card';
+import { Button } from '@packages/ui/components/base/button';
+import { Card, CardContent } from '@packages/ui/components/base/card';
 
 export default function AquascapeServices() {
     return (

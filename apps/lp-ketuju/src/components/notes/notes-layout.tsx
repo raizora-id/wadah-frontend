@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 import { cn } from '@/lib/utils';
-import { Button } from '@packages/ui/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@packages/ui/components/ui/sheet';
+import { Button } from '@packages/ui/components/base/button';
+import { Sheet, SheetContent, SheetTrigger } from '@packages/ui/components/base/sheet';
 
 import { Menu, PanelLeftClose, PanelLeftOpen } from 'lucide-react';
 

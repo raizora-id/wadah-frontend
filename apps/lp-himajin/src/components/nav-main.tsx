@@ -1,6 +1,6 @@
 'use client';
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@packages/ui/components/ui/collapsible';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@packages/ui/components/base/collapsible';
 import {
     SidebarGroup,
     SidebarGroupLabel,
@@ -10,7 +10,7 @@ import {
     SidebarMenuSub,
     SidebarMenuSubButton,
     SidebarMenuSubItem
-} from '@packages/ui/components/ui/sidebar';
+} from '@packages/ui/components/base/sidebar';
 
 import { ChevronRight, type LucideIcon } from 'lucide-react';
 
