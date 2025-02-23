@@ -33,7 +33,6 @@ const Page = () => {
                 <Templates />
                 <Revenue />
                 <Testimonials />
-                <Footer />
             </div>
         </>
     );
