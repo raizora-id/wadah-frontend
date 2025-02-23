@@ -7,6 +7,7 @@ import { ThemeProvider } from 'next-themes';
 
 import { siteMetadata } from '@/data/site-metadata';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Navigation } from '@packages/ui/components/layouts/headers/header-ketuju';
 import '@packages/ui/globals.css';
 
 const geistSans = localFont({
@@ -32,6 +33,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
         <html suppressHydrationWarning lang='en'>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
                 <GoogleAnalytics gaId={'G-F0WBE47V4M'} />
+                <Navigation />
                 <ThemeProvider attribute='class'>{children}</ThemeProvider>
             </body>
         </html>
