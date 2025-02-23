@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Features } from '@/components/features';
 import Footer from '@/components/footer';
 import LogoIntro from '@/components/logo-intro';
@@ -6,7 +8,7 @@ import { PageSEO } from '@/components/seo';
 import { Templates } from '@/components/templates';
 import { Testimonials } from '@/components/testimonials';
 import { siteMetadata } from '@/data/site-metadata';
-import { TextAnimate } from '@packages/ui/components/motions/text-animate';
+import TextGradientScroll from '@packages/ui/components/motions/scroll-reveal';
 
 /**
  * The main page component that renders the HomePage component.
@@ -17,22 +19,20 @@ const Page = () => {
     return (
         <>
             <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-            <div className='flex items-center justify-center p-4 pt-12'>
-                <TextAnimate
-                    animation='blurInUp'
-                    by='character'
-                    once
-                    className='font-size[12rem] text-xl font-semibold'>
-                    It is a long established fact that a reader will be distracted by the readable content of a page
-                    when looking at its layout.
-                </TextAnimate>
+            <div className='flex flex-col items-center'>
+                <div className='bg-red flex max-w-6xl items-center p-4 px-12 pt-72'>
+                    <TextGradientScroll
+                        className='text-5xl'
+                        text='Setiap momen berharga memiliki ceritanya sendiri - seperti kepingan mozaik yang membentuk kenangan tak terlupakan. Dihadiri, kami percaya bahwa setiap undangan adalah jembatan yang menghubungkan hati dengan hati, menganyam kebersamaan dalam lembar digital yang memukau. Dari perayaan kehidupan hingga momen pencapaian, kami hadir untuk mengubah setiap kesempatan istimewa Anda menjadi pengalaman digital yang mengundang decak kagum. Karena kami yakin, ketika cerita Anda dikisahkan dengan indah, setiap undangan menjadi awal dari sebuah kenangan yang akan selalu dikenang.'
+                    />
+                </div>
+                <LogoIntro />
+                <Features />
+                <Templates />
+                <Revenue />
+                <Testimonials />
+                <Footer />
             </div>
-            <LogoIntro />
-            <Features />
-            <Templates />
-            <Revenue />
-            <Testimonials />
-            <Footer />
         </>
     );
 };
