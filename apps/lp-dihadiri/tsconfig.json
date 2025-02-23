@@ -35,7 +35,8 @@
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        ".next/types/**/*.ts"
+        ".next/types/**/*.ts",
+        "../../packages/ui/src/components/layouts/headers/DatabaseLogo.tsx"
     ],
     "exclude": [
         "node_modules"
