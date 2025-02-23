@@ -18,9 +18,9 @@ export default function LogoIntro() {
     return (
         <>
             <div style={{ height: '2vh' }}></div>
-            <div className='main' ref={scene}>
+            <div className='main w-full' ref={scene}>
                 <motion.div className='mask' style={{ maskSize: imageScale }}>
-                    <img src='https://blog.olivierlarose.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2F3.a565eeaf.jpg&w=750&q=75' />
+                    <img src='https://image.mux.com/tgcgNxURMDq02gJ02thoMZ3cLPsNHzN4Ak/animated.gif?start=20' />
                 </motion.div>
             </div>
         </>
