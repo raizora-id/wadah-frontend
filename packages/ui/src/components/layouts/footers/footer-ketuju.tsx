@@ -1,112 +1,210 @@
-'use client'
-import { FC, ReactNode } from "react";
-import icon from "./icons/icon.svg";
 
-import xIcon from "./icons/x.svg";
-import githubIcon from "./icons/github.svg";
-import discordIcon from "./icons/discord.svg";
+import Link from "next/link";
+import { HeaderDefaultLogo } from "../headers/header-ketuju-default-logo";
 
+interface NavigationItem {
+  name: string; // Nama item
+  href: string; // URL tujuan
+  external?: boolean; // Apakah link external?
+}
 
-export function Footer(): React.ReactElement {
+interface FooterProps {
+  logo?: React.ReactNode; // Props untuk logo
+  description?: string; // Deskripsi footer
+  navigation?: {
+    product: NavigationItem[];
+    resources: NavigationItem[];
+    company: NavigationItem[];
+    legal: NavigationItem[];
+  }; // Props untuk navigation items
+  copyrightText?: string; // Teks copyright
+  systemStatus?: {
+    label: string; // Label status sistem
+    color: string; // Warna status sistem
+  }; // Props untuk status sistem
+}
+
+export function Footer({
+  logo = <HeaderDefaultLogo className="w-32 sm:w-40" />, // Default logo
+  description = "Redefining the way databases are built and managed. Built in Switzerland, made for the world.", // Default deskripsi
+  navigation = {
+    product: [
+      { name: "Enterprise", href: "#", external: false },
+      { name: "Pricing", href: "/pricing", external: false },
+      { name: "Docs", href: "#", external: false },
+      { name: "Changelog", href: "/changelog", external: false },
+    ],
+    resources: [
+      { name: "FAQs", href: "/pricing#faq-title", external: false },
+      { name: "GitHub", href: "#", external: true },
+      { name: "Discord", href: "#", external: true },
+      { name: "YouTube", href: "#", external: true },
+    ],
+    company: [
+      { name: "About", href: "/about", external: false },
+      { name: "Careers", href: "#", external: true },
+      { name: "Contact", href: "#", external: false },
+      { name: "Status", href: "#", external: false },
+    ],
+    legal: [
+      { name: "Imprint", href: "#", external: false },
+      { name: "Privacy", href: "#", external: false },
+      { name: "Terms", href: "#", external: false },
+      { name: "DPA", href: "#", external: false },
+    ],
+  }, // Default navigation items
+  copyrightText = `© ${new Date().getFullYear()} Dihadiri by Ketuju. All rights reserved.`, // Default teks copyright
+  systemStatus = {
+    label: "All systems operational",
+    color: "emerald", // Warna status sistem
+  }, // Default status sistem
+}: FooterProps) {
   return (
-    <footer className="relative border-t px-8 pb-32 pt-20">
-      <div className="mx-auto flex w-full max-w-screen-xl flex-col justify-between sm:flex-row">
-        <div className="mr-4 flex flex-col gap-4">
-          <a
-            className="mr-4 flex items-center gap-3 text-sm font-normal text-black"
-            href="/"
-          >
-            <img
-              src={icon}
-              alt="logo"
-              className="inline size-7 dark:hue-rotate-180 dark:invert"
-            />
-            <span className="text-2xl font-medium text-black dark:text-white">
-              assistant-ui
-            </span>
-          </a>
-          <div className="flex gap-4">
-            <a href="https://x.com/assistantui" target="_blank">
-              <img
-                src={xIcon}
-                alt="X icon"
-                className="inline size-5 opacity-30 transition-opacity hover:opacity-100 dark:hue-rotate-180 dark:invert"
-              />
-            </a>
-            <a href="https://github.com/assistant-ui" target="_blank">
-              <img
-                src={githubIcon}
-                alt="GitHub icon"
-                className="inline size-5 opacity-30 transition-opacity hover:opacity-100 dark:hue-rotate-180 dark:invert"
-              />
-            </a>
-            <a href="https://discord.gg/S9dwgCNEFs" target="_blank">
-              <img
-                src={discordIcon}
-                alt="Discord icon"
-                className="inline size-5 opacity-30 transition-opacity hover:opacity-100 dark:hue-rotate-180 dark:invert"
-              />
-            </a>
+    <footer id="footer">
+      <div className="mx-auto max-w-6xl px-3 pb-8 pt-16 sm:pt-24 lg:pt-32">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-20">
+          <div className="space-y-8">
+            {logo} {/* Render logo dari props */}
+            <p className="text-sm leading-6 text-gray-600 dark:text-gray-400">
+              {description} {/* Render deskripsi dari props */}
+            </p>
           </div>
-          <div className="flex-grow" />
-          <p className="text-foreground/30 text-sm">
-            &copy; {new Date().getFullYear()} Raizora Inc.
-          </p>
+          <div className="mt-16 grid grid-cols-1 gap-14 sm:gap-8 md:grid-cols-2 xl:col-span-2 xl:mt-0">
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
+                  Product
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.product.map((item) => (
+                    <li key={item.name} className="w-fit">
+                      <Link
+                        className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                      >
+                        <span>{item.name}</span>
+                        {/* {item.external && (
+                          <div className="ml-1 aspect-square size-3 rounded-full bg-gray-100 p-px dark:bg-gray-500/20">
+                            <RiArrowRightUpLine
+                              aria-hidden="true"
+                              className="size-full shrink-0 text-gray-900 dark:text-gray-300"
+                            />
+                          </div>
+                        )} */}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
+                  Resources
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.resources.map((item) => (
+                    <li key={item.name} className="w-fit">
+                      <Link
+                        className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                      >
+                        <span>{item.name}</span>
+                        {/* {item.external && (
+                          <div className="ml-0.5 aspect-square size-3 rounded-full bg-gray-100 p-px dark:bg-gray-500/20">
+                            <RiArrowRightUpLine
+                              aria-hidden="true"
+                              className="size-full shrink-0 text-gray-900 dark:text-gray-300"
+                            />
+                          </div>
+                        )} */}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
+                  Company
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name} className="w-fit">
+                      <Link
+                        className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                      >
+                        <span>{item.name}</span>
+                        {/* {item.external && (
+                          <div className="ml-1 aspect-square size-3 rounded-full bg-gray-100 p-px dark:bg-gray-500/20">
+                            <RiArrowRightUpLine
+                              aria-hidden="true"
+                              className="size-full shrink-0 text-gray-900 dark:text-gray-300"
+                            />
+                          </div>
+                        )} */}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
+                  Legal
+                </h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.legal.map((item) => (
+                    <li key={item.name} className="w-fit">
+                      <Link
+                        className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                        href={item.href}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
+                      >
+                        <span>{item.name}</span>
+                        {/* {item.external && (
+                          <div className="ml-1 aspect-square size-3 rounded-full bg-gray-100 p-px dark:bg-gray-500/20">
+                            <RiArrowRightUpLine
+                              aria-hidden="true"
+                              className="size-full shrink-0 text-gray-900 dark:text-gray-300"
+                            />
+                          </div>
+                        )} */}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mt-10 grid grid-cols-2 items-start gap-10 sm:mt-0">
-          <div className="flex w-[160px] flex-col justify-center gap-4">
-            <p className="text-sm font-semibold">Dihadiri</p>
-            <FooterLink href="/docs/getting-started">Documentation</FooterLink>
-            <FooterLink href="/showcase">Changelog</FooterLink>
-            <FooterLink href="/examples">Demo</FooterLink>
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:mt-20 sm:flex-row lg:mt-24 dark:border-gray-800">
+          <p className="text-sm leading-5 text-gray-500 dark:text-gray-400">
+            {copyrightText} {/* Render teks copyright dari props */}
+          </p>
+          <div className="rounded-full border border-gray-200 py-1 pl-1 pr-2 dark:border-gray-800">
+            <div className="flex items-center gap-1.5">
+              <div className="relative size-4 shrink-0">
+                <div
+                  className={`absolute inset-[1px] rounded-full bg-${systemStatus.color}-500/20 dark:bg-${systemStatus.color}-600/20`}
+                />
+                <div
+                  className={`absolute inset-1 rounded-full bg-${systemStatus.color}-600 dark:bg-${systemStatus.color}-500`}
+                />
+              </div>
+              <span className="text-xs text-gray-700 dark:text-gray-50">
+                {systemStatus.label} {/* Render label status sistem dari props */}
+              </span>
+            </div>
           </div>
-          <div className="flex flex-col justify-center gap-4">
-            <p className="text-sm font-semibold">Products</p>
-            <FooterLink href="https://cal.com/simon-farshid/assistant-ui">
-              Dihadiri
-            </FooterLink>
-            <FooterLink href="https://docs.google.com/document/d/1EhtzGCVOFGtDWaRP7uZ4gBpDVzUfuCF23U6ztRunNRo/view">
-              Assetiva
-            </FooterLink>
-            <FooterLink href="/blog">Klolatoko</FooterLink>
-            <FooterLink href="https://docs.google.com/document/d/1EhtzGCVOFGtDWaRP7uZ4gBpDVzUfuCF23U6ztRunNRo/view">
-              Klolakos
-            </FooterLink>
-            <FooterLink href="https://docs.google.com/document/d/1rTuYeC2xJHWB5u42dSyWwp3vBx7Cms5b6sK971wraVY/view">
-              KlolaRental
-            </FooterLink>
-          </div>
-
-          {/* <div className="mt-4 flex flex-col justify-center space-y-4">
-            <a
-              className="text-muted-foreground hover:text-foreground text-xs transition-colors sm:text-sm"
-              href="#"
-            >
-              Privacy Policy
-            </a>
-            <a
-              className="text-muted-foreground hover:text-foreground text-xs transition-colors sm:text-sm"
-              href="#"
-            >
-              Terms of Service
-            </a>
-          </div> */}
         </div>
       </div>
     </footer>
   );
 }
-
-const FooterLink: FC<{ href: string; children: ReactNode }> = ({
-  href,
-  children,
-}) => {
-  return (
-    <a
-      className="text-muted-foreground hover:text-foreground text-xs transition-colors sm:text-sm"
-      href={href}
-    >
-      {children}
-    </a>
-  );
-};
