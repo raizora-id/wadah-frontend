@@ -2,6 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
+import react from '@astrojs/react';
+
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
@@ -17,6 +19,6 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: 'https://tempat-teduh.raizora.com',
-  integrations: [ sitemap(), mdx()]
+  site: 'https://klolatoko.raizora.com',
+  integrations: [ sitemap(), mdx(), react()]
 });
