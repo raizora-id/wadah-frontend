@@ -2,9 +2,9 @@
 
 import React from 'react';
 import Link from 'next/link';
-import useScroll from '@/hooks/use-scroll';
-import { Button } from '@/components/base/button';
-import { cn } from '@/lib/utils';
+import useScroll from '../../../hooks/use-scroll';
+import { Button } from '../../../components/base/button';
+import { cn } from '../../../lib/utils';
 import { HeaderDefaultLogo } from './header-ketuju-default-logo';
 
 interface NavigationItem {
