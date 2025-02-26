@@ -36,7 +36,7 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
                 <GoogleAnalytics gaId={'G-F0WBE47V4M'} />
                 <Navigation />
                 <ThemeProvider attribute='class'>{children}</ThemeProvider>
-                <Footer />
+                <Footer productName='Dihadiri' />
             </body>
         </html>
     );

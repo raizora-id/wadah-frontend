@@ -60,7 +60,7 @@ export default function RootLayout({
                 className={`${geistSans.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-50 antialiased selection:bg-orange-100 selection:text-orange-600`}>
                 <Navigation />
                 {children}
-                <Footer />
+                <Footer productName='Klolarental' />
             </body>
         </html>
     );

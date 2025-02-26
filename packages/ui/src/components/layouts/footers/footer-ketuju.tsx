@@ -12,12 +12,12 @@ interface FooterProps {
   logo?: React.ReactNode; // Props untuk logo
   description?: string; // Deskripsi footer
   navigation?: {
-    product: NavigationItem[];
-    resources: NavigationItem[];
+    products: NavigationItem[];
+    solutions: NavigationItem[];
     company: NavigationItem[];
-    legal: NavigationItem[];
+    socials: NavigationItem[];
   }; // Props untuk navigation items
-  copyrightText?: string; // Teks copyright
+  productName?: string;
   systemStatus?: {
     label: string; // Label status sistem
     color: string; // Warna status sistem
@@ -28,32 +28,31 @@ export function Footer({
   logo = <HeaderDefaultLogo className="w-32 sm:w-40" />, // Default logo
   description = "Redefining the way databases are built and managed. Built in Switzerland, made for the world.", // Default deskripsi
   navigation = {
-    product: [
-      { name: "Enterprise", href: "#", external: false },
-      { name: "Pricing", href: "/pricing", external: false },
-      { name: "Docs", href: "#", external: false },
-      { name: "Changelog", href: "/changelog", external: false },
+    products: [
+      { name: "Dihadiri", href: "https://dihadiri.com", external: false },
+      { name: "Assetiva", href: "https://klolakos.ketuju.com", external: false },
+      { name: "Dokukita", href: "https://dokukita.ketuju.com", external: false },
     ],
-    resources: [
-      { name: "FAQs", href: "/pricing#faq-title", external: false },
-      { name: "GitHub", href: "#", external: true },
-      { name: "Discord", href: "#", external: true },
-      { name: "YouTube", href: "#", external: true },
+    solutions: [
+      { name: "Klolaform", href: "https://klolaform.ketuju.com", external: false },
+      { name: "Klolakos", href: "https://klolakos.ketuju.com", external: false },
+      { name: "Klolatoko", href: "https://klolatoko.ketuju.com", external: false },
+      { name: "Klolarental", href: "https://klolarental.ketuju.com", external: false },
     ],
     company: [
-      { name: "About", href: "/about", external: false },
-      { name: "Careers", href: "#", external: true },
-      { name: "Contact", href: "#", external: false },
-      { name: "Status", href: "#", external: false },
+      { name: "About", href: "https://ketuju.com", external: false },
+      { name: "Services", href: "https://ketuju.com/services", external: true },
+      { name: "Contact", href: "https://ketuju.com/contact", external: false },
+      { name: "Help Center", href: "https://help.ketuju.com", external: false },
     ],
-    legal: [
-      { name: "Imprint", href: "#", external: false },
-      { name: "Privacy", href: "#", external: false },
-      { name: "Terms", href: "#", external: false },
-      { name: "DPA", href: "#", external: false },
+    socials: [
+      { name: "Instagram", href: "#", external: false },
+      { name: "Tiktok", href: "#", external: false },
+      { name: "Linkedin", href: "#", external: false },
+      { name: "Facebook", href: "#", external: false },
     ],
   }, // Default navigation items
-  copyrightText = `© ${new Date().getFullYear()} Dihadiri by Ketuju. All rights reserved.`, // Default teks copyright
+  productName = "",
   systemStatus = {
     label: "All systems operational",
     color: "emerald", // Warna status sistem
@@ -73,10 +72,10 @@ export function Footer({
             <div className="grid grid-cols-2 gap-8">
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
-                  Product
+                  Products
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.product.map((item) => (
+                  {navigation.products.map((item) => (
                     <li key={item.name} className="w-fit">
                       <Link
                         className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -100,10 +99,10 @@ export function Footer({
               </div>
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
-                  Resources
+                  Solutions
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.resources.map((item) => (
+                  {navigation.solutions.map((item) => (
                     <li key={item.name} className="w-fit">
                       <Link
                         className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -156,10 +155,10 @@ export function Footer({
               </div>
               <div>
                 <h3 className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-50">
-                  Legal
+                  Socials
                 </h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.legal.map((item) => (
+                  {navigation.socials.map((item) => (
                     <li key={item.name} className="w-fit">
                       <Link
                         className="flex rounded-md text-sm text-gray-500 transition hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
@@ -186,7 +185,7 @@ export function Footer({
         </div>
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:mt-20 sm:flex-row lg:mt-24 dark:border-gray-800">
           <p className="text-sm leading-5 text-gray-500 dark:text-gray-400">
-            {copyrightText} {/* Render teks copyright dari props */}
+          © {new Date().getFullYear()} {productName} by Ketuju. All rights reserved.
           </p>
           <div className="rounded-full border border-gray-200 py-1 pl-1 pr-2 dark:border-gray-800">
             <div className="flex items-center gap-1.5">
