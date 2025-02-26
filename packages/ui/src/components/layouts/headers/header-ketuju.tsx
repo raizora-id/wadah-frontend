@@ -28,8 +28,8 @@ export function Navigation({
         </Link>
     ), // Default logo
     navigationItems = [
-        { label: 'Kategori', href: '/', onClick: () => console.log('Kategori clicked') },
-        { label: 'Custom', href: '/', onClick: () => console.log('Custom clicked') },
+        { label: 'Fitur', href: '/', onClick: () => console.log('Kategori clicked') },
+        { label: 'Harga', href: '/', onClick: () => console.log('Custom clicked') },
         { label: 'Testimoni', href: '/', onClick: () => console.log('Testimoni clicked') },
     ], // Default navigation items
     contactButtonLabel = 'Kontak kami', // Default label untuk tombol kontak
