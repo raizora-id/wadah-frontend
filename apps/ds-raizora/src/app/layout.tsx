@@ -10,6 +10,10 @@ import AuthProvider from '@/providers/session-provider';
 import { Toaster } from '@packages/ui/components/base/toaster';
 import '@packages/ui/globals.css';
 
+import { RefineContext } from './_refine_context';
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
+
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
     variable: '--font-geist-sans',
@@ -27,12 +31,19 @@ export const metadata: Metadata = {
 };
 
 const Layout = async ({ children }: Readonly<{ children: ReactNode }>) => {
+    const locale = await getLocale();
+    const messages = await getMessages();
+
     return (
         <html suppressHydrationWarning lang='en'>
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
                 <ThemeProvider attribute='data-theme' defaultTheme='zycas'>
                     <ReactQueryProvider>
-                        <AuthProvider>{children}</AuthProvider>
+                        <NextIntlClientProvider locale={locale} messages={messages}>
+                            <RefineContext>
+                                <AuthProvider>{children}</AuthProvider>
+                            </RefineContext>
+                        </NextIntlClientProvider>
                     </ReactQueryProvider>
                 </ThemeProvider>
                 <Toaster />
