@@ -5,7 +5,7 @@ import { Footer } from '@packages/ui/components/layouts/footers/footer-ketuju';
 import { Navigation } from '@packages/ui/components/layouts/headers/header-ketuju';
 import '@packages/ui/globals.css';
 
-import { siteConfig } from './siteConfig';
+import siteConfig from '../../site.config';
 
 const geistSans = localFont({
     src: './fonts/GeistVF.woff',
@@ -19,8 +19,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://yoururl.com'),
-    title: siteConfig.name,
+    metadataBase: new URL(siteConfig.url),
+    title: siteConfig.title,
     description: siteConfig.description,
     keywords: ['Marketing', 'Database', 'Software'],
     authors: [
@@ -34,15 +34,15 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: siteConfig.url,
-        title: siteConfig.name,
+        title: siteConfig.title,
         description: siteConfig.description,
-        siteName: siteConfig.name
+        siteName: siteConfig.title
     },
     twitter: {
         card: 'summary_large_image',
-        title: siteConfig.name,
+        title: siteConfig.title,
         description: siteConfig.description,
-        creator: '@yourname'
+        creator: '@ketujucreative'
     },
     icons: {
         icon: '/favicon.ico'
