@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Button } from '@packages/ui/components/base/button';
 
 import { SolarLogo } from '../../public/SolarLogo';
-import { siteConfig } from './siteConfig';
+import siteConfig from '../../site.config';
 
 export default function NotFound() {
     return (

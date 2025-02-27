@@ -1,26 +1,27 @@
 ---
 import "../styles/global.css";
 import { AstroSeo } from "@astrolib/seo";
+import Config from "../../site.config.js";
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yoursite.com/current-page"
+  title={Config.title}
+  description={Config.description}
+  canonical={Config.url}
   openGraph={{
-    url: "https://yoursite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
+    url: "https://klolatoko.ketuju.com",
+    title: Config.title,
+    description: Config.description,
     images: [
       {
-        url: "https://yoursite.com/og-image.jpg",
+        url: Config.url,
         width: 1200,
         height: 630,
         alt: "Open Graph Image Alt",
         type: "image/jpeg",
       },
     ],
-    site_name: "Your Site Name",
+    site_name: Config.title,
     type: "website",
     locale: "en_US",
   }}

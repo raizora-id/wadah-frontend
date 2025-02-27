@@ -2,6 +2,7 @@
 import BaseHead from "@/components/BaseHead.astro";
 import { Footer } from '@packages/ui/components/layouts/footers/footer-ketuju';
 import { Navigation } from '@packages/ui/components/layouts/headers/header-ketuju';
+import Config from "../../site.config.js";
 ---
 
 <html
@@ -11,6 +12,6 @@ import { Navigation } from '@packages/ui/components/layouts/headers/header-ketuj
   <body class="bg-white">
     <Navigation />
     <slot />
-    <Footer productName="Klolatoko" />
+    <Footer productName={Config.title} description={Config.description} />
   </body>
 </html>
