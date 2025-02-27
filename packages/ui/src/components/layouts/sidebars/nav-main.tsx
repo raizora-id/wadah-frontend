@@ -1,6 +1,7 @@
 "use client"
 
 import { ChevronRight, type LucideIcon } from "lucide-react"
+import Link from "next/link";
 
 import {
   Collapsible,
@@ -17,7 +18,8 @@ import {
   SidebarMenuSub,
   SidebarMenuSubButton,
   SidebarMenuSubItem,
-} from "../../base/sidebar"
+} from "./sidebar"
+import React from "react"
 
 export function NavMain({
   items,
@@ -35,7 +37,7 @@ export function NavMain({
 }) {
   return (
     <SidebarGroup>
-      <SidebarGroupLabel>Platform</SidebarGroupLabel>
+      <SidebarGroupLabel>Keuangan & Akuntansi</SidebarGroupLabel>
       <SidebarMenu>
         {items.map((item) => (
           <Collapsible
@@ -57,9 +59,9 @@ export function NavMain({
                   {item.items?.map((subItem) => (
                     <SidebarMenuSubItem key={subItem.title}>
                       <SidebarMenuSubButton asChild>
-                        <a href={subItem.url}>
+                      <Link href={subItem.url}>
                           <span>{subItem.title}</span>
-                        </a>
+                      </Link>
                       </SidebarMenuSubButton>
                     </SidebarMenuSubItem>
                   ))}
@@ -69,6 +71,11 @@ export function NavMain({
           </Collapsible>
         ))}
       </SidebarMenu>
+
+      <SidebarGroupLabel>Human Resources</SidebarGroupLabel>
+      <SidebarGroupLabel>Supply Chain Management</SidebarGroupLabel>
+
+
     </SidebarGroup>
   )
 }
