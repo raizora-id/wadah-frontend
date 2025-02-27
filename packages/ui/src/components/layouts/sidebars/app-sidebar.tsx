@@ -2,87 +2,62 @@
 
 import * as React from "react"
 import {
-  type LucideIcon
+  LucideIcon
 } from "lucide-react"
 
 import { NavMain } from "./nav-main"
-import { NavProjects } from "./nav-projects"
-import { NavUser } from "./nav-user"
 import { TeamSwitcher } from "./team-switcher"
-
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarHeader,
   SidebarRail,
-} from "../../base/sidebar"
+} from "./sidebar"
 
-export type User = {
-  name: string
-  email: string
-  avatar: string
+interface User {
+  name: string;
+  email: string;
+  avatar: string;
 }
 
-export type Team = {
-  name: string
-  logo: LucideIcon
-  plan: string
+interface Module {
+  name: string;
+  icon: React.ComponentType<{ size?: number }>;
+  onClick: () => void;
 }
 
-export type SubNavItem = {
-  title: string
-  url: string
+
+interface Team {
+  name: string;
+  logo: React.ElementType;
+  plan: string;
+  switcher: Boolean
+  modules: Module[]
 }
 
-export type NavItem = {
-  title: string
-  url: string
-  icon: LucideIcon
-  isActive?: boolean
-  items?: SubNavItem[]
+interface NavItem {
+  title: string;
+  url: string;
+  icon?: LucideIcon;
+  isActive?: boolean;
+  items?: { title: string; url: string }[];
 }
 
-export type Project = {
-  name: string
-  url: string
-  icon: LucideIcon
-}
-
-// Props interface
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
-  user?: User
-  teams?: Team[]
-  navItems?: NavItem[]
-  projects?: Project[]
+  user: User;
+  teams: Team[];
+  navMain: NavItem[];
 }
 
-
-export function AppSidebar(
-  { ...props }: AppSidebarProps
-) {
+export function AppSidebar({ user, teams, navMain, ...props }: AppSidebarProps) {
   return (
     <Sidebar collapsible="icon" {...props}>
-      {
-        props.teams && (
-          <SidebarHeader>
-          <TeamSwitcher teams={props.teams} />
-        </SidebarHeader>
-        )
-      }
-
+      <SidebarHeader>
+        <TeamSwitcher teams={teams} />
+      </SidebarHeader>
       <SidebarContent>
-        {props.navItems && <NavMain items={props.navItems} />}
-        {props.projects && <NavProjects projects={props.projects} />}
+        <NavMain items={navMain} />
       </SidebarContent>
-
-      {
-        props.user && ( 
-        <SidebarFooter>
-          <NavUser user={props.user} />
-        </SidebarFooter>
-        )
-      }
       <SidebarRail />
     </Sidebar>
   )

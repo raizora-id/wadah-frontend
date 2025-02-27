@@ -6,10 +6,8 @@ import { ChevronsUpDown, Plus } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "../../base/dropdown-menu"
 import {
@@ -17,7 +15,15 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "../../base/sidebar"
+} from "./sidebar"
+import ListModuleERP from "./list-module"
+
+interface Module {
+  name: string;
+  icon: React.ComponentType<{ size?: number }>;
+  onClick: () => void;
+}
+
 
 export function TeamSwitcher({
   teams,
@@ -26,6 +32,8 @@ export function TeamSwitcher({
     name: string
     logo: React.ElementType
     plan: string
+    switcher: Boolean
+    modules: Module[]
   }[]
 }) {
   const { isMobile } = useSidebar()
@@ -44,35 +52,32 @@ export function TeamSwitcher({
                 {activeTeam && <activeTeam.logo className="size-4" />}
               </div>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{activeTeam?.name ?? ""}</span>
-                <span className="truncate text-xs">{activeTeam?.plan}</span>
+                {activeTeam && (
+                  <>
+                    <span className="truncate font-semibold">
+                      {activeTeam.name}
+                    </span>
+                    <span className="truncate text-xs">{activeTeam.plan}</span>
+                  </>
+                )}
               </div>
               <ChevronsUpDown className="ml-auto" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
+
+
+
           <DropdownMenuContent
             className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
             align="start"
             side={isMobile ? "bottom" : "right"}
             sideOffset={4}
           >
-            <DropdownMenuLabel className="text-xs text-muted-foreground">Teams</DropdownMenuLabel>
-            {teams.map((team, index) => (
-              <DropdownMenuItem key={team.name} onClick={() => setActiveTeam(team)} className="gap-2 p-2">
-                <div className="flex size-6 items-center justify-center rounded-sm border">
-                  <team.logo className="size-4 shrink-0" />
-                </div>
-                {team.name}
-                <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
-              </DropdownMenuItem>
-            ))}
+              <DropdownMenuLabel className="text-xs text-muted-foreground">
+                Module
+              </DropdownMenuLabel>
+              {activeTeam && <ListModuleERP modules={activeTeam.modules} />}
             <DropdownMenuSeparator />
-            <DropdownMenuItem className="gap-2 p-2">
-              <div className="flex size-6 items-center justify-center rounded-md border bg-background">
-                <Plus className="size-4" />
-              </div>
-              <div className="font-medium text-muted-foreground">Add team</div>
-            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

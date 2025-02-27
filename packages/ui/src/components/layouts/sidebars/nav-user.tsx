@@ -14,6 +14,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "../../base/avatar"
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,12 +24,14 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../../base/dropdown-menu"
+
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "../../base/sidebar"
+} from "./sidebar"
+import React from "react"
 
 export function NavUser({
   user,
@@ -103,7 +106,7 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <LogOut />
+            <LogOut />
               Log out
             </DropdownMenuItem>
           </DropdownMenuContent>
