@@ -39,6 +39,7 @@
         "nuqs": "catalog:",
         "react": "catalog:",
         "react-dom": "catalog:",
+        "swapy": "^1.0.5",
         "tailwind-merge": "catalog:",
         "tailwindcss": "catalog:",
         "vaul": "^1.1.2",
