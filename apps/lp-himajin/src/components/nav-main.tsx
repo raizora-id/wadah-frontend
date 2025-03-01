@@ -10,7 +10,7 @@ import {
     SidebarMenuSub,
     SidebarMenuSubButton,
     SidebarMenuSubItem
-} from '@packages/ui/components/base/sidebar';
+} from '@packages/ui/components/layouts/sidebars/sidebar';
 
 import { ChevronRight, type LucideIcon } from 'lucide-react';
 

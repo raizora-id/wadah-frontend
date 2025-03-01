@@ -1,6 +1,5 @@
 import { fakeProducts, Product } from '@/data/mock-api';
 import { notFound } from 'next/navigation';
-import ProductForm from './product-form';
 
 type TProductViewPageProps = {
   productId: string;
@@ -21,5 +20,5 @@ export default async function ProductViewPage({
     pageTitle = `Edit Product`;
   }
 
-  return <ProductForm initialData={product} pageTitle={pageTitle} />;
+  return null;
 }

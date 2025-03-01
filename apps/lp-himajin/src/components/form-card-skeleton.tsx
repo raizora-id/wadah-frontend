@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardContent, CardHeader } from './ui/card';
-import { Skeleton } from './ui/skeleton';
+import { Card, CardContent, CardHeader } from '@packages/ui/components/base/card';
+import { Skeleton } from '@packages/ui/components/base/skeleton';
 
 export default function FormCardSkeleton() {
   return (

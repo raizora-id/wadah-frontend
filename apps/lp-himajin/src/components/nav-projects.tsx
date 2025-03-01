@@ -15,7 +15,7 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
     useSidebar
-} from '@packages/ui/components/base/sidebar';
+} from '@packages/ui/components/layouts/sidebars/sidebar';
 
 import { Folder, Forward, type LucideIcon, MoreHorizontal, Trash2 } from 'lucide-react';
 
