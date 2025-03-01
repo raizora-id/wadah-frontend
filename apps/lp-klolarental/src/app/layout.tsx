@@ -60,7 +60,10 @@ export default function RootLayout({
                 className={`${geistSans.className} min-h-screen overflow-x-hidden scroll-auto bg-gray-50 antialiased selection:bg-orange-100 selection:text-orange-600`}>
                 <Navigation />
                 {children}
-                <Footer productName='Klolarental' />
+                <Footer
+                    productName='Klolarental'
+                    description='Bikin rental mobilmu nggak ribet lagi! Aplikasi kami hadir buat otomatisasi manajemen, pantau pemesanan, dan tingkatkan keuntunganmu. Yuk, coba sekarang!'
+                />
             </body>
         </html>
     );

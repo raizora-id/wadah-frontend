@@ -3,14 +3,14 @@
 import React from 'react';
 import Link from 'next/link';
 import useScroll from '../../../hooks/use-scroll';
+import { useSmoothScroll } from 'ui/src/hooks/use-smooth-scroll';
 import { Button } from '../../../components/base/button';
 import { cn } from '../../../lib/utils';
 import { HeaderDefaultLogo } from './header-ketuju-default-logo';
 
 interface NavigationItem {
     label: string; // Label untuk navigation item
-    href: string; // URL tujuan
-    onClick?: () => void; // Fungsi yang akan dipanggil saat item diklik
+    target: string; // URL tujuan
 }
 
 interface NavigationProps {
@@ -28,15 +28,18 @@ export function Navigation({
         </Link>
     ), // Default logo
     navigationItems = [
-        { label: 'Fitur', href: '#feature', onClick: () => console.log('Kategori clicked') },
-        { label: 'Harga', href: '#price', onClick: () => console.log('Custom clicked') },
-        { label: 'Testimoni', href: '#testimony', onClick: () => console.log('Testimoni clicked') },
+        { label: 'Fitur', target: 'feature' },
+        { label: 'Harga', target: 'price' },
+        { label: 'Testimoni', target: 'testimony' },
     ], // Default navigation items
     contactButtonLabel = 'Kontak kami', // Default label untuk tombol kontak
     onContactClick = () => console.log('Kontak kami clicked'), // Default fungsi untuk tombol kontak
 }: NavigationProps) {
     const scrolled = useScroll(15);
     const [open, setOpen] = React.useState(false);
+
+    // Get the scroll function from our hook
+    const { scrollToElement } = useSmoothScroll()
 
     React.useEffect(() => {
         const mediaQuery: MediaQueryList = window.matchMedia('(min-width: 768px)');
@@ -67,14 +70,13 @@ export function Navigation({
                     <nav className='hidden md:absolute md:top-1/2 md:left-1/2 md:block md:-translate-x-1/2 md:-translate-y-1/2 md:transform'>
                         <div className='flex items-center gap-10 font-medium'>
                             {navigationItems.map((item, index) => (
-                                <Link
+                                <button
                                     key={index}
-                                    href={item.href}
                                     className='px-2 py-1 text-gray-900 dark:text-gray-50'
-                                    onClick={item.onClick} // Tambahkan onClick handler
+                                    onClick={() => scrollToElement(item.target)} // Tambahkan onClick handler
                                 >
                                     {item.label}
-                                </Link>
+                                </button>
                             ))}
                         </div>
                     </nav>
@@ -95,8 +97,8 @@ export function Navigation({
                     )}>
                     <ul className='space-y-4 font-medium'>
                         {navigationItems.map((item, index) => (
-                            <li key={index} onClick={() => { item.onClick?.(); setOpen(false); }}>
-                                <Link href={item.href}>{item.label}</Link>
+                            <li key={index} onClick={() => { scrollToElement(item.target); setOpen(false); }}>
+                                <Link href={""}>{item.label}</Link>
                             </li>
                         ))}
                     </ul>

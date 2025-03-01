@@ -1,6 +1,6 @@
 export const siteConfig = {
-    name: 'GEA Tourism',
-    url: 'https://gea.raizora.com',
+    name: 'Klolarental | Solusi Terbaik untuk Kelola Rental Mobil!',
+    url: 'https://klolarental.raizora.com',
     author: {
         name: 'engineering raizora',
         url: 'https://lab.raizora.com'
