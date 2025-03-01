@@ -16,15 +16,21 @@ import Filters from './components/filters/filters-wrapper';
 import DynamicMap from './components/map';
 import { CarCatalogSkeleton } from './components/skeletons/car-catalog';
 
+type TCarsPageProps = {
+    params: Promise<{ id: string }>
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+  }
+
 export const metadata: Metadata = {
     title: 'Cars'
 };
 
+
 export default async function CarsPage({
-    searchParams
-}: {
-    searchParams: { [key: string]: string | string[] | undefined };
-}) {
+    searchParams: pageSearchParams
+}: TCarsPageProps) {
+    const searchParams = await pageSearchParams;
+    
     return (
         <div className='[--site-header-height:100px] md:[--site-header-height:170px]'>
             <header className='sticky top-0 z-40 h-[var(--site-header-height)] border-b border-black/10 bg-white'>

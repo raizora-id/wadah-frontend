@@ -91,20 +91,20 @@ async function seedCars() {
           VALUES (
             ${car.slug}, 
             ${car.name}, 
-            ${car.body_style}, 
+            ${car.bodyStyle}, 
             ${car.powertrain}, 
             ${car.transmission}, 
             ${car.seats}, 
             ${car.description}, 
             ${car.features},
             ${car.rating}, 
-            ${car.review_count}, 
-            ${car.unlimited_mileage ?? false}, 
-            ${car.image_url}, 
-            ${car.price_per_day}, 
+            ${car.reviewCount}, 
+            ${car.unlimitedMileage ?? false}, 
+            "", 
+            ${car.pricePerDay}, 
             ${car.currency || "USD"},
-            ${car.stripe_price_id},
-            ${car.price_id},
+            ${0},
+            ${car.id},
             ${car.status},
             ${car.metadata}
           )
@@ -164,7 +164,7 @@ async function seedLocations() {
 ;(async () => {
   try {
     // await seedUsers()
-    // await seedCars()
+    await seedCars()
     await seedLocations()
   } catch (error) {
     console.error("Error seeding database:", error)

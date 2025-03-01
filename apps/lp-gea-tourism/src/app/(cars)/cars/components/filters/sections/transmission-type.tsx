@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, SetStateAction } from "react"
 
 import { Toggle } from "@/components/ui/toggle"
 import { AutomaticGearboxIcon } from "@/components/icons/automatic-gearbox"
@@ -9,7 +9,7 @@ import { SelectedFilters, Transmission } from "../types"
 const transmissions: {
   slug: Transmission
   name: string
-  icon: (props: React.HTMLAttributes<SVGElement>) => JSX.Element
+  icon: (props: React.HTMLAttributes<SVGElement>) => React.ReactElement
 }[] = [
   {
     slug: "automatic",

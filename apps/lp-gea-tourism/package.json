@@ -9,7 +9,11 @@
         "start": "next start",
         "lint": "next lint",
         "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
-        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
+        "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+        "db:generate": "drizzle-kit generate",
+        "db:migrate": "tsx --tsconfig ./tsconfig.scripts.json ./src/db/migrate.ts",
+        "db:push": "drizzle-kit push",
+        "db:seed": "tsx --tsconfig ./tsconfig.scripts.json ./src/db/seed.ts"
     },
     "dependencies": {
         "@clerk/nextjs": "^5.3.3",
@@ -42,6 +46,7 @@
         "cmdk": "catalog:",
         "contentlayer": "^0.3.4",
         "date-fns": "^2.30.0",
+        "drizzle-kit": "^0.30.5",
         "drizzle-orm": "^0.39.3",
         "embla-carousel-react": "^8.2.0",
         "eslint": "^8.57.0",
@@ -54,6 +59,7 @@
         "next-safe-action": "catalog:",
         "next-themes": "catalog:",
         "nuqs": "catalog:",
+        "postgres": "^3.4.5",
         "react": "catalog:",
         "react-day-picker": "^8.10.1",
         "react-dom": "catalog:",

@@ -87,24 +87,6 @@ export function FiltersButton({
       </Badge>
     )
 
-    if (isValidElement(trigger)) {
-      return cloneElement(
-        trigger as ReactElement<{
-          className?: string
-          children?: React.ReactNode
-        }>,
-        {
-          className: `${trigger.props.className || ""} relative`, // Ensure it's positioned correctly for the badge
-          children: (
-            <>
-              {trigger.props.children}
-              {badge}
-            </>
-          ),
-        }
-      )
-    }
-
     return (
       <Button
         variant="outline"
