@@ -12,10 +12,10 @@ export default function Home() {
             <div className='pt-56'>
                 <Hero />
             </div>
-            <div className='mt-52 px-4 xl:px-0'>
+            <div id='feature' className='mt-52 px-4 xl:px-0'>
                 <Features />
             </div>
-            <div className='mt-32 px-4 xl:px-0'>
+            <div id='testimony' className='mt-32 px-4 xl:px-0'>
                 <Testimonial />
             </div>
             <FeatureDivider className='my-16 max-w-6xl' />
