@@ -13,7 +13,7 @@ import { BodyStyle, SelectedFilters } from "../types"
 export const bodyStyles: {
   slug: BodyStyle
   name: string
-  icon: (props: React.HTMLAttributes<SVGElement>) => JSX.Element
+  icon: (props: React.HTMLAttributes<SVGElement>) => React.ReactElement
 }[] = [
   {
     slug: "hatchback",

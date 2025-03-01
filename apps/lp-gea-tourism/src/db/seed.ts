@@ -20,7 +20,7 @@ const main = async () => {
                     latitude: location.latitude,
                     longitude: location.longitude,
                     featured: location.featured,
-                    imageUrl: location.imageUrl
+                    imageUrl: location.image_url
                 })
                 .onConflictDoNothing();
         }

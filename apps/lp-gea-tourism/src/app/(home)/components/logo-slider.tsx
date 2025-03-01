@@ -24,10 +24,10 @@ import { VolvoIcon } from "./car-logos/volvo"
 
 interface LogoData {
   id: string
-  icon: JSX.Element
+  icon: React.ReactElement
 }
 
-const logoIcons: Record<string, JSX.Element> = {
+const logoIcons: Record<string, React.ReactElement> = {
   kia: <KiaIcon style={{ height: "10px", flexShrink: 0 }} />,
   subaru: <SubaruIcon style={{ height: "15px", flexShrink: 0 }} />,
   mini: <MiniIcon style={{ height: "24px", flexShrink: 0 }} />,
