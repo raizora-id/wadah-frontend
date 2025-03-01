@@ -2,7 +2,7 @@
 
 import { Input } from '@packages/ui/components/base/input';
 
-import { Button } from './ui/button';
+import { Button } from '@packages/ui/components/base/button';
 import { useKBar } from 'kbar';
 import { ArrowRight, Search } from 'lucide-react';
 

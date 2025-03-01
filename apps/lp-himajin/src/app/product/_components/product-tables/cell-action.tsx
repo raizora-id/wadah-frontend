@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { AlertModal } from '@/components/modal/alert-modal';
-import { Product } from '@/constants/data';
+import { Product } from '@/data/data-table';
 import { Button } from '@packages/ui/components/base/button';
 import {
     DropdownMenu,

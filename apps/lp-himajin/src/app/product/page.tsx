@@ -1,34 +1,37 @@
 import { Suspense } from 'react';
-
+import type { Metadata, ResolvingMetadata } from 'next'
 import Link from 'next/link';
 
 import PageContainer from '@/components/layout/page-container';
-import { searchParamsCache, serialize } from '@/lib/searchparams';
+import { searchParamsCache, serialize } from '@/lib/search-params';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@packages/ui/components/base/button';
-import { Heading } from '@packages/ui/components/base/heading';
+import { Heading } from '@/components/heading';
 import { Separator } from '@packages/ui/components/base/separator';
-import { DataTableSkeleton } from '@packages/ui/components/base/table/data-table-skeleton';
+import { DataTableSkeleton } from '@/components/table/data-table-skeleton';
 
 import ProductListingPage from './_components/product-listing';
 import ProductTableAction from './_components/product-tables/product-table-action';
 import { Plus } from 'lucide-react';
-import { SearchParams } from 'nuqs/parsers';
+import { SearchParams } from 'nuqs';
 
 export const metadata = {
     title: 'Dashboard: Products'
 };
 
-type pageProps = {
-    searchParams: SearchParams;
+type TPageProps = {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 };
 
-export default async function Page({ searchParams }: pageProps) {
+export default async function Page( { searchParams }: TPageProps,
+    parent: ResolvingMetadata) {
+    
+    const searchParam = await searchParams
     // Allow nested RSCs to access the search params (in a type-safe way)
     searchParamsCache.parse(searchParams);
 
     // This key is used for invoke suspense if any of the search params changed (used for filters).
-    const key = serialize({ ...searchParams });
+    const key = serialize({ ...searchParam });
 
     return (
         <PageContainer>

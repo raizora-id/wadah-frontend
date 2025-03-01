@@ -4,7 +4,6 @@ import { ProductCard } from '@/components/product-card';
 import { SpecialToday } from '@/components/special-today';
 import ProductFeatures from '@/modules/product/components/product-features';
 import { Button } from '@packages/ui/components/base/button';
-import { Card, CardContent } from '@packages/ui/components/base/card';
 
 export default function Home() {
     const categories = [

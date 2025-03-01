@@ -1,8 +1,8 @@
 'use client';
 
-import { DataTableFilterBox } from '@packages/ui/components/base/table/data-table-filter-box';
-import { DataTableResetFilter } from '@packages/ui/components/base/table/data-table-reset-filter';
-import { DataTableSearch } from '@packages/ui/components/base/table/data-table-search';
+import { DataTableFilterBox } from '@/components/table/data-table-filter-box';
+import { DataTableResetFilter } from '@/components/table/data-table-reset-filter';
+import { DataTableSearch } from '@/components/table/data-table-search';
 
 import { CATEGORY_OPTIONS, useProductTableFilters } from './use-product-table-filters';
 
@@ -20,7 +20,7 @@ export default function ProductTableAction() {
         <div className='flex flex-wrap items-center gap-4'>
             <DataTableSearch
                 searchKey='name'
-                searchQuery={searchQuery}
+                searchQuery={String(searchQuery)}
                 setSearchQuery={setSearchQuery}
                 setPage={setPage}
             />
@@ -29,7 +29,7 @@ export default function ProductTableAction() {
                 title='Categories'
                 options={CATEGORY_OPTIONS}
                 setFilterValue={setCategoriesFilter}
-                filterValue={categoriesFilter}
+                filterValue={String(categoriesFilter)}
             />
             <DataTableResetFilter isFilterActive={isAnyFilterActive} onReset={resetFilters} />
         </div>
