@@ -19,6 +19,6 @@ export default defineConfig({
     skipInline: false,
     drafts: true
   },
-  site: 'https://klolatoko.raizora.com',
+  site: 'https://klolaform.raizora.com',
   integrations: [ sitemap(), mdx(), react()]
 });
