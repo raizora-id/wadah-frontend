@@ -1,7 +1,7 @@
-import { Product } from '@/constants/data';
-import { fakeProducts } from '@/constants/mock-api';
-import { searchParamsCache } from '@/lib/searchparams';
-import { DataTable as ProductTable } from '@packages/ui/components/base/table/data-table';
+import { Product } from '@/data/data-table';
+import { fakeProducts } from '@/data/mock-api';
+import { searchParamsCache } from '@/lib/search-params';
+import { DataTable as ProductTable } from '@/components/table/data-table';
 
 import { columns } from './product-tables/columns';
 
