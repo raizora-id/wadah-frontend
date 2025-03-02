@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "target": "esnext",
+        "module": "esnext",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "ignoreDeprecations": "5.0"
+    },
+    "include": [
+        "src/**/*.ts",
+        "scripts/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

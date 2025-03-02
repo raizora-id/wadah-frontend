@@ -1,0 +1,35 @@
+{
+  "component": {
+    "button": {
+      "critical": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal-hover}"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal-active}"
+        },
+        "foreground": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}"
+        },
+        "foreground-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.white.normal}"
+        }
+      }
+    }
+  }
+}

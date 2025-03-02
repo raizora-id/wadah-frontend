@@ -1,0 +1,37 @@
+{
+  "component": {
+    "form-element": {
+      "border-color-disabled": {
+        "type": "color",
+        "value": "transparent"
+      },
+      "border-color": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.dark}"
+      },
+      "border-color-hover": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.dark-hover}"
+      },
+      "border-color-active": {
+        "type": "color",
+        "value": "{foundation.palette.cloud.dark-active}"
+      },
+      "border-color-focus": {
+        "type": "color",
+        "value": "{foundation.palette.blue.normal}",
+        "comment": "Should be used for all form-elements when the component has active or focus state and it's needed to render border attribute, or combined with shadows."
+      },
+      "border-color-error": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal}",
+        "comment": "Should be used for all form-elements when the component has error state and it's needed to render border attribute, or combined with shadows."
+      },
+      "border-color-error-hover": {
+        "type": "color",
+        "value": "{foundation.palette.red.normal-hover}",
+        "comment": "Should be used for all form-elements when the component has error and hover state and it's needed to render border attribute, or combined with shadows."
+      }
+    }
+  }
+}

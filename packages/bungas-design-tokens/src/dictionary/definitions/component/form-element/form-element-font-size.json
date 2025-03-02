@@ -1,0 +1,12 @@
+{
+  "component": {
+    "form-element": {
+      "normal": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}"
+        }
+      }
+    }
+  }
+}

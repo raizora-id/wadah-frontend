@@ -1,0 +1,41 @@
+{
+  "component": {
+    "button-link": {
+      "secondary": {
+        "background": {
+          "type": "color",
+          "value": "transparent",
+          "comment": "Used for the background of secondary ButtonLink in the default state."
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-hover}",
+          "comment": "Used for the background of secondary ButtonLink in the hover state."
+        },
+        "background-active": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.light-active}",
+          "comment": "Used for the background of secondary ButtonLink in the active and the focus state."
+        },
+        "foreground": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark}",
+          "comment": "Used for the text of secondary ButtonLink in the default state."
+        },
+        "foreground-hover": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-hover}",
+          "comment": "Used for the text of secondary ButtonLink in the hover state."
+        },
+        "foreground-active": {
+          "type": "color",
+          "category": "foreground",
+          "value": "{foundation.palette.ink.dark-active}",
+          "comment": "Used for the text of secondary ButtonLink in the active and the focus state."
+        }
+      }
+    }
+  }
+}

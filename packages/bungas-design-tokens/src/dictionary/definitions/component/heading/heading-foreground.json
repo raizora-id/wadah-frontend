@@ -1,0 +1,14 @@
+{
+  "component": {
+    "heading": {
+      "foreground": {
+        "type": "color",
+        "value": "{foundation.palette.ink.dark}"
+      },
+      "foreground-inverted": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}"
+      }
+    }
+  }
+}

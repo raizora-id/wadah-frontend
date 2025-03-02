@@ -1,0 +1,24 @@
+{
+  "component": {
+    "form-box": {
+      "small": {
+        "height": {
+          "type": "size",
+          "value": "{foundation.size.large}"
+        }
+      },
+      "normal": {
+        "height": {
+          "type": "size",
+          "value": "{foundation.size.extra-large}"
+        }
+      },
+      "large": {
+        "height": {
+          "type": "size",
+          "value": "{foundation.size.extra-extra-large}"
+        }
+      }
+    }
+  }
+}

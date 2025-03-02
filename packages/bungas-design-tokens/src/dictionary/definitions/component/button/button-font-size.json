@@ -1,0 +1,24 @@
+{
+  "component": {
+    "button": {
+      "small": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.small}"
+        }
+      },
+      "normal": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.normal}"
+        }
+      },
+      "large": {
+        "font-size": {
+          "type": "size",
+          "value": "{foundation.font-size.large}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "component": {
+    "drawer": {
+      "overlay": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}",
+          "opacity": "50"
+        }
+      }
+    }
+  }
+}

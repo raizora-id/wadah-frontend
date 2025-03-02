@@ -1,5 +1,5 @@
 import defaultFoundation, { CustomFoundation } from "./default-foundation";
-import createTokens, { Tokens } from "./createTokens";
+import createTokens, { Tokens } from "./create-tokens";
 import merge from "../utils/mergeDeep";
 
 type Overrides = Partial<Tokens>;

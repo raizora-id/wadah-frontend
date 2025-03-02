@@ -1,0 +1,16 @@
+{
+  "component": {
+    "form-element": {
+      "background": {
+        "type": "color",
+        "value": "{foundation.palette.white.normal}"
+      },
+      "disabled": {
+        "background": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.normal}"
+        }
+      }
+    }
+  }
+}

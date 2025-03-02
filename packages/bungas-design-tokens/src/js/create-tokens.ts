@@ -9,8 +9,8 @@ If you want to update some tokens:
 - please do so in /definitions folder
 - run "build" script
 */
-import transparentColor from "./transparentColor";
-import boxShadow from "./boxShadow";
+import transparentColor from "./transparent-color";
+import boxShadow from "./box-shadow";
 import type { Foundation } from "./default-foundation";
 
 export interface Tokens {

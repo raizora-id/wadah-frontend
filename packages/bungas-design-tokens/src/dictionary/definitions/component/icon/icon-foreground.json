@@ -1,0 +1,48 @@
+{
+  "component": {
+    "icon": {
+      "primary": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.dark}"
+        }
+      },
+      "secondary": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.ink.normal}"
+        }
+      },
+      "tertiary": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.cloud.dark}"
+        }
+      },
+      "info": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.blue.normal}"
+        }
+      },
+      "success": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.green.normal}"
+        }
+      },
+      "warning": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.orange.normal}"
+        }
+      },
+      "critical": {
+        "foreground": {
+          "type": "color",
+          "value": "{foundation.palette.red.normal}"
+        }
+      }
+    }
+  }
+}

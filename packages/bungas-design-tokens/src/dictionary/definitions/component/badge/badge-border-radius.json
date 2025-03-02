@@ -1,0 +1,10 @@
+{
+  "component": {
+    "badge": {
+      "border-radius": {
+        "type": "border-radius",
+        "value": 12
+      }
+    }
+  }
+}
