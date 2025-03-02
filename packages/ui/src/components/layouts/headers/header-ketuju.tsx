@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
 import useScroll from '../../../hooks/use-scroll';
 import { useSmoothScroll } from '../../../hooks/use-smooth-scroll';
 import { Button } from '../../../components/base/button';
@@ -22,10 +21,10 @@ interface NavigationProps {
 
 export function Navigation({
     logo = (
-        <Link href={'/'} aria-label='Home'>
+        <a href={'/'} aria-label='Home'>
             <span className='sr-only'>Company logo</span>
             <HeaderDefaultLogo className='w-28 md:w-32' />
-        </Link>
+        </a>
     ), // Default logo
     navigationItems = [
         { label: 'Fitur', target: 'feature' },
@@ -61,7 +60,7 @@ export function Navigation({
                 'animate-slide-down-fade fixed inset-x-3 top-4 z-50 mx-auto flex max-w-6xl transform-gpu justify-center overflow-hidden rounded-xl border border-transparent px-3 py-3 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1.03)] will-change-transform',
                 open === true ? 'h-52' : 'h-16',
                 scrolled || open === true
-                    ? 'backdrop-blur-nav max-w-3xl border-gray-100 bg-white/80 shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black/70'
+                    ? 'backdrop-blur-sm max-w-3xl border-gray-100 bg-white/80 shadow-xl shadow-black/5 dark:border-white/15 dark:bg-black/70'
                     : 'bg-white/0 dark:bg-gray-950/0'
             )}>
             <div className='w-full md:my-auto'>
@@ -98,7 +97,7 @@ export function Navigation({
                     <ul className='space-y-4 font-medium'>
                         {navigationItems.map((item, index) => (
                             <li key={index} onClick={() => { scrollToElement(item.target); setOpen(false); }}>
-                                <Link href={""}>{item.label}</Link>
+                                <a href={""}>{item.label}</a>
                             </li>
                         ))}
                     </ul>

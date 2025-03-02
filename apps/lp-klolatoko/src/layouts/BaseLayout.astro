@@ -10,7 +10,7 @@ import Config from "../../site.config.js";
   class="scroll-smooth selection:bg-accent-500 selection:text-white">
   <head> <BaseHead /></head>
   <body class="bg-white">
-    <Navigation />
+    <Navigation client:visible/>
     <slot />
     <Footer productName={Config.title} description={Config.description} />
   </body>
