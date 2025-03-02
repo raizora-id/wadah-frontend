@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import useScroll from '../../../hooks/use-scroll';
-import { useSmoothScroll } from 'ui/src/hooks/use-smooth-scroll';
+import { useSmoothScroll } from '../../../hooks/use-smooth-scroll';
 import { Button } from '../../../components/base/button';
 import { cn } from '../../../lib/utils';
 import { HeaderDefaultLogo } from './header-ketuju-default-logo';

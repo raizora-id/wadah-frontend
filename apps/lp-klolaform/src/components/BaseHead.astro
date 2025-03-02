@@ -1,26 +1,27 @@
 ---
-import "../styles/global.css";
+import "../../../../packages/ui/globals.css";
 import { AstroSeo } from "@astrolib/seo";
+import Config from "../../site.config.js";
 ---
 
 <AstroSeo
-  title="Your Page Title"
-  description="A detailed description of your page content."
-  canonical="https://yoursite.com/current-page"
+  title={Config.title}
+  description={Config.description}
+  canonical={Config.url}
   openGraph={{
-    url: "https://yoursite.com/current-page",
-    title: "Your Page Title",
-    description: "A detailed description of your page content.",
+    url: Config.url,
+    title: Config.title,
+    description: Config.description,
     images: [
       {
-        url: "https://yoursite.com/og-image.jpg",
+        url: Config.url,
         width: 1200,
         height: 630,
         alt: "Open Graph Image Alt",
         type: "image/jpeg",
       },
     ],
-    site_name: "Your Site Name",
+    site_name: Config.title,
     type: "website",
     locale: "en_US",
   }}
@@ -35,13 +36,13 @@ import { AstroSeo } from "@astrolib/seo";
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <!-- Basic Meta Tags -->
-<title>Your Website Title</title>
+<title>{Config.tabTitle}</title>
 <meta
   name="description"
-  content="A brief description of your website content."
+  content={Config.description}
 />
 <meta name="keywords" content="keyword1, keyword2, keyword3" />
-<meta name="author" content="Your Name or Company Name" />
+<meta name="author" content="Ketuju by Raizora" />
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -63,7 +64,7 @@ import { AstroSeo } from "@astrolib/seo";
 <meta property="og:title" content="Your Website Title" />
 <meta
   property="og:description"
-  content="A brief description of your website content."
+  content={Config.description}
 />
 <meta
   property="og:image"

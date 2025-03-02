@@ -5,11 +5,11 @@ export default {
 	...shared,
 	darkMode: ["class"],
 	content: [
-		"./pages/**/*.{ts,tsx}",
+		"./pages/**/*.{ts,tsx,astro}",
 		"./components/**/*.{ts,tsx,jsx,tsx}",
-		"./app/**/*.{ts,tsx,jsx,tsx}",
-		"./src/**/*.{ts,tsx,jsx,tsx}",
-		"../../packages/ui/src/components/**/*.{ts,tsx}",
+		"./app/**/*.{ts,tsx,jsx,tsx,astro}",
+		"./src/**/*.{ts,tsx,jsx,tsx,astro}",
+		"../../packages/ui/src/components/**/*.{ts,tsx,astro}",
 	],
 	theme: {
 		extend: {
