@@ -1,0 +1,48 @@
+{
+  "component": {
+    "button": {
+      "bundle-basic": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #E13E3B 0%, #E87E09 100%)"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #BD2825 0%, #D67000 100%)"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #9F1816 0%, #C36802 100%)"
+        }
+      },
+      "bundle-medium": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #3719AB 0%, #8539DB 100%)"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #2D1393 0%, #7343AA 100%)"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #250F79 0%, #5A3485 100%)"
+        }
+      },
+      "bundle-top": {
+        "background": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #2D2D2E 0%, #696E73 100%)"
+        },
+        "background-hover": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #171718 0%, #51575C 100%)"
+        },
+        "background-active": {
+          "type": "color",
+          "value": "linear-gradient(to top right, #101011 0%, #51575C)"
+        }
+      }
+    }
+  }
+}

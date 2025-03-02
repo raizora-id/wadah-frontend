@@ -1,0 +1,12 @@
+{
+  "component": {
+    "form-element": {
+      "disabled": {
+        "opacity": {
+          "type": "opacity",
+          "value": 50
+        }
+      }
+    }
+  }
+}

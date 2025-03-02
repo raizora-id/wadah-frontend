@@ -1,0 +1,30 @@
+{
+  "component": {
+    "button": {
+      "without-text": {
+        "padding": {
+          "type": "size",
+          "value": "0"
+        }
+      },
+      "padding": {
+        "x-small": {
+          "type": "size",
+          "value": "{foundation.space.200}"
+        },
+        "small": {
+          "type": "size",
+          "value": "{foundation.space.300}"
+        },
+        "normal": {
+          "type": "size",
+          "value": "{foundation.space.400}"
+        },
+        "large": {
+          "type": "size",
+          "value": 28
+        }
+      }
+    }
+  }
+}
