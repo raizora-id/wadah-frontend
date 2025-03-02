@@ -1,0 +1,40 @@
+{
+    "name": "@raizora/bungas-design-tokens",
+    "description": "Design tokens from Raizora.",
+    "version": "0.2.1",
+    "main": "dist/index.cjs",
+    "module": "dist/index.js",
+    "type": "module",
+    "types": "./dist/index.d.ts",
+    "files": [
+        "dist",
+        "package.json",
+        "README.md"
+    ],
+    "scripts": {
+        "fetch:colors": "zx ./scripts/fetchBaseTokens.mjs",
+        "check:types": "tsc",
+        "build": "yarn clean && yarn build:dictionary && tsup && yarn eslint --fix src/js/*.ts",
+        "build:dictionary": "node --loader ts-node/esm ./src/dictionary/build.ts",
+        "prepublishOnly": "yarn build",
+        "clean": "del-cli dist output src/js/createTokens.* src/js/defaultFoundation.*"
+    },
+    "author": "lab@raizora.com",
+    "keywords": [
+        "bungas",
+        "ui",
+        "design",
+        "tokens"
+    ],
+    "devDependencies": {
+        "@types/lodash": "^4.17.7",
+        "figx": "^0.1.3",
+        "lodash": "^4.17.21",
+        "memfs": "^3.5.1",
+        "style-dictionary": "^3.8.0",
+        "xml": "^1.0.1"
+    },
+    "dependencies": {
+        "color2k": "^2.0.3"
+    }
+}
