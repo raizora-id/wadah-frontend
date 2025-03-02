@@ -11,7 +11,7 @@ import Config from "../../site.config.js";
     <BaseHead />
   </head>
   <body class="2xl:max-w-7xl mx-auto flex flex-col min-h-svh">
-    <Navigation />
+    <Navigation client:visible/>
     <Contact />
     <main class="grow"><slot /></main>
     <Footer productName={Config.title} description={Config.description} />
