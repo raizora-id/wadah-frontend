@@ -21,7 +21,10 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
     title: siteMetadata.title,
-    description: siteMetadata.description
+    description: siteMetadata.description,
+    icons: {
+		icon: './favicon.png'
+	}
 };
 
 const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
