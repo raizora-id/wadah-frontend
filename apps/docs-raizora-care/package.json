@@ -16,17 +16,17 @@
     "types:check": "tsc --noEmit"
   },
   "dependencies": {
-    "markdown-to-jsx": "^7.4.0",
+    "markdown-to-jsx": "^7.7.4",
     "next": "catalog:",
     "nextra": "catalog:",
     "nextra-theme-docs": "catalog:",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-intersection-observer": "^8.26.2"
+    "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^14.2.13",
-    "@tailwindcss/postcss": "^4.0.0-beta.8",
+    "@next/bundle-analyzer": "^15.2.1",
+    "@tailwindcss/postcss": "^4.0.12",
     "pagefind": "^1.3.0",
     "tailwindcss": "catalog:"
   },

@@ -27,11 +27,11 @@
         "tokens"
     ],
     "devDependencies": {
-        "@types/lodash": "^4.17.7",
+        "@types/lodash": "^4.17.16",
         "figx": "^0.1.3",
         "lodash": "^4.17.21",
-        "memfs": "^3.5.1",
-        "style-dictionary": "^3.8.0",
+        "memfs": "^4.17.0",
+        "style-dictionary": "^4.3.3",
         "xml": "^1.0.1"
     },
     "dependencies": {
