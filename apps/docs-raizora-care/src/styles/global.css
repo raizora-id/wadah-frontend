@@ -1,0 +1,37 @@
+@import "tailwindcss";
+@import "fumadocs-ui/css/neutral.css";
+@import "fumadocs-ui/css/preset.css";
+
+/* @plugin "@tailwindcss/forms"; */
+@plugin "tailwindcss-motion";
+
+/* @variant dark (&:where([data-theme="dark"] *)); */
+/* @source "../../node_modules/twistail-react"; */
+@source '../../node_modules/fumadocs-ui/dist/**/*.js';
+
+@theme inline {
+    /* @see: https://github.com/tailwindlabs/tailwindcss/discussions/13410#discussioncomment-11928917 */
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+}
+
+@layer base {
+    html,
+    body {
+        @apply antialiased min-h-screen scroll-smooth;
+    }
+    body {
+        @apply font-sans antialiased;
+    }
+    pre,
+    code {
+        @apply font-mono;
+    }
+}
+
+/* Debug element */
+@utility debug {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #f87171;
+}
