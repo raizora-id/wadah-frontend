@@ -44,4 +44,5 @@ catalog:
   "firebase": "^11.3.1"
   "nextra": "^4.2.13"
   "nextra-theme-docs": "^4.2.13"
+  "@supabase/supabase-js": "^2.49.1"
 
