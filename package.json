@@ -27,10 +27,11 @@
         "build:lp-klolarental": "pnpm --filter @raizora/ds-klolarental build",
         "build": "pnpm --filter [nama-project] build",
         "start": "pnpm --filter [nama-project] start",
-        "lint": "pnpm --filter [nama-project] lint"
+        "lint": "pnpm --filter [nama-project] lint",
+        "format": "biome format . --write"
     },
     "devDependencies": {
-        "@biomejs/biome": "1.8.3",
+        "@biomejs/biome": "catalog:",
         "@t3-oss/env-nextjs": "^0.11.1"
     },
     "dependencies": {
