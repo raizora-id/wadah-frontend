@@ -2,7 +2,7 @@
 
 import type { TOCItemType } from 'fumadocs-core/server'
 import { useEffect, useRef } from 'react'
-import { cn } from 'twistail-utils'
+import { cn } from '@packages/ui/lib/utils'
 import Link from '#/app/link'
 
 export default function CustomTOC({ items }: { items: TOCItemType[] }) {

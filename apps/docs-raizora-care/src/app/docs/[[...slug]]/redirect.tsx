@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react'
-import { cn } from 'twistail-utils'
+import { cn } from '@packages/ui/lib/utils'
 import Link from '#/app/link'
 
 export default function RedirectComponent({ targetUrl }: { targetUrl: string }) {
