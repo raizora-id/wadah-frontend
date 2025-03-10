@@ -1,66 +1,19 @@
-import bundleAnalyzer from '@next/bundle-analyzer'
-import nextra from 'nextra'
+import { createMDX } from 'fumadocs-mdx/next'
+import type { NextConfig } from 'next'
 
-const withNextra = nextra({
-  defaultShowCopyCode: true,
-  latex: true,
-  contentDirBasePath: '/'
-})
+const withMDX = createMDX()
 
-const withBundleAnalyzer = bundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true'
-})
+const nextConfig: NextConfig = {
+  output: 'export',
+  cleanDistDir: true,
+  reactStrictMode: true,
+  poweredByHeader: false,
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+    unoptimized: true,
+  },
+  eslint: { ignoreDuringBuilds: true /* disable eslint on build */ },
+  devIndicators: { position: 'bottom-right' },
+}
 
-const nextConfig = withBundleAnalyzer(
-  withNextra({
-    reactStrictMode: true,
-    eslint: {
-      // Warning: This allows production builds to successfully complete even if
-      // your project has ESLint errors.
-      ignoreDuringBuilds: true
-    },
-    i18n: {
-      locales: ['en', 'es', 'ru'],
-      defaultLocale: 'en'
-    },
-    redirects: async () => [
-      {
-        source: '/docs',
-        destination: '/docs/getting-started',
-        statusCode: 302
-      }
-    ],
-    webpack(config) {
-      // rule.exclude doesn't work starting from Next.js 15
-      const { test: _test, ...imageLoaderOptions } = config.module.rules.find(
-        rule => rule.test?.test?.('.svg')
-      )
-      config.module.rules.push({
-        test: /\.svg$/,
-        oneOf: [
-          {
-            resourceQuery: /svgr/,
-            use: ['@svgr/webpack']
-          },
-          imageLoaderOptions
-        ]
-      })
-      return config
-    },
-    experimental: {
-      turbo: {
-        rules: {
-          './app/_icons/*.svg': {
-            loaders: ['@svgr/webpack'],
-            as: '*.js'
-          }
-        }
-      },
-      optimizePackageImports: [
-        // '@app/_icons'
-      ]
-    }
-  })
-)
-
-export default nextConfig
+export default withMDX(nextConfig)
