@@ -3,13 +3,12 @@
 @plugin "@tailwindcss/forms";
 @plugin "@tailwindcss/typography";
 
-@source "./src/components/**/*.{ts,tsx}";
+
+@source "./src/components/**/*.{ts,tsx,js}";
 
 @custom-variant dark (&:is(.dark *));
 
 @plugin "tailwindcss-animate";
-
-
 
 @theme {
   --color-background: hsl(var(--background));
@@ -194,6 +193,7 @@
       stroke-dashoffset: 0;
     }
   }
+  
   @keyframes hover {
     0%,
     100% {
@@ -212,6 +212,7 @@
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
