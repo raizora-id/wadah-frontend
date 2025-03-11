@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { cn } from 'twistail-utils'
+import { cn } from '@packages/ui/lib/utils'
 import Link from '#/app/link'
 // import { urls } from '#/constants'
 

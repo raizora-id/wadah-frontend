@@ -1,16 +1,29 @@
 import { Footer, Layout, Navbar } from 'nextra-theme-docs'
-import { Banner, Head } from 'nextra/components'
+import { Head } from 'nextra/components'
 import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
+import siteConfig from '../site.config'
+import Image from 'next/image'
  
 export const metadata = {
-  // Define your metadata here
-  // For more information on metadata API, see: https://nextjs.org/docs/app/building-your-application/optimizing/metadata
-}
+  title: siteConfig.title,
+  description: siteConfig.description,
+  icons: {
+    icon: './favicons/favicon.ico'
+  }
+};
  
 const navbar = (
   <Navbar
-    logo={<b>Raizora Design</b>}
+    logo={    
+      <div className='flex grid grid-row gap-4'>
+          <Image
+      src="/logo.png"
+      width={40}
+      height={40}
+      alt="Picture of the author"
+    /><b>Bungas Design</b>
+      </div>}
     // ... Your additional navbar options
   />
 )
