@@ -8,7 +8,7 @@ import {
   CustomTooltip2,
   CustomTooltip3,
   CustomTooltip4,
-} from "@/components/CustomTooltips"
+} from "@packages/ui/components/chart/tooltip-chart"
 import {
   Select,
   SelectContent,
