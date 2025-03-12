@@ -2,8 +2,10 @@
 import MainLayout from '@/components/layouts/main-content';
 import { StatsLoader } from '@/modules/home/components/stats-loader';
 import { TabNavigation, TabNavigationLink } from '@packages/ui/components/base/tab-navigation'
-import SwapLayout from '@/modules/home/components/swap-layout';import { TransactionsLoader } from '@/modules/home/components/transaction-loader';
 import { useTranslation } from '@refinedev/core';
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { siteConfig } from '../../../site.config';
 
 import ProtectedLayout from '../../components/layouts/protected-layout';
 
@@ -21,6 +23,7 @@ const navigation = [
 
 export default function Page() {
     const { translate: t } = useTranslation();
+    const pathname = usePathname()
 
     return (
         <ProtectedLayout>
