@@ -1,19 +1,17 @@
 "use client";
-import MainLayout from "@/components/layouts/main";
-import ProtectedLayout from "@/components/layouts/protected";
 
-import HeaderChat from "@packages/ui/components/base/dashboard-chat/list-chat/header-chat";
-import ChatList from "@packages/ui/components/base/dashboard-chat/list-chat/chat-list";
+import HeaderChat from "@packages/ui/components/base/chat/list/header-chat";
+import ChatList from "@packages/ui/components/base/chat/list/chat-list";
 
 import { useEffect, useState } from "react";
 import { Button } from "@packages/ui/components/base/button";
 import { Avatar } from "@packages/ui/components/base/avatar";
-import ChatMessages from "@packages/ui/components/base/dashboard-chat/area-chat/list-chat";
+import ChatMessages from "@packages/ui/components/base/chat/area/list-chat";
 
-import { messages, openChat } from "../../../data/chat";
+import { messages, openChat } from "../../data/chat";
 import { Textarea } from "@packages/ui/components/base/textarea";
 import { ScrollArea } from "@packages/ui/components/base/scroll-area";
-import { useChatStore } from "../../../hooks/use-profile-chat";
+import { useChatStore } from "../../hooks/use-profile";
 
 import {
     MessageCircle,
@@ -154,8 +152,6 @@ export default function ExampleChatMessage() {
     const { showProfile, toggleProfile, setShowProfile } = useChatStore();
 
     return (
-        <ProtectedLayout>
-            <MainLayout breadcrumbs={router_breadcrumbs}>
                 <div className="flex flex-col h-[100%] bg-gray-100 relative">
                     <div className="flex flex-1 overflow-hidden">
                         <div
@@ -351,7 +347,5 @@ export default function ExampleChatMessage() {
                             )}
                     </div>
                 </div>
-            </MainLayout>
-        </ProtectedLayout>
     );
 }
