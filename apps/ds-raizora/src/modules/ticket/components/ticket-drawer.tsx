@@ -27,9 +27,9 @@ import {
   type Ticket,
 } from "@/data/support/schema"
 import React from "react"
-import { Input } from "../Input"
-import { Label } from "../Label"
-import { Textarea } from "../Textarea"
+import { Input } from "@packages/ui/components/base/input"
+import { Label } from "@packages/ui/components/base/label"
+import { Textarea } from "@packages/ui/components/base/textarea"
 
 type TicketFormData = Partial<Ticket>
 
