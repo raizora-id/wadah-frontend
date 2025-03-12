@@ -2,7 +2,7 @@
 import { BarChart } from "@packages/ui/components/chart/bar-chart"
 import { Button } from "@packages/ui/components/base/button"
 import { ComboChart } from "@/components/ComboChart"
-import { ConditionalBarChart } from "@packages/ui/components/ConditionalBarChart"
+import { ConditionalBarChart } from "@packages/ui/components/chart/conditional-bar-chart"
 import {
   CustomTooltip,
   CustomTooltip2,
