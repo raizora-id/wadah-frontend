@@ -7,8 +7,6 @@ import { Divider } from "@packages/ui/components/base/divider"
 import { LineChartSupport } from "@packages/ui/components/chart/line-chart-support"
 import { ProgressCircle } from "@packages/ui/components/chart/progress-circle"
 import { TicketDrawer } from "@/modules/ticket/components/ticket-drawer"
-import { DataTable } from "@/components/ui/data-table-support/DataTable"
-import { columns } from "@/components/ui/data-table-support/columns"
 import { tickets } from "@/data/support/tickets"
 import { volume } from "@/data/support/volume"
 import { RiAddLine } from "@remixicon/react"
@@ -177,7 +175,6 @@ export default function SupportDashboard() {
           </div>
         </Card>
       </dl>
-      <DataTable data={tickets} columns={columns} />
     </main>
   )
 }
