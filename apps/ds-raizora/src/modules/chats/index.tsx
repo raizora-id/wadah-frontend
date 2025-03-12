@@ -26,7 +26,7 @@ const router_breadcrumbs = [
     { label: "Table", href: "/table", isPage: true },
 ];
 
-export default function ExampleChatMessage() {
+export default function ChatMessage() {
     const [activeView, setActiveView] = useState<
         "desktop" | "tablet" | "mobile"
     >("desktop");
