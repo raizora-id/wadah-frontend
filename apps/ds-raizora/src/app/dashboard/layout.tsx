@@ -1,11 +1,11 @@
 'use client';
 import MainLayout from '@/components/layouts/main-content';
-import { StatsLoader } from '@/modules/home/components/stats-loader';
 import { TabNavigation, TabNavigationLink } from '@packages/ui/components/base/tab-navigation'
 import { useTranslation } from '@refinedev/core';
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { siteConfig } from '../../../site.config';
+import { MetricsCards } from '@/modules/stats/components/metrics-card';
 
 import ProtectedLayout from '../../components/layouts/protected-layout';
 
@@ -21,13 +21,22 @@ const navigation = [
     { name: "Audits", href: siteConfig.baseLinks.quotes.audits },
   ]
 
-export default function Page() {
+  export default function Layout({
+    children,
+  }: Readonly<{
+    children: React.ReactNode
+  }>) {
     const { translate: t } = useTranslation();
     const pathname = usePathname()
+
+    console.log(pathname)
 
     return (
         <ProtectedLayout>
             <MainLayout breadcrumbs={router_bearcrums}>
+                <div className="p-4 sm:p-6">
+                    <MetricsCards />
+                </div>
                 <TabNavigation className="mt-6 gap-x-4 px-4 sm:px-6">
                     {navigation.map((item) => (
                         <TabNavigationLink
@@ -39,6 +48,7 @@ export default function Page() {
                         </TabNavigationLink>
                     ))}
                 </TabNavigation>
+                <>{children}</>
             </MainLayout>
         </ProtectedLayout>
     );

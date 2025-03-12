@@ -1,12 +1,12 @@
 export const siteConfig = {
     name: "Dashboard Raizora",
-    url: "https://planner.tremor.so",
-    description: "The simplest dashboard template.",
+    url: "https://ds.raizora.com",
+    description: "Dashboard Raizora.",
     baseLinks: {
       quotes: {
-        overview: "/quotes/overview",
-        monitoring: "/quotes/monitoring",
-        audits: "/quotes/audits",
+        overview: "/dashboard/overview",
+        monitoring: "/dashboard/monitoring",
+        audits: "/dashboard/audits",
       },
     },
   }
