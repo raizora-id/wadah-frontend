@@ -18,7 +18,7 @@ import { CardHeader } from '@packages/ui/components/base/card';
 import { CardContent } from '@packages/ui/components/base/card';
 import { useTranslation } from '@refinedev/core';
 
-import ProtectedLayout from '../../components/layouts/protected-layout';
+import ProtectedLayout from '../../../components/layouts/protected-layout';
 
 const router_bearcrums = [
     { label: 'Dashboard', href: '/' },
