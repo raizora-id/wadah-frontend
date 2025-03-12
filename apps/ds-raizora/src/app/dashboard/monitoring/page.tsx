@@ -1,8 +1,8 @@
 "use client"
-import { BarChart } from "@/components/BarChart"
-import { Button } from "@/components/Button"
+import { BarChart } from "@packages/ui/components/chart/bar-chart"
+import { Button } from "@packages/ui/components/base/button"
 import { ComboChart } from "@/components/ComboChart"
-import { ConditionalBarChart } from "@/components/ConditionalBarChart"
+import { ConditionalBarChart } from "@packages/ui/components/ConditionalBarChart"
 import {
   CustomTooltip,
   CustomTooltip2,
@@ -15,7 +15,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/Select"
+} from "@packages/ui/components/base/select"
 import { dataChart, dataChart2, dataChart3, dataChart4 } from "@/data/data"
 import { formatters } from "@/lib/utils"
 import { SlidersHorizontal } from "lucide-react"
