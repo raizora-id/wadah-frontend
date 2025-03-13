@@ -11,7 +11,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@packages/ui/components/base/dialog"
-import { Divider } from "@packages/ui/components/base/dialog"
+import { Divider } from "@packages/ui/components/base/divider"
 import {
   Table,
   TableBody,
@@ -32,7 +32,7 @@ import {
   SatisfactionMetrics,
   TopIssue,
 } from "@/data/retention/schema"
-import { valueFormatter } from "@/lib/formatters"
+import { valueFormatter } from "@packages/utils/format"
 import { cn, focusRing } from "@packages/ui/lib/utils"
 import { RiCloseLine, RiExpandDiagonalLine } from "@remixicon/react"
 import { useState } from "react"

@@ -17,6 +17,7 @@
         "@next/third-parties": "catalog:",
         "@packages/api-client": "workspace:*",
         "@packages/ui": "workspace:*",
+        "@packages/utils": "workspace:*",
         "@refinedev/devtools": "^1.2.14",
         "@refinedev/nextjs-router": "^6.2.1",
         "@tabler/icons-react": "catalog:",
