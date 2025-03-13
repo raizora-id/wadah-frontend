@@ -3,7 +3,7 @@
 import { Badge } from "@packages/ui/components/base/badge"
 import { ProgressCircle } from "@packages/ui/components/chart/progress-circle"
 import { Agent } from "@/data/agents/schema"
-import { cn } from "@/lib/utils"
+import { cn } from "@packages/ui/lib/utils"
 import { RiShieldCheckFill } from "@remixicon/react"
 import { ColumnDef, createColumnHelper } from "@tanstack/react-table"
 import { ButtonTicketGeneration } from "../button-ticket-generation"

@@ -8,9 +8,9 @@ import HeaderSidebar from '@packages/ui/components/layouts/sidebars/nav/header-s
 import NavMainContent from '@packages/ui/components/layouts/sidebars/nav/nav-main';
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@packages/ui/components/layouts/sidebars/sidebar';
 
-import { MainLayoutProps } from '../../types/breadcrumbs';
+import { MainLayoutProps } from '../../shared/types/breadcrumbs';
 import { menuItems, menusData } from './../../data/menus';
-import { MenuItem } from './../../types/menu-Item';
+import { MenuItem } from '../../shared/types/menu-Item';
 import { Home } from 'lucide-react';
 
 const logoData = {

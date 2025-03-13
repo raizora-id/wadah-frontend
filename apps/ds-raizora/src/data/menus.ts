@@ -1,6 +1,6 @@
 
 import { DollarSign, FileText, Folder, Home, Users } from 'lucide-react';
-import { MenuItem, MenuItemType } from './../types/menu-Item';
+import { MenuItem, MenuItemType } from '../shared/types/menu-Item';
 
 
 export const menusData: MenuItem[] = [

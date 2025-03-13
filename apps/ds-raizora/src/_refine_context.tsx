@@ -5,7 +5,7 @@ import { GitHubBanner, type I18nProvider, Refine } from "@refinedev/core";
 import routerProvider from "@refinedev/nextjs-router";
 import React, { Suspense, type PropsWithChildren } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { setUserLocale } from "@/i18n";
+import { setUserLocale } from "@/shared/i18n";
 
 type Props = {
   themeMode?: string;

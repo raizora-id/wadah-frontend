@@ -6,8 +6,8 @@ import Head from 'next/head';
 
 import { ThemeProvider } from 'next-themes';
 
-import { appConfig } from '@/config/app';
-import ReactQueryProvider from '@/providers/react-query-provider';
+import { appConfig } from '@/shared/config/app';
+import ReactQueryProvider from '@/shared/providers/react-query-provider';
 import { Toaster } from '@packages/ui/components/base/toaster';
 import '@packages/ui/globals.css';
 

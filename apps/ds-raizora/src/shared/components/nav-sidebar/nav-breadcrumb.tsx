@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import Link from 'next/link';
 
-import { useNavMenu } from '@/hooks/query/user-menu';
+import { useNavMenu } from '@/shared/hooks/query/user-menu';
 import { cn } from '@/lib/utils';
-import type { IMenu } from '@/schema/menu';
+import type { IMenu } from '@/shared/schema/menu';
 import {
     Breadcrumb,
     BreadcrumbItem,

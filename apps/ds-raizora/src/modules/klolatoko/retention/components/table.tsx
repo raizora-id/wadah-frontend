@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@packages/ui/lib/utils"
 
 const TableRoot = React.forwardRef<
   HTMLDivElement,

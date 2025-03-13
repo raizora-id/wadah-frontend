@@ -1,4 +1,4 @@
-import { MessageChat } from "@/types/chat";
+import { MessageChat } from "@/shared/types/chat";
 
 export const Users: User[] = [
     {
