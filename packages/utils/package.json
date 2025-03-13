@@ -20,6 +20,7 @@
         "./delimiter": "./src/delimiter.ts"
     },
     "dependencies": {
-        "date-fns": "catalog:"
+        "date-fns": "catalog:",
+        "@tooling/typescript-config": "workspace:"
     }
 }

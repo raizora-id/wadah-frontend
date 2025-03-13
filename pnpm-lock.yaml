@@ -257,6 +257,9 @@ importers:
       '@packages/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      '@packages/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       '@refinedev/devtools':
         specifier: ^1.2.14
         version: 1.2.14(@refinedev/cli@2.16.44(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(bufferutil@4.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@refinedev/core@4.57.7(@tanstack/react-query@5.67.2(react@19.0.0))(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@refinedev/devtools-server@1.1.40(@babel/preset-env@7.26.9(@babel/core@7.26.9))(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(bufferutil@4.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
@@ -2391,6 +2394,9 @@ importers:
 
   packages/utils:
     dependencies:
+      '@tooling/typescript-config':
+        specifier: 'workspace:'
+        version: link:../../tooling/typescript-config
       date-fns:
         specifier: 'catalog:'
         version: 4.1.0
