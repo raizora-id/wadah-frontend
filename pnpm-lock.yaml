@@ -2391,6 +2391,9 @@ importers:
 
   packages/utils:
     dependencies:
+      '@tooling/typescript-config':
+        specifier: 'workspace:'
+        version: link:../../tooling/typescript-config
       date-fns:
         specifier: 'catalog:'
         version: 4.1.0

@@ -64,3 +64,8 @@ type FormatAmountParams = {
       return value.toString(); // Optionally handle numbers less than 100 if needed
     }
   }
+
+  export function valueFormatter(value: number) {
+    return `${Intl.NumberFormat("us").format(value).toString()}`
+  }
+
