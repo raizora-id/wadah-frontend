@@ -1,6 +1,6 @@
 import React from "react"
 
-import { cx, focusRing } from "@/lib/utils"
+import { cn, focusRing } from "@packages/ui/lib/utils"
 import { RiCheckboxCircleFill, RiCloseCircleFill } from "@remixicon/react"
 
 interface ButtonProps extends React.ComponentPropsWithoutRef<"button"> {
@@ -16,7 +16,7 @@ const ButtonTicketGeneration = React.forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={forwardedRef}
-        className={cx(
+        className={cn(
           // base
           "relative inline-flex items-center justify-center gap-1.5 whitespace-nowrap rounded-md border px-2 py-1 text-center text-sm font-medium shadow-sm transition-all duration-100 ease-in-out",
           // disabled

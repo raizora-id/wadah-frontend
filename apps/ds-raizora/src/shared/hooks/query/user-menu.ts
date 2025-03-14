@@ -1,4 +1,4 @@
-import type { IMenu } from '@/schema/menu';
+import type { IMenu } from '@/shared/schema/menu';
 import { queryOptions, useSuspenseQuery } from '@tanstack/react-query';
 
 import {

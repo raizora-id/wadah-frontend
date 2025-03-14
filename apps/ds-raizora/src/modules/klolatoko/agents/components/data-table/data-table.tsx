@@ -6,7 +6,7 @@ import {
   TableHead,
   TableHeaderCell,
   TableRow,
-} from "../Table"
+} from "../table"
 import { cn } from "@packages/ui/lib/utils"
 import { RankingInfo, rankItem } from "@tanstack/match-sorter-utils"
 import {

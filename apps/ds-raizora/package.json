@@ -13,6 +13,8 @@
         "gen:open-api": "openapi-zod-client './schemas/open-api.json' -o './__generated__/zodios-client.ts'"
     },
     "dependencies": {
+        "@emoji-mart/data": "^1.2.1",
+        "@emoji-mart/react": "^1.1.1",
         "@hookform/resolvers": "^4.1.3",
         "@next/third-parties": "catalog:",
         "@packages/api-client": "workspace:*",

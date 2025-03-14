@@ -5,8 +5,8 @@ import localFont from 'next/font/local';
 
 import { ThemeProvider } from 'next-themes';
 
-import ReactQueryProvider from '@/providers/react-query-provider';
-import AuthProvider from '@/providers/session-provider';
+import ReactQueryProvider from '@/shared/providers/react-query-provider';
+import AuthProvider from '@/shared/providers/session-provider';
 import { Toaster } from '@packages/ui/components/base/toaster';
 import '@packages/ui/globals.css';
 

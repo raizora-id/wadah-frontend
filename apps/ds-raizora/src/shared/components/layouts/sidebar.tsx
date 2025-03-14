@@ -4,7 +4,7 @@ import { LayoutsNavs } from '@packages/ui/components/layouts/navbars/layouts-nav
 import { AppSidebar } from '@packages/ui/components/layouts/sidebars/app-sidebar';
 import { SidebarInset, SidebarProvider, SidebarTrigger } from '@packages/ui/components/layouts/sidebars/sidebar';
 
-import { MainLayoutProps } from '../../types/breadcrumbs';
+import { MainLayoutProps } from '../../shared/types/breadcrumbs';
 import { DollarSign, GalleryVerticalEnd, Settings2, SquareTerminal, Truck, Users } from 'lucide-react';
 
 const sidebarData = {

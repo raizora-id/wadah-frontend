@@ -1,13 +1,13 @@
 'use client';
-import MainLayout from '@/components/layouts/main-content';
+import MainLayout from '@/shared/components/layouts/main-content';
 import { TabNavigation, TabNavigationLink } from '@packages/ui/components/base/tab-navigation'
 import { useTranslation } from '@refinedev/core';
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { siteConfig } from '../../../site.config';
-import { MetricsCards } from '@/modules/stats/components/metrics-card';
+import { MetricsCards } from '@/modules/klolatoko/stats/components/metrics-card';
 
-import ProtectedLayout from '../../components/layouts/protected-layout';
+import ProtectedLayout from '@/shared/components/layouts/protected-layout';
 
 const router_bearcrums = [
     { label: 'Dashboard', href: '/' },
