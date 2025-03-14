@@ -1,8 +1,8 @@
 'use client';
 
-import ProtectedLayout from '../../components/layouts/protected-layout';
-import { ProductTable } from '../../modules/products/components/product-table';
-import MainLayout from './../../components/layouts/main-content';
+import ProtectedLayout from '@/shared/components/layouts/protected-layout';
+import { ProductTable } from '@/modules/klolatoko/products/components/product-table';
+import MainLayout from '@/shared/components/layouts/main-content';
 
 const router_bearcrums = [
     { label: 'Dashboard', href: '/' },

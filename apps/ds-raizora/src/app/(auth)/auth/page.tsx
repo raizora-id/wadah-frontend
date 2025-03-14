@@ -1,9 +1,7 @@
 import Image from 'next/image';
 
-import '@packages/ui/globals.css';
-
-import { LoginForm } from '../../../components/auth/auth-form';
-import BaseTemplate from '../../../components/templates/base-layout';
+import { LoginForm } from '@/shared/components/auth/auth-form';
+import BaseTemplate from '@/shared/components/templates/base-layout';
 import { GalleryVerticalEnd } from 'lucide-react';
 
 const LoginPage = () => {

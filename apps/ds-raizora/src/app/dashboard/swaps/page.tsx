@@ -2,23 +2,23 @@
 
 import { Suspense } from 'react';
 
-import MainLayout from '@/components/layouts/main-content';
-import { Overview } from '@/modules/home/components/overview';
-import { OverviewLoader } from '@/modules/home/components/overview-loader';
-import { RecentSales } from '@/modules/home/components/recent-sales';
-import { RecentSalesLoader } from '@/modules/home/components/recent-sales-loader';
-import { Stats } from '@/modules/home/components/stats';
-import { StatsLoader } from '@/modules/home/components/stats-loader';
-import SwapLayout from '@/modules/home/components/swap-layout';
-import { TransactionsLoader } from '@/modules/home/components/transaction-loader';
-import { Transactions } from '@/modules/home/components/transactions';
-import { ProductTable } from '@/modules/products/components/product-table';
+import MainLayout from '@/shared/components/layouts/main-content';
+import { Overview } from '@/modules/core/home/components/overview';
+import { OverviewLoader } from '@/modules/core/home/components/overview-loader';
+import { RecentSales } from '@/modules/core/home/components/recent-sales';
+import { RecentSalesLoader } from '@/modules/core/home/components/recent-sales-loader';
+import { Stats } from '@/modules/core/home/components/stats';
+import { StatsLoader } from '@/modules/core/home/components/stats-loader';
+import SwapLayout from '@/modules/core/home/components/swap-layout';
+import { TransactionsLoader } from '@/modules/core/home/components/transaction-loader';
+import { Transactions } from '@/modules/core/home/components/transactions';
+import { ProductTable } from '@/modules/klolatoko/products/components/product-table';
 import { Card, CardDescription, CardTitle } from '@packages/ui/components/base/card';
 import { CardHeader } from '@packages/ui/components/base/card';
 import { CardContent } from '@packages/ui/components/base/card';
 import { useTranslation } from '@refinedev/core';
 
-import ProtectedLayout from '../../../components/layouts/protected-layout';
+import ProtectedLayout from '@/shared/components/layouts/protected-layout';
 
 const router_bearcrums = [
     { label: 'Dashboard', href: '/' },

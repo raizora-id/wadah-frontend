@@ -17,7 +17,7 @@ import {
   SelectValue,
 } from "@packages/ui/components/base/select"
 import { dataChart, dataChart2, dataChart3, dataChart4 } from "@/data/data"
-import { formatters } from "@/lib/utils"
+import { formatters } from "@/shared/lib/utils"
 import { SlidersHorizontal } from "lucide-react"
 
 export default function Monitoring() {
