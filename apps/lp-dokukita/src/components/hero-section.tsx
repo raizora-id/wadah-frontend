@@ -3,7 +3,7 @@ import { Button } from "@packages/ui/components/base/button"
 
 export default function HeroSection() {
   return (
-    <section className="w-full flex justify-center py-16 md:py-24">
+    <section className="w-full max-w-[1082px] flex justify-center py-16 md:py-24">
       <div className="container px-4 md:px-8">
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6">
@@ -12,15 +12,15 @@ export default function HeroSection() {
               <span>New templates added weekly</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-semibold leading-tight">
-              Professional Document Templates for Your Business
+              Template Dokumen Profesional untuk Bisnis Anda
             </h1>
             <p className="text-base md:text-xl text-muted-foreground">
-              High-quality templates for agreements, contracts, and legal documents. Save time and ensure compliance.
+            Koleksi template dokumen bisnis berkualitas tinggi yang siap pakai. Hemat waktu, tampil profesional, dan dapatkan perlindungan hukum yang Anda butuhkan.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button variant="secondary" size="lg" asChild>
                 <Link href="/templates">
-                  Browse Templates
+                  Jelajahi Kebutuhan
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -40,9 +40,6 @@ export default function HeroSection() {
                     ></path>
                   </svg>
                 </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild>
-                <Link href="#pricing">View Pricing</Link>
               </Button>
             </div>
             <div className="flex items-center gap-4 text-sm text-muted-foreground">

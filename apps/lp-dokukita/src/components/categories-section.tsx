@@ -3,76 +3,12 @@ import type React from "react"
 export default function CategoriesSection() {
   return (
     <section className="w-full flex justify-center py-16">
-      <div className="w-full max-w-[1082px] px-4 md:px-12">
-        <div className="flex flex-col items-center gap-12">
-          <div className="text-center">
-            <h2 className="text-2xl md:text-3xl font-medium mb-2">
-              Document Categories.{" "}
-              <i className="font-normal text-muted-foreground">
-                We offer a wide range of professional templates for all your business needs.
-              </i>
-            </h2>
-          </div>
-
-          <div className="w-full max-w-[800px] mx-auto">
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 md:gap-12">
-              <CategoryLogo name="Business" href="/categories/business" icon={<BusinessIcon />} />
-              <CategoryLogo name="Legal" href="/categories/legal" icon={<LegalIcon />} />
-              <CategoryLogo name="HR" href="/categories/hr" icon={<HRIcon />} />
-              <CategoryLogo name="Finance" href="/categories/finance" icon={<FinanceIcon />} />
-              <CategoryLogo name="Real Estate" href="/categories/real-estate" icon={<RealEstateIcon />} />
-              <CategoryLogo name="Marketing" href="/categories/marketing" icon={<MarketingIcon />} />
-              <CategoryLogo name="Consulting" href="/categories/consulting" icon={<ConsultingIcon />} />
-              <CategoryLogo name="Nonprofit" href="/categories/nonprofit" icon={<NonprofitIcon />} />
-            </div>
-          </div>
-
           <div className="flex flex-col items-center gap-6">
-            <div className="text-center">
-              <h2 className="text-2xl md:text-3xl font-medium mb-2">
-                Created by{" "}
-                <span className="inline-block">
-                  <svg width="138" height="32" viewBox="0 0 138 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14 4H6C4.9 4 4 4.9 4 6V26C4 27.1 4.9 28 6 28H14C15.1 28 16 27.1 16 26V6C16 4.9 15.1 4 14 4ZM14 26H6V6H14V26Z"
-                      fill="currentColor"
-                    />
-                    <path d="M8 10H12V12H8V10ZM8 14H12V16H8V14ZM8 18H10V20H8V18Z" fill="currentColor" />
-                    <path
-                      d="M22 10.5V9H34V10.5H22ZM22 15.5H34V14H22V15.5ZM22 20.5H34V19H22V20.5Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M40 10.5V9H70V10.5H40ZM40 15.5H70V14H40V15.5ZM40 20.5H65V19H40V20.5Z"
-                      fill="currentColor"
-                    />
-                    <path
-                      d="M80 10.5V9H110V10.5H80ZM80 15.5H110V14H80V15.5ZM80 20.5H105V19H80V20.5Z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </span>{" "}
-                <i>and</i>{" "}
-                <span className="inline-block">
-                  <svg width="111" height="32" viewBox="0 0 111 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M14 4H6C4.9 4 4 4.9 4 6V26C4 27.1 4.9 28 6 28H14C15.1 28 16 27.1 16 26V6C16 4.9 15.1 4 14 4Z"
-                      fill="currentColor"
-                    />
-                    <path d="M8 10H12V12H8V10ZM8 14H12V16H8V14ZM8 18H10V20H8V18Z" fill="currentColor" />
-                    <path d="M22 10H34V12H22V10ZM22 15H34V17H22V15ZM22 20H34V22H22V20Z" fill="currentColor" />
-                    <path d="M40 10H70V12H40V10ZM40 15H70V17H40V15ZM40 20H65V22H40V20Z" fill="currentColor" />
-                    <path d="M80 10H100V12H80V10ZM80 15H100V17H80V15ZM80 20H95V22H80V20Z" fill="currentColor" />
-                  </svg>
-                </span>
-              </h2>
-            </div>
-
             <div className="flex flex-col gap-4 p-4 md:p-6 rounded-2xl bg-card">
               <div className="text-center">
-                <h5 className="font-medium text-lg mb-1">
-                  Premium document templates for all industries.
-                  <span className="text-muted-foreground block md:inline"> Available in multiple formats.</span>
+              <h5 className="font-medium text-lg mb-1">
+                  Menyesuaikan di beberapa Industri.
+                  <span className="text-muted-foreground block md:inline"> Tersedia di berbagai format.</span>
                 </h5>
               </div>
 
@@ -88,8 +24,6 @@ export default function CategoriesSection() {
               </div>
             </div>
           </div>
-        </div>
-      </div>
     </section>
   )
 }
