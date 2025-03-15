@@ -1429,6 +1429,55 @@ importers:
         specifier: ^8.26.0
         version: 8.26.0(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
 
+  apps/lp-kloladia:
+    dependencies:
+      '@astrojs/mdx':
+        specifier: ^4.1.0
+        version: 4.1.0(astro@5.4.2(@types/node@22.13.10)(@upstash/redis@1.34.5)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))
+      '@astrojs/react':
+        specifier: ^4.2.1
+        version: 4.2.1(@types/node@22.13.10)(@types/react-dom@19.0.4(@types/react@19.0.10))(@types/react@19.0.10)(jiti@2.4.2)(lightningcss@1.29.2)(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(tsx@4.19.3)(yaml@2.7.0)
+      '@astrojs/rss':
+        specifier: ^4.0.11
+        version: 4.0.11
+      '@astrojs/sitemap':
+        specifier: ^3.2.1
+        version: 3.2.1
+      '@astrolib/seo':
+        specifier: ^1.0.0-beta.8
+        version: 1.0.0-beta.8(astro@5.4.2(@types/node@22.13.10)(@upstash/redis@1.34.5)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0))
+      '@packages/ui':
+        specifier: 'workspace:'
+        version: link:../../packages/ui
+      '@tailwindcss/forms':
+        specifier: ^0.5.10
+        version: 0.5.10(tailwindcss@4.0.12)
+      '@tailwindcss/typography':
+        specifier: ^0.5.16
+        version: 0.5.16(tailwindcss@4.0.12)
+      '@tailwindcss/vite':
+        specifier: ^4.0.0-beta.8
+        version: 4.0.12(vite@6.2.1(@types/node@22.13.10)(jiti@2.4.2)(lightningcss@1.29.2)(tsx@4.19.3)(yaml@2.7.0))
+      '@types/react':
+        specifier: ^19.0.10
+        version: 19.0.10
+      '@types/react-dom':
+        specifier: ^19.0.4
+        version: 19.0.4(@types/react@19.0.10)
+      astro:
+        specifier: ^5.4.2
+        version: 5.4.2(@types/node@22.13.10)(@upstash/redis@1.34.5)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.35.0)(tsx@4.19.3)(typescript@5.8.2)(yaml@2.7.0)
+      react:
+        specifier: 'catalog:'
+        version: 19.0.0
+      react-dom:
+        specifier: 'catalog:'
+        version: 19.0.0(react@19.0.0)
+    devDependencies:
+      tailwindcss:
+        specifier: ^4.0.0
+        version: 4.0.12
+
   apps/lp-klolaform:
     dependencies:
       '@astrojs/mdx':
@@ -1516,6 +1565,9 @@ importers:
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
+      dotted-map:
+        specifier: ^2.2.3
+        version: 2.2.3
       gsap:
         specifier: ^3.12.7
         version: 3.12.7
@@ -6156,6 +6208,15 @@ packages:
     resolution: {integrity: sha512-5CK3ZkVskSExf9YaXVMJ04F6Fb18HXKVZw8TMKVP7qOIvHGiBmT6YzWHqsQ3/PMNov2TzJ41ofRKX3zjR3G6Yg==}
     hasBin: true
 
+  '@turf/boolean-point-in-polygon@6.5.0':
+    resolution: {integrity: sha512-DtSuVFB26SI+hj0SjrvXowGTUCHlgevPAIsukssW6BG5MlNSBQAo70wpICBNJL6RjukXg8d2eXaAWuD/CqL00A==}
+
+  '@turf/helpers@6.5.0':
+    resolution: {integrity: sha512-VbI1dV5bLFzohYYdgqwikdMVpe7pJ9X3E+dlr425wa2/sMJqYDhTO++ec38/pcPvPE6oD9WEEeU3Xu3gza+VPw==}
+
+  '@turf/invariant@6.5.0':
+    resolution: {integrity: sha512-Wv8PRNCtPD31UVbdJE/KVAWKe7l6US+lJItRR/HOEW3eh+U/JwRCSUl/KZ7bmjM/C+zLNoreM2TU6OoLACs4eg==}
+
   '@types/acorn@4.0.6':
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
 
@@ -7908,6 +7969,9 @@ packages:
   dotenv@16.4.7:
     resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
     engines: {node: '>=12'}
+
+  dotted-map@2.2.3:
+    resolution: {integrity: sha512-8hyOOHHLLVCcCisM3yb9hqp+3bJ7TSMcr1SfrUw8Wxp5UMqih35jIvUyagweCooJbz/EH1nC9GGuPysh7+YlAg==}
 
   drizzle-kit@0.30.5:
     resolution: {integrity: sha512-l6dMSE100u7sDaTbLczibrQZjA35jLsHNqIV+jmhNVO3O8jzM6kywMOmV9uOz9ZVSCMPQhAZEFjL/qDPVrqpUA==}
@@ -9987,6 +10051,9 @@ packages:
     resolution: {integrity: sha512-iclAHeNqNm68zFtnZ0e+1L2yUIdvzNoauKU4WBA3VvH/vPFieF7qfRlwUZU+DA9P9bPXIS90ulxoUoCH23sV2w==}
     engines: {node: '>= 0.6'}
 
+  mgrs@1.0.0:
+    resolution: {integrity: sha512-awNbTOqCxK1DBGjalK3xqWIstBZgN6fxsMSiXLs9/spqWkF2pAhb2rrYCFSsr1/tT7PhcDGjZndG8SWYn0byYA==}
+
   mhchemparser@4.2.1:
     resolution: {integrity: sha512-kYmyrCirqJf3zZ9t/0wGgRZ4/ZJw//VwaRVGA75C4nhE60vtnIzhl9J9ndkX/h6hxSN7pjg/cE0VxbnNM+bnDQ==}
 
@@ -11183,6 +11250,9 @@ packages:
   process@0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+
+  proj4@2.15.0:
+    resolution: {integrity: sha512-LqCNEcPdI03BrCHxPLj29vsd5afsm+0sV1H/O3nTDKrv8/LA01ea1z4QADDMjUqxSXWnrmmQDjqFm1J/uZ5RLw==}
 
   promise-inflight@1.0.1:
     resolution: {integrity: sha512-6zWPyEOFaQBJYcGMHBKTKJ3u6TBsnMFOIZSa6ce1e/ZrrsOlnHRHbabMjLiBYKp+n44X9eUI6VUPaukCXHuG4g==}
@@ -12957,6 +13027,9 @@ packages:
   widest-line@5.0.0:
     resolution: {integrity: sha512-c9bZp7b5YtRj2wOe6dlj32MK+Bx/M/d+9VB2SHM1OtsUHR0aV0tdP6DWh/iMt0kWi1t5g1Iudu6hQRNd1A4PVA==}
     engines: {node: '>=18'}
+
+  wkt-parser@1.4.0:
+    resolution: {integrity: sha512-qpwO7Ihds/YYDTi1aADFTI1Sm9YC/tTe3SHD24EeIlZxy7Ik6a1b4HOz7jAi0xdUAw487duqpo8OGu+Tf4nwlQ==}
 
   word-wrap@1.2.5:
     resolution: {integrity: sha512-BN22B5eaMMI9UMtjrGd5g5eCYPpCPDUy0FJXbYsaT5zYxjFOckS53SQDE3pWkVoWpHXVb3BrYcEN4Twa55B5cA==}
@@ -17724,6 +17797,17 @@ snapshots:
       semver: 7.6.2
       update-check: 1.5.4
 
+  '@turf/boolean-point-in-polygon@6.5.0':
+    dependencies:
+      '@turf/helpers': 6.5.0
+      '@turf/invariant': 6.5.0
+
+  '@turf/helpers@6.5.0': {}
+
+  '@turf/invariant@6.5.0':
+    dependencies:
+      '@turf/helpers': 6.5.0
+
   '@types/acorn@4.0.6':
     dependencies:
       '@types/estree': 1.0.6
@@ -20022,6 +20106,11 @@ snapshots:
       is-obj: 2.0.0
 
   dotenv@16.4.7: {}
+
+  dotted-map@2.2.3:
+    dependencies:
+      '@turf/boolean-point-in-polygon': 6.5.0
+      proj4: 2.15.0
 
   drizzle-kit@0.30.5:
     dependencies:
@@ -22892,6 +22981,8 @@ snapshots:
 
   methods@1.1.2: {}
 
+  mgrs@1.0.0: {}
+
   mhchemparser@4.2.1: {}
 
   micromark-core-commonmark@1.1.0:
@@ -24369,6 +24460,11 @@ snapshots:
   process-warning@4.0.1: {}
 
   process@0.11.10: {}
+
+  proj4@2.15.0:
+    dependencies:
+      mgrs: 1.0.0
+      wkt-parser: 1.4.0
 
   promise-inflight@1.0.1: {}
 
@@ -26567,6 +26663,8 @@ snapshots:
   widest-line@5.0.0:
     dependencies:
       string-width: 7.2.0
+
+  wkt-parser@1.4.0: {}
 
   word-wrap@1.2.5: {}
 
