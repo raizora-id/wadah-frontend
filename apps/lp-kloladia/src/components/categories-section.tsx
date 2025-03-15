@@ -71,8 +71,8 @@ export default function CategoriesSection() {
             <div className="flex flex-col gap-4 p-4 md:p-6 rounded-2xl bg-card">
               <div className="text-center">
                 <h5 className="font-medium text-lg mb-1">
-                  Premium document templates for all industries.
-                  <span className="text-muted-foreground block md:inline"> Available in multiple formats.</span>
+                  Menyesuaikan di beberapa Industri.
+                  <span className="text-muted-foreground block md:inline"> Tersedia di berbagai format.</span>
                 </h5>
               </div>
 
