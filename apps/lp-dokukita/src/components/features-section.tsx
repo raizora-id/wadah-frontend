@@ -1,9 +1,8 @@
 import type React from "react"
-import { CheckIcon } from "lucide-react"
 
 const HeroSection = () => {
   return (
-    <section className="py-28 lg:py-32">
+    <section className="py-12 md:py-36">
       <div className="container flex flex-col justify-between gap-8 md:gap-14 lg:flex-row lg:gap-20">
         <div className="flex-1">
           <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl md:whitespace-nowrap lg:text-6xl">
