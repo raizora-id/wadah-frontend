@@ -35,7 +35,9 @@ const Layout = ({ children }: Readonly<{ children: ReactNode }>) => {
             <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
                 <GoogleAnalytics gaId={'G-F0WBE47V4M'} />
                 <Navigation />
-                <ThemeProvider attribute='class'>{children}</ThemeProvider>
+                <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+                    {children}
+                </ThemeProvider>
                 <Footer productName='Dihadiri' />
             </body>
         </html>
