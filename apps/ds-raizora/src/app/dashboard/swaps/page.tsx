@@ -12,7 +12,7 @@ import { StatsLoader } from '@/modules/core/home/components/stats-loader';
 import SwapLayout from '@/modules/core/home/components/swap-layout';
 import { TransactionsLoader } from '@/modules/core/home/components/transaction-loader';
 import { Transactions } from '@/modules/core/home/components/transactions';
-import { ProductTable } from '@/modules/klolatoko/products/components/product-table';
+import { ProductTable } from '@/products/klolatoko/modules/products/components/product-table';
 import { Card, CardDescription, CardTitle } from '@packages/ui/components/base/card';
 import { CardHeader } from '@packages/ui/components/base/card';
 import { CardContent } from '@packages/ui/components/base/card';

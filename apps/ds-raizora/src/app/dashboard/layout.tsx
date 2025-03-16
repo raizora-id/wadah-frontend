@@ -5,7 +5,7 @@ import { useTranslation } from '@refinedev/core';
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { siteConfig } from '../../../site.config';
-import { MetricsCards } from '@/modules/klolatoko/stats/components/metrics-card';
+import { MetricsCards } from '@/products/klolatoko/modules/stats/components/metrics-card';
 
 import ProtectedLayout from '@/shared/components/layouts/protected-layout';
 

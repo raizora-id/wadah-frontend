@@ -8,10 +8,10 @@ import { Button } from "@packages/ui/components/base/button";
 import { Avatar } from "@packages/ui/components/base/avatar";
 import ChatMessages from "@packages/ui/components/base/chat/area/list-chat";
 
-import { messages, openChat } from "../../../data/chat";
+import { messages, openChat } from "../../data/chat";
 import { Textarea } from "@packages/ui/components/base/textarea";
 import { ScrollArea } from "@packages/ui/components/base/scroll-area";
-import { useChatStore } from "../../../shared/hooks/use-profile";
+import { useChatStore } from "../../shared/hooks/use-profile";
 
 import {
     MessageCircle,
