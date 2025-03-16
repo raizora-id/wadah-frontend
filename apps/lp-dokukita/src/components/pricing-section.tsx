@@ -1,6 +1,6 @@
 export default function PricingSection() {
     return (
-      <section className="w-full flex justify-center py-16">
+      <section className="w-full flex justify-center py-12 md:py-36">
         <div className="w-full max-w-[1082px] px-4 md:px-12">
           <div className="flex flex-col items-center gap-12">
             <div className="text-center">
