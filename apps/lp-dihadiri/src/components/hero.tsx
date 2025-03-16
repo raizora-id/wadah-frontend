@@ -1,27 +1,50 @@
-import { ArrowRight } from 'lucide-react'
+import { Button } from "@packages/ui/components/base/button";
+import { Container } from "../components/container";
+import { useScroll, useTransform, motion } from "framer-motion";
+import { useRef } from "react";
 
-export function Hero() {
+export const Hero = () => {
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: videoContainerRef,
+    offset: ["start start", "end end"],
+  });
+  const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
+
   return (
-    <section className="flex min-h-screen flex-col items-center justify-center px-4 pt-[72px] text-center">
-      <h1 className="max-w-[800px] font-sans text-[64px] font-black leading-[1.1] tracking-[-0.02em] text-black md:text-[120px]">
-        WHERE IDEAS
-        <br />
-        BECOME
-        <br />
-        DESIGNS
-      </h1>
-      <p className="mt-6 max-w-[540px] text-[15px] text-[#6B7280]">
-        Kittl makes it simple to create professional designs — just the right tools, no unnecessary extras.
-      </p>
-      <a
-        href="#"
-        className="group mt-8 inline-flex items-center gap-2 rounded-[4px] bg-black px-5 py-3 text-[15px] font-medium text-white hover:bg-[#111827]"
+    <div className="bg-background text-white">
+      <motion.div
+        style={{ opacity }}
+        ref={videoContainerRef}
+        className="absolute -top-[--header-height] left-0 h-[200vh] w-full"
       >
-        Try Kittl for Free
-        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-      </a>
-      <div className="mt-16 h-[400px] w-full max-w-[1200px] bg-[#F3F4F6]"></div>
-    </section>
-  )
-}
-
+        <img
+          className="sticky top-0 h-screen w-full object-cover"
+          src="/img/apple-tv-rebuild/posters/napoleon.webp"
+        />
+      </motion.div>
+      <Container className="relative z-10 h-[--hero-height] pb-7">
+        <motion.div
+          className="flex h-full flex-col items-start justify-end"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1 },
+          }}
+          whileInView="visible"
+          exit="hidden"
+          animate="hidden"
+          viewport={{ amount: 0.98 }}
+        >
+          <h1 className="mb-10 text-4xl font-bold md:text-5xl">
+            All Apple Originals. <br />
+            Only on Apple TV+.
+          </h1>
+          <Button className="mb-16">
+            Stream now
+          </Button>
+          <p className="font-semibold">Watch on the 📺 app.</p>
+        </motion.div>
+      </Container>
+    </div>
+  );
+};
