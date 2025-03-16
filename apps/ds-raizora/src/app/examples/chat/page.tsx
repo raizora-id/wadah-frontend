@@ -2,9 +2,9 @@
 import MainLayout from '@/shared/components/layouts/main-content';
 import { useTranslation } from '@refinedev/core';
 import { usePathname } from "next/navigation"
-import { siteConfig } from '../../../site.config';
+import { siteConfig } from '../../../../site.config';
 import ProtectedLayout from '@/shared/components/layouts/protected-layout';
-import ChatMessage from '@/modules/core/chats';
+import ChatMessage from '@/modules/chats';
 
 const router_bearcrums = [
     { label: 'Dashboard', href: '/' },

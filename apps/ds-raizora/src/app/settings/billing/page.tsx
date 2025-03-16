@@ -31,7 +31,7 @@ import {
   TableHeaderCell,
   TableRoot,
   TableRow,
-} from "@/modules/core/billing/components/billing-table"
+} from "@/modules/billing/components/billing-table"
 import { CircleCheck, Plus } from "lucide-react"
 
 const data = [

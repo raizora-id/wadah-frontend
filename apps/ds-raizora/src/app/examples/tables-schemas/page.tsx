@@ -1,7 +1,7 @@
 'use client';
 
 import ProtectedLayout from '@/shared/components/layouts/protected-layout';
-import { ProductTable } from '@/modules/klolatoko/products/components/product-table';
+import { ProductTable } from '@/products/klolatoko/modules/products/components/product-table';
 import MainLayout from '@/shared/components/layouts/main-content';
 
 const router_bearcrums = [
