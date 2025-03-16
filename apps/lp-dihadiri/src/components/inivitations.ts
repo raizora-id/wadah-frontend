@@ -1,9 +1,9 @@
-export type Movie = {
+export type Invitation = {
     poster: string;
     name: string;
   };
   
-  export const movies = [
+  export const invitations = [
     { poster: "/img/apple-tv-rebuild/posters/airplane.webp", name: "Airplane" },
     {
       poster: "/img/apple-tv-rebuild/posters/family-man.webp",
@@ -25,14 +25,14 @@ export type Movie = {
     { poster: "/img/apple-tv-rebuild/posters/stars.webp", name: "Stars" },
   ];
   
-  export const randomMoviesSet1 = movies
+  export const randomInvitationsSet1 = invitations
     .sort(() => Math.random() - 0.5)
-    .concat(movies.sort(() => Math.random() - 0.5))
-    .concat(movies.sort(() => Math.random() - 0.5));
+    .concat(invitations.sort(() => Math.random() - 0.5))
+    .concat(invitations.sort(() => Math.random() - 0.5));
   
-  export const randomMoviesSet2 = movies
+  export const randomInvitationsSet2 = invitations
     .sort(() => Math.random() - 0.5)
-    .concat(movies.sort(() => Math.random() - 0.5))
-    .concat(movies.sort(() => Math.random() - 0.5))
+    .concat(invitations.sort(() => Math.random() - 0.5))
+    .concat(invitations.sort(() => Math.random() - 0.5))
     .sort(() => Math.random() - 0.5);
   

@@ -1,9 +1,9 @@
 import {
-    Movie,
-    movies,
-    randomMoviesSet1,
-    randomMoviesSet2,
-  } from "./movies";
+    Invitation,
+    invitations,
+    randomInvitationsSet1,
+    randomInvitationsSet2,
+  } from "./inivitations";
   import { Button } from "@packages/ui/components/base/button";
   import {
     useScroll,
@@ -72,8 +72,8 @@ import {
               >
                 <img
                   className="h-full w-full object-cover"
-                  src={movies[0].poster}
-                  alt={movies[0].name}
+                  src={invitations[0].poster}
+                  alt={invitations[0].name}
                 />
               </motion.div>
               <motion.div
@@ -82,8 +82,8 @@ import {
               >
                 <img
                   className="h-full w-full object-cover"
-                  src={movies[1].poster}
-                  alt={movies[1].name}
+                  src={invitations[1].poster}
+                  alt={invitations[1].name}
                 />
                 <motion.div
                   variants={{
@@ -102,8 +102,8 @@ import {
               >
                 <img
                   className="h-full w-full object-cover"
-                  src={movies[2].poster}
-                  alt={movies[2].name}
+                  src={invitations[2].poster}
+                  alt={invitations[2].name}
                 />
               </motion.div>
             </div>
@@ -118,20 +118,17 @@ import {
           transition={{ duration: 0.4 }}
           className="-mt-[calc((100vh-(300px*(16/9)))/2)] space-y-3 pt-4 md:-mt-[calc((100vh-(60vw*(9/16)))/2)]"
         >
-          <SmallVideoCarousel movies={randomMoviesSet1} />
-          <div className="[--carousel-offset:-32px] [--duration:74s]">
-            <SmallVideoCarousel movies={randomMoviesSet2} />
-          </div>
+          <SmallVideoCarousel invitations={randomInvitationsSet1} />
         </motion.div>
       </motion.div>
     );
   };
   
-  const SmallVideoCarousel = ({ movies }: { movies: Movie[] }) => {
+  const SmallVideoCarousel = ({ invitations }: { invitations: Invitation[] }) => {
     return (
       <div className="overflow-clip">
         <div className="animate-carousel-move relative left-[var(--carousel-offset,0px)] flex gap-3">
-          {movies.map((movie, index) => (
+          {invitations.map((movie, index) => (
             <div
               className="aspect-video w-[40vw] shrink-0 md:w-[23vw]"
               key={`${movie.name}-${index}`}
