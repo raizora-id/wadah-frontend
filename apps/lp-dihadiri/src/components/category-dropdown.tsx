@@ -23,11 +23,12 @@ export function CategoryDropdown({ options, selectedId, onSelect }: CategoryDrop
   const selectedOption = options.find((option) => option.id === selectedId) || options[0]
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full max-w-md mx-auto">
       {/* Selected option display - fixed height */}
       <div
         className="flex items-center justify-between w-full p-4 bg-white dark:bg-zinc-900 rounded-lg shadow-sm cursor-pointer"
         onClick={() => setIsOpen(!isOpen)}
+        style={{ height: "116px" }} // Fixed height to match desktop view
       >
         <div className="flex items-start gap-3">
           <div className="mt-1 flex-shrink-0">{selectedOption.icon}</div>
@@ -48,6 +49,7 @@ export function CategoryDropdown({ options, selectedId, onSelect }: CategoryDrop
                 <div
                   key={option.id}
                   className="flex items-start gap-3 p-4 hover:bg-muted cursor-pointer transition-colors"
+                  style={{ height: "116px" }} // Fixed height to match desktop view
                   onClick={() => {
                     onSelect(option.id)
                     setIsOpen(false)
