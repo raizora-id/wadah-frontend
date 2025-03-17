@@ -6,7 +6,7 @@ import {
 } from "lexical";
 import { BoldIcon } from "../icons/BoldIcon";
 import { OPEN_FLOATING_COMPOSER_COMMAND } from "@liveblocks/react-lexical";
-import { CommentIcon } from "../icons/CommentIcon";
+import { CommentIcon } from "./icons/CommentIcon";
 import { motion } from "framer-motion";
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import { MouseEventHandler, ReactNode, useCallback } from "react";

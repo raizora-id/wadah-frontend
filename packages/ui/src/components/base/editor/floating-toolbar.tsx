@@ -10,10 +10,9 @@ import {
   size,
   useFloating,
 } from "@floating-ui/react-dom";
-import { FloatingToolbarAi } from "./FloatingToolbarAi";
-import { useRange } from "../hooks/useRange";
-import { useMouseListener } from "../hooks/useMouseListener";
-import { FloatingToolbarOptions } from "./FloatingToolbarOptions";
+import { useRange } from "../../../hooks/use-range";
+import { useMouseListener } from "../../../hooks/use-mouse-listener";
+import { FloatingToolbarOptions } from "./floating-toolbar-options";
 
 const MARGIN_X = 32;
 
@@ -120,26 +119,12 @@ function ToolbarOptions({
 
   return (
     <div className="w-full text-foreground text-sm leading-relaxed">
-      {/* AI toolbar when enabled */}
-      {state === "ai" ? (
-        <FloatingToolbarAi
-          state={state}
-          setState={setState}
-          onClose={() => {
-            setState("closed");
-            setFullWidth(false);
-          }}
-        />
-      ) : null}
 
-      {/* Initial toolbar */}
-      {state === "default" ? (
         <FloatingToolbarOptions
           state={state}
           setState={setState}
           onOpenAi={() => setFullWidth(true)}
         />
-      ) : null}
     </div>
   );
 }
