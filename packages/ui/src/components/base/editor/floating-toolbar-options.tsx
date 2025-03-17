@@ -1,10 +1,10 @@
-import { SparklesIcon } from "../icons/SparklesIcon";
+import { SparklesIcon } from "./icons/SparklesIcon";
 import {
   $createParagraphNode,
   $getSelection,
   FORMAT_TEXT_COMMAND,
 } from "lexical";
-import { BoldIcon } from "../icons/BoldIcon";
+import { BoldIcon } from "./icons/BoldIcon";
 import { OPEN_FLOATING_COMPOSER_COMMAND } from "@liveblocks/react-lexical";
 import { CommentIcon } from "./icons/CommentIcon";
 import { motion } from "framer-motion";
@@ -12,11 +12,11 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { MouseEventHandler, ReactNode, useCallback } from "react";
 import { $setBlocksType } from "@lexical/selection";
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text";
-import { useActiveBlock } from "../hooks/useActiveBlock";
-import { ItalicIcon } from "../icons/ItalicIcon";
-import { UnderlineIcon } from "../icons/UnderlineIcon";
-import { StrikethroughIcon } from "../icons/StrikethroughIcon";
-import { CodeIcon } from "../icons/CodeIcon";
+import { useActiveBlock } from "../../../hooks/use-active-block";
+import { ItalicIcon } from "./icons/ItalicIcon";
+import { UnderlineIcon } from "./icons/UnderlineIcon";
+import { StrikethroughIcon } from "./icons/StrikethroughIcon";
+import { CodeIcon } from "./icons/CodeIcon";
 
 // Options in the toolbar's dropdown
 const DROPDOWN_OPTIONS = [
