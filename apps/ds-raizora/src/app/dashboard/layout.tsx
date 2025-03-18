@@ -8,6 +8,7 @@ import { siteConfig } from '../../../site.config';
 import { MetricsCards } from '@/products/klolatoko/modules/stats/components/metrics-card';
 
 import ProtectedLayout from '@/shared/components/layouts/protected-layout';
+import { Editor } from '@packages/ui/components/base/editor/editor';
 
 const router_bearcrums = [
     { label: 'Dashboard', href: '/' },
@@ -34,21 +35,7 @@ const navigation = [
     return (
         <ProtectedLayout>
             <MainLayout breadcrumbs={router_bearcrums}>
-                <div className="p-4 sm:p-6">
-                    <MetricsCards />
-                </div>
-                <TabNavigation className="mt-6 gap-x-4 px-4 sm:px-6">
-                    {navigation.map((item) => (
-                        <TabNavigationLink
-                        key={item.name}
-                        asChild
-                        active={pathname === item.href}
-                        >
-                        <Link href={item.href}>{item.name}</Link>
-                        </TabNavigationLink>
-                    ))}
-                </TabNavigation>
-                <>{children}</>
+                <Editor />
             </MainLayout>
         </ProtectedLayout>
     );

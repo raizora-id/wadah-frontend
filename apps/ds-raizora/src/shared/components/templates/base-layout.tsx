@@ -11,17 +11,6 @@ import ReactQueryProvider from '@/shared/providers/react-query-provider';
 import { Toaster } from '@packages/ui/components/base/toaster';
 import '@packages/ui/globals.css';
 
-const geistSans = localFont({
-    src: '../../../src/app/fonts/GeistVF.woff',
-    variable: '--font-geist-sans',
-    weight: '100 900'
-});
-
-const geistMono = localFont({
-    src: '../../../src/app/fonts/GeistMonoVF.woff',
-    variable: '--font-geist-mono',
-    weight: '100 900'
-});
 
 export const metadata: Metadata = {
     title: appConfig.appName,
@@ -34,7 +23,7 @@ const GuestLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
             <Head>
                 <meta name='viewport' content='width=device-width, initial-scale=1.0' />
             </Head>
-            <body className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}>
+            <body className={`bg-background text-foreground antialiased`}>
                 <ThemeProvider attribute='class'>
                     <ReactQueryProvider>{children}</ReactQueryProvider>
                 </ThemeProvider>
