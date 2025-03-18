@@ -2,7 +2,7 @@
 
 import React, { FormEvent, useState } from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@/shared/lib/utils';
 import { Button } from '@packages/ui/components/base/button';
 import { Input } from '@packages/ui/components/base/input';
 import { Label } from '@packages/ui/components/base/label';
