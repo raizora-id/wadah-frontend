@@ -32,6 +32,7 @@
         "update-deps": "npm-check-updates --configFileName .ncurc.json"
     },
     "devDependencies": {
+        "@moonrepo/cli": "^1.33.2",
         "@biomejs/biome": "catalog:",
         "@t3-oss/env-nextjs": "^0.12.0",
         "npm-check-updates": "^17.1.15"

@@ -111,6 +111,9 @@ importers:
       '@biomejs/biome':
         specifier: 'catalog:'
         version: 1.9.4
+      '@moonrepo/cli':
+        specifier: ^1.33.2
+        version: 1.33.2
       '@t3-oss/env-nextjs':
         specifier: ^0.12.0
         version: 0.12.0(typescript@5.8.2)(zod@3.24.2)
@@ -4824,6 +4827,45 @@ packages:
 
   '@mermaid-js/parser@0.3.0':
     resolution: {integrity: sha512-HsvL6zgE5sUPGgkIDlmAWR1HTNHz2Iy11BAWPTa4Jjabkpguy4Ze2gzfLrg6pdRuBvFwgUYyxiaNqZwrEEXepA==}
+
+  '@moonrepo/cli@1.33.2':
+    resolution: {integrity: sha512-5zrc3XVG7iSrx7gQowuREoc5X+XQm9GIZ6rI6DrXfgOHOtQO5KbPbnnW8UCMSZB81ep33x1B63wpYXmaPdZFCA==}
+    hasBin: true
+
+  '@moonrepo/core-linux-arm64-gnu@1.33.2':
+    resolution: {integrity: sha512-fcfn7rdS0Ssc44FfygM4xipn+5e96DBfup3YgxgrzEhSTP1dBlWiUH2/0naKk7Up8qc2r9H0JR02nqWQ4ODELg==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@moonrepo/core-linux-arm64-musl@1.33.2':
+    resolution: {integrity: sha512-pKXKHIWvbAPMJ251W/9xGpc7Xxqli9PIPt40Xt7bq3UnF23BCC66KI5Bx4B2+XrXbGLdkkrM0KJvcg6VSjnTLQ==}
+    cpu: [arm64]
+    os: [linux]
+
+  '@moonrepo/core-linux-x64-gnu@1.33.2':
+    resolution: {integrity: sha512-zTogO0P0c2ELXprJ2XQ/b1qg8jz2khZRFd3IZ8PNiJBEuipIL0FxPFvtNC3fXBiPm79Goy4azdhmShrHoTE3qg==}
+    cpu: [x64]
+    os: [linux]
+
+  '@moonrepo/core-linux-x64-musl@1.33.2':
+    resolution: {integrity: sha512-e6lN9urrQvYTbyIJ66vsijWVFANlH3+1WTUFxknAgbyUVAlD7DJ5hve5CSJWY7JAOChknIUdNmkAXAvZGnS9lw==}
+    cpu: [x64]
+    os: [linux]
+
+  '@moonrepo/core-macos-arm64@1.33.2':
+    resolution: {integrity: sha512-d1NuUshwEgamSf5E2FHR8qneTnQULAZv8IVqzXXCytzSDhTTSNZ+LW7arho90uA2wQuzdoWeLH8skOOBWaoyTA==}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@moonrepo/core-macos-x64@1.33.2':
+    resolution: {integrity: sha512-GYSFYjdYJ6lVAPcnZItczSAIRP2NUCwOiIgX1z1Whwp0AP4uQwEsvpOHxfl+tKGZWV++3r/q+XmJgVa7j6OFPA==}
+    cpu: [x64]
+    os: [darwin]
+
+  '@moonrepo/core-windows-x64-msvc@1.33.2':
+    resolution: {integrity: sha512-UU5A/AcbpDAr8OVcnmHgqCpWcVrreU2dGkUI7IRmnmH5/il7DWHPikRKZ5ZHKNRel/977BxOlhdU6t+vHfNjLQ==}
+    cpu: [x64]
+    os: [win32]
 
   '@napi-rs/simple-git-android-arm-eabi@0.1.19':
     resolution: {integrity: sha512-XryEH/hadZ4Duk/HS/HC/cA1j0RHmqUGey3MsCf65ZS0VrWMqChXM/xlTPWuY5jfCc/rPubHaqI7DZlbexnX/g==}
@@ -16574,6 +16616,39 @@ snapshots:
   '@mermaid-js/parser@0.3.0':
     dependencies:
       langium: 3.0.0
+
+  '@moonrepo/cli@1.33.2':
+    dependencies:
+      detect-libc: 2.0.3
+    optionalDependencies:
+      '@moonrepo/core-linux-arm64-gnu': 1.33.2
+      '@moonrepo/core-linux-arm64-musl': 1.33.2
+      '@moonrepo/core-linux-x64-gnu': 1.33.2
+      '@moonrepo/core-linux-x64-musl': 1.33.2
+      '@moonrepo/core-macos-arm64': 1.33.2
+      '@moonrepo/core-macos-x64': 1.33.2
+      '@moonrepo/core-windows-x64-msvc': 1.33.2
+
+  '@moonrepo/core-linux-arm64-gnu@1.33.2':
+    optional: true
+
+  '@moonrepo/core-linux-arm64-musl@1.33.2':
+    optional: true
+
+  '@moonrepo/core-linux-x64-gnu@1.33.2':
+    optional: true
+
+  '@moonrepo/core-linux-x64-musl@1.33.2':
+    optional: true
+
+  '@moonrepo/core-macos-arm64@1.33.2':
+    optional: true
+
+  '@moonrepo/core-macos-x64@1.33.2':
+    optional: true
+
+  '@moonrepo/core-windows-x64-msvc@1.33.2':
+    optional: true
 
   '@napi-rs/simple-git-android-arm-eabi@0.1.19':
     optional: true
