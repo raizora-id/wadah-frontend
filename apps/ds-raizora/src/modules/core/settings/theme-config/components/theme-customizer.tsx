@@ -11,7 +11,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@packages/ui/component
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@packages/ui/components/base/accordion"
 import { Label } from "@packages/ui/components/base/label"
 import { RadioGroup, RadioGroupItem } from "@packages/ui/components/base/radio-group"
-import { Slider } from "@packages/ui/components/base/slider"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@packages/ui/components/base/select"
 import { Switch } from "@packages/ui/components/base/switch"
 import { ColorPicker } from "./color-picker"
@@ -27,7 +26,7 @@ import {
   generateSpacing,
   hexToHSL,
   checkContrast,
-} from "@/lib/theme-config"
+} from "../theme-config"
 
 export function ThemeCustomizer() {
   const { theme, setTheme } = useTheme()
