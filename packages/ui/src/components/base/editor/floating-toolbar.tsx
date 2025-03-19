@@ -10,8 +10,8 @@ import {
   size,
   useFloating,
 } from "@floating-ui/react-dom";
-import { useRange } from "../../../hooks/use-range";
-import { useMouseListener } from "../../../hooks/use-mouse-listener";
+import { useRange } from "@/hooks/use-range";
+import { useMouseListener } from "@/hooks/use-mouse-listener";
 import { FloatingToolbarOptions } from "./floating-toolbar-options";
 
 const MARGIN_X = 32;
@@ -79,26 +79,14 @@ export function FloatingToolbar() {
   return createPortal(
     <div
       ref={setFloating}
-      className="pointer-events-none"
-      style={
-        fullWidth && editor._rootElement
-          ? {
-              position: strategy,
-              top: 0,
-              left: editor._rootElement.getBoundingClientRect().left + MARGIN_X,
-              transform: `translate3d(0, ${Math.round(y)}px, 0)`,
-              width:
-                editor._rootElement.getBoundingClientRect().width -
-                MARGIN_X * 2,
-            }
-          : {
-              position: strategy,
-              top: 0,
-              left: 0,
-              transform: `translate3d(${Math.round(x)}px, ${Math.round(y)}px, 0)`,
-              minWidth: "max-content",
-            }
-      }
+      className="pointer-events-auto bg-white rounded flex gap-2 transition-opacity duration-200 z-[1000]"
+      style={{
+        position: "fixed", 
+        top: `${y ?? 0}px`,
+        left: `${x ?? 0}px`,
+        transform: "translate(-50%, -10px)",
+        opacity: range ? 1 : 0,
+      }}
     >
       <ToolbarOptions setFullWidth={setFullWidth} />
     </div>,
@@ -111,7 +99,7 @@ function ToolbarOptions({
 }: {
   setFullWidth: (isFullWidth: boolean) => void;
 }) {
-  const [state, setState] = useState<"default" | "ai" | "closed">("default");
+  const [state, setState] = useState<"default" | "closed">("default");
 
   if (state === "closed") {
     return null;
@@ -120,11 +108,14 @@ function ToolbarOptions({
   return (
     <div className="w-full text-foreground text-sm leading-relaxed">
 
+      {/* Initial toolbar */}
+      {state === "default" ? (
         <FloatingToolbarOptions
           state={state}
-          setState={setState}
-          onOpenAi={() => setFullWidth(true)}
+          setState={setState} 
+          setFullWidth={setFullWidth}
         />
+      ) : null}
     </div>
   );
 }
