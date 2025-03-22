@@ -1,5 +1,5 @@
 {
-  "extends": "@repo/typescript-config/react-library.json",
+  "extends": "@tooling/typescript-config/react-library.json",
   "compilerOptions": {
     "baseUrl": ".",
     "plugins": [
@@ -8,10 +8,19 @@
       }
     ],
     "paths": {
-      "@repo/shadcn-ui/*": ["./*"],
-      "@repo/*": ["../*"]
+      "@repo/shadcn-ui/*": [
+        "./*"
+      ],
+      "@repo/*": [
+        "../*"
+      ]
     }
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

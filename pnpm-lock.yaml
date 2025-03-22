@@ -220,12 +220,18 @@ importers:
       '@next/third-parties':
         specifier: ^15.2.0
         version: 15.2.1(next@15.2.0(@babel/core@7.26.9)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      '@packages/shadcn-ui':
+        specifier: workspace:*
+        version: link:../../packages/shadcn-ui
       '@packages/tailwind-config':
         specifier: workspace:*
         version: link:../../packages/tailwind-config
       '@packages/theme-switcher':
         specifier: workspace:*
         version: link:../../packages/theme-switcher
+      '@packages/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       '@sentry/nextjs':
         specifier: ^9.3.0
         version: 9.8.0(@opentelemetry/context-async-hooks@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/core@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/instrumentation@0.57.2(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))(next@15.2.0(@babel/core@7.26.9)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(webpack@5.98.0)
