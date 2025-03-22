@@ -1,0 +1,19 @@
+{
+  "name": "@packages/sandbox",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@codesandbox/sandpack-react": "^2.20.0",
+    "@packages/shadcn-ui": "workspace:*",
+    "@packages/ui": "workspace:*",
+    "lucide-react": "^0.477.0",
+    "react": "catalog:",
+    "react-dom": "catalog:"
+  },
+  "devDependencies": {
+    "@tooling/typescript-config": "workspace:*",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "typescript": "catalog:"
+  }
+}
