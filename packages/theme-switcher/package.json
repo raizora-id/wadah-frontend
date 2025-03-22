@@ -1,0 +1,20 @@
+{
+  "name": "@packages/theme-switcher",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "@radix-ui/react-use-controllable-state": "^1.1.0",
+    "lucide-react": "^0.477.0",
+    "motion": "^12.4.7",
+    "react": "catalog:",
+    "react-dom": "catalog:",
+    "@packages/ui": "workspace:",
+    "react-fast-marquee": "^1.6.5"
+  },
+  "devDependencies": {
+    "@tooling/typescript-config": "workspace:*",
+    "@types/react": "catalog:",
+    "@types/react-dom": "catalog:",
+    "typescript": "catalog:"
+  }
+}
