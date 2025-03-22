@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from '@repo/shadcn-ui/components/ui/button';
+import { Button } from '@packages/shadcn-ui/components/ui/button';
 import Image from 'next/image';
 import Logo from './logo.svg';
 

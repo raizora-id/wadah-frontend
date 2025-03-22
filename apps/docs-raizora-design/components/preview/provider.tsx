@@ -1,6 +1,6 @@
 'use client';
 
-import { SandboxProvider } from '@repo/sandbox';
+import { SandboxProvider } from '@packages/sandbox';
 import { useTheme } from 'next-themes';
 import type { ComponentProps } from 'react';
 

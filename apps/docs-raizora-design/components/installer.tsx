@@ -7,7 +7,7 @@ import {
   SnippetTabsContent,
   SnippetTabsList,
   SnippetTabsTrigger,
-} from '@repo/snippet';
+} from '@packages/ui/components/base/snippet';
 import { track } from '@vercel/analytics/react';
 import Image from 'next/image';
 import { useState } from 'react';

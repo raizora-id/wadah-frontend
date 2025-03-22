@@ -1,4 +1,4 @@
-import { cn } from '@repo/shadcn-ui/lib/utils';
+import { cn } from '@packages/ui/lib/utils';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 
