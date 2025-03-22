@@ -8,12 +8,12 @@ import {
   SandboxTabsContent,
   SandboxTabsList,
   SandboxTabsTrigger,
-} from '@repo/sandbox';
+} from '@packages/sandbox';
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from '@repo/shadcn-ui/components/ui/resizable';
+} from '@packages/ui/components/base/resizable';
 import { AppWindowIcon, CodeIcon, TerminalIcon } from 'lucide-react';
 import { content } from './content';
 import { PreviewProvider } from './provider';

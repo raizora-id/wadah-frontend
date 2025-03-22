@@ -1,9 +1,9 @@
 import './global.css';
 import { ThemeProvider } from '@/providers/theme';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Toaster } from '@repo/shadcn-ui/components/ui/sonner';
-import { TooltipProvider } from '@repo/shadcn-ui/components/ui/tooltip';
-import { cn } from '@repo/shadcn-ui/lib/utils';
+import { Toaster } from '@packages/ui/components/base/sonner';
+import { TooltipProvider } from '@packages/ui/components/base/tooltip';
+import { cn } from '@packages/ui/lib/utils';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/react';
 import { RootProvider } from 'fumadocs-ui/provider';
 import type { ReactNode } from 'react';
