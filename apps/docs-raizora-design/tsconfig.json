@@ -6,12 +6,6 @@
       "@/*": [
         "./*"
       ],
-      "@repo/*": [
-        "../../packages/*"
-      ],
-      "@/components/*": [
-        "../../packages/shadcn-ui/components/*"
-      ],
       "@/lib/*": [
         "../../packages/shadcn-ui/lib/*"
       ]

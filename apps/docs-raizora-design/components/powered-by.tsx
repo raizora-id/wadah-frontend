@@ -1,5 +1,5 @@
 import { env } from '@/env';
-import { cn } from '@repo/shadcn-ui/lib/utils';
+import { cn } from '@packages/ui/lib/utils';
 import Image from 'next/image';
 
 type PoweredByProps = {
