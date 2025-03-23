@@ -1,3 +1,9 @@
 {
-    "pages": ["ui", "cli"]
+    "pages": [
+        "raizora",
+        "himajin",
+        "gea",
+        "ketuju",
+        "tempat-teduh"
+    ]
 }

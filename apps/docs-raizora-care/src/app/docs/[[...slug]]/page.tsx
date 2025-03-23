@@ -11,7 +11,7 @@ export default async function Page(props: {
 
   // Check if there's no slug or an empty slug (path is /docs)
   if (!params.slug || params.slug.length === 0) {
-    return <Redirect targetUrl="/docs/ui" />
+    return <Redirect targetUrl="/docs/raizora" />
   }
 
   const page = source.getPage(params.slug)
