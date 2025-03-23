@@ -6,8 +6,8 @@ import { source } from '#/lib/source'
 
 export const metadata: Metadata = {
   title: {
-    default: 'Twistail Documentation',
-    template: '%s - Twistail Documentation',
+    default: 'Raizora Care - Pusat Bantuan dari Raizora',
+    template: '%s - Raizora Care',
   },
 }
 
