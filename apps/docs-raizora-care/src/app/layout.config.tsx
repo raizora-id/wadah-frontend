@@ -28,7 +28,7 @@ export const baseOptions: BaseLayoutProps = {
   links: [
     { text: 'Kebijakan Layanan', url: '/service-policy' },
     {
-      text: 'Kebijakan Privasi',
+      text: 'Kebijakan Data dan Privasi',
       url: '/privacy',
       external: true,
       active: 'url',

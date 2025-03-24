@@ -8,7 +8,8 @@ export default function Footer() {
   ]
 
   const secondaryLinks = [
-    { href: '/privacy', label: 'Kebijakan Privasi' },
+    { href: '/privacy', label: 'Kebijakan Layanan' },
+    { href: '/privacy', label: 'Kebijakan Data dan Privasi' },
     { href: '/imprint', label: 'Hubungi' },
   ]
 
