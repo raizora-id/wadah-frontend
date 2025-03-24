@@ -6,7 +6,7 @@ import { cn } from '@packages/ui/lib/utils'
 import Link from '#/app/link'
 // import { urls } from '#/constants'
 
-import { GitHubIcon } from './icons'
+import { PhoneIcon } from './icons'
 
 export const NavBar = () => {
   const pathname = usePathname()
@@ -58,11 +58,11 @@ export const NavBar = () => {
             <div className="h-px w-12 bg-gray-200" />
             <div className="flex gap-6">
               <Link
-                href="https://github.com/riipandi/twistail"
+                href="/contact"
                 target="_blank"
                 className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600 dark:text-gray-300"
               >
-                <GitHubIcon className="size-5" />
+                <PhoneIcon className="size-5" />
               </Link>
             </div>
           </div>

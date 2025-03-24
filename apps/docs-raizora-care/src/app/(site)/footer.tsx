@@ -1,19 +1,15 @@
 'use client'
 
-import CountryFlag from 'react-country-flag'
 import Link from '#/app/link'
 
 export default function Footer() {
   const navLinks = [
-    { href: '/docs', label: 'About' },
-    { href: '/docs/changelog', label: 'Changelog' },
-    { href: '/docs/contributors', label: 'Contributors' },
-    { href: '/docs/faqs', label: 'FAQs' },
+    { href: '/docs', label: 'Tentang Kami' },
   ]
 
   const secondaryLinks = [
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/imprint', label: 'Imprint' },
+    { href: '/privacy', label: 'Kebijakan Privasi' },
+    { href: '/imprint', label: 'Hubungi' },
   ]
 
   return (
@@ -46,16 +42,14 @@ export default function Footer() {
         </div>
 
         <div className="py-8 text-center text-gray-400 text-sm">
-          &copy; {new Date().getFullYear()} - Made by{' '}
+          &copy; {new Date().getFullYear()} - Salam hangat dari{' '}
           <Link
             href="https://ripandis.com/?ref=twistail.com"
             className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text font-medium text-transparent hover:invert dark:from-sky-300 dark:to-blue-500"
             newTab
           >
-            Aris Ripandi
+            Raizora
           </Link>
-          {' in '}
-          <CountryFlag countryCode="ID" aria-label="Indonesia" />
         </div>
       </footer>
     </div>

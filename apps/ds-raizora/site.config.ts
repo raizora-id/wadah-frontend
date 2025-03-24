@@ -11,5 +11,5 @@ export const siteConfig = {
     },
   }
   
-  export type siteConfig = typeof siteConfig
+export type siteConfig = typeof siteConfig
   

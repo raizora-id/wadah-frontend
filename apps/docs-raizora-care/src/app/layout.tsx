@@ -12,22 +12,22 @@ import { cn } from '@packages/ui/lib/utils'
 const fontSans = Mona_Sans({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = JetBrains_Mono({ variable: '--font-mono', subsets: ['latin'] })
 
-const baseUrl = env.NEXT_PUBLIC_BASE_URL || 'https://twistail.com'
-const metaDescription = `Modular and extensible UI components library powered by Radix UI, Tailwind CSS, and TypeScript.`
-const metaTitle = 'Twistail — React UI components library'
+const baseUrl = env.NEXT_PUBLIC_BASE_URL || 'https://care.raizora.com'
+const metaDescription = `resource for assistance across all our business lines, designed to support and guide users throughout their journey with our interconnected ecosystem of services.`
+const metaTitle = 'Raizora Care Center'
 const ogImageUrl = 'https://twistail.com/images/banner.png'
 
 export const metadata: Metadata = {
   title: { default: metaTitle, template: '%s - Twistail' },
   description: metaDescription,
   keywords: `Open Source,Responsive,UI Components,React,Tailwind CSS v4,Radix UI,TypeScript,Next.js,Server Components`,
-  creator: '@riipandi',
+  creator: '@raizora_people',
   openGraph: {
     url: baseUrl,
     title: metaTitle,
     description: metaDescription,
     images: { url: ogImageUrl },
-    siteName: 'Twistail',
+    siteName: 'Raizora',
     type: 'website',
   },
   twitter: {
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     description: metaDescription,
     images: { url: ogImageUrl, alt: metaTitle },
     card: 'summary_large_image',
-    creator: '@riipandi',
+    creator: '@raizora_people',
   },
 }
 
