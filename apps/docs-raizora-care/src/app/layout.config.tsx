@@ -19,18 +19,17 @@ const TitleComponent = () => (
       height={250}
       unoptimized
     />
-    <span>Twistail Docs</span>
+    <span>Raizora Care</span>
   </div>
 )
 
 export const baseOptions: BaseLayoutProps = {
   nav: { url: '', title: <TitleComponent />, transparentMode: 'always' },
-  githubUrl: 'https://github.com/riipandi/twistail',
   links: [
-    { text: 'Home', url: '/' },
+    { text: 'Kebijakan Layanan', url: '/service-policy' },
     {
-      text: 'Storybook',
-      url: 'https://twistail-storybook.netlify.app/',
+      text: 'Kebijakan Data dan Privasi',
+      url: '/privacy',
       external: true,
       active: 'url',
     },
