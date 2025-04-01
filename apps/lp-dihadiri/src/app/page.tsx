@@ -2,31 +2,15 @@
 
 import React from 'react';
 
-import { Features } from '@/components/features';
-import Footer from '@/components/footer';
-// import LogoIntro from '@/components/logo-intro';
-// import { Revenue } from '@/components/revenue';
-// import { PageSEO } from '@/components/seo';
-// import { Templates } from '@/components/templates';
-// import { Testimonials } from '@/components/testimonials';
-// import { siteMetadata } from '@/data/site-metadata';
-// import { BackgroundGradientAnimation } from '@packages/ui/components/motions/background-gradient-animation';
-// import TextGradientScroll from '@packages/ui/components/motions/scroll-reveal';
-
-
 import { useState } from "react"
 
 import Image from "next/image"
-import Link from "next/link"
 import {
-  ArrowRight,
   Blend,
   Bug,
   Bell,
   Check,
   BarChartIcon as ChartNoAxesColumn,
-  ChevronLeft,
-  ChevronRight,
   CircleDot,
   Diamond,
   Sparkles,
@@ -411,7 +395,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   )
 }
