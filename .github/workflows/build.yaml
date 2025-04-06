@@ -1,0 +1,110 @@
+name: Build Frontend Web
+
+on:
+  push:
+    branches: [stable]
+    paths:
+      - 'apps/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
+  jobs:
+    # Job to detect affected apps
+    detect-changes:
+      name: Detect Changed Apps
+      run-on: ubuntu-latest
+      outputs:
+        matrix: ${{ steps.step-matrix.outputs.matrix }}
+      steps:
+        - uses: actions/checkout@v3
+          with:
+            fetch-depth: 0 # Fetch all history to properly detect changes
+        - name: Find changed apps
+          id: set-matrix
+          run: |
+            if [ "${{ github.event_name }}" == "pull_request" ]; then
+              BASE_SHA=${{github.event.pull_request.base.sha }}
+            else
+              BASE_SHA=$(git rev-parse HEAD^)
+            fi
+
+            # Get all directories in apps that have chaged
+            CHANGED_DIRS=$(git diff --name-only $BASE_SHA HEAD | grep '^apps/' | awk -F/ '{print $2}' | sort | uniq)
+
+            # Convert to JSON array for metrix
+            APPS_JSON=$(echo "$CHANGED_DIRS" | jq -R -s -c "split(\n) | map(select(length > 0))")
+
+            echo "matrix={\"app\":$APPS_JSON}" >> $GITHUB_OUTPUT
+            echo "$Changed apps: $APPS_JSON"
+    
+  # Job untuk linting code
+  lint:
+    name: Lint App
+    needs: detect-changes
+    if: ${{ needs.detect-changes.outputs.matrix != '{"app":[]}' && needs.detect-changes.outputs.matrix != '' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run linting
+        run: pnpm --filter ${{ matrix.app }} lint
+  
+  # Job untuk menjalankan unit tests
+  test:
+    name: Test App
+    needs: [detect-changes, lint]
+    if: ${{ needs.detect-changes.outputs.matrix != '{"app":[]}' && needs.detect-changes.outputs.matrix != '' }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix: ${{ fromJson(needs.detect-changes.outputs.matrix) }}
+      fail-fast: false
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run tests
+        run: pnpm --filter ${{ matrix.app }} test
+
+
+
