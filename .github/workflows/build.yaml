@@ -1,41 +1,54 @@
-name: Build Frontend Web
-
-on:
+name: Frontend Apps CI
+on: 
   push:
-    branches: [stable]
     paths:
       - 'apps/**'
       - 'packages/**'
       - 'pnpm-lock.yaml'
-  jobs:
-    # Job to detect affected apps
-    detect-changes:
-      name: Detect Changed Apps
-      run-on: ubuntu-latest
-      outputs:
-        matrix: ${{ steps.step-matrix.outputs.matrix }}
-      steps:
-        - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0 # Fetch all history to properly detect changes
-        - name: Find changed apps
-          id: set-matrix
-          run: |
-            if [ "${{ github.event_name }}" == "pull_request" ]; then
-              BASE_SHA=${{github.event.pull_request.base.sha }}
-            else
-              BASE_SHA=$(git rev-parse HEAD^)
-            fi
+  pull_request:
+    paths:
+      - 'apps/**'
+      - 'packages/**'
+      - 'pnpm-lock.yaml'
 
-            # Get all directories in apps that have chaged
-            CHANGED_DIRS=$(git diff --name-only $BASE_SHA HEAD | grep '^apps/' | awk -F/ '{print $2}' | sort | uniq)
+jobs:
+  # Job untuk mendeteksi aplikasi yang berubah
+  detect-changes:
+    name: Detect Changed Apps
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - name: Install Git
+        run: |
+          apt-get update
+          if ! command -v git &> /dev/null; then
+            echo "Git not found, installing..."
+            apt-get update
+            apt-get install -y git
+          fi
+          apt-get install -y git jq
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Fetch all history to properly detect changes
+      - name: Find changed apps
+        id: set-matrix
+        run: |
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            BASE_SHA=${{ github.event.pull_request.base.sha }}
+          else
+            BASE_SHA=$(git rev-parse HEAD^)
+          fi
+          
+          # Get all directories in apps that have changed
+          CHANGED_DIRS=$(git diff --name-only $BASE_SHA HEAD | grep '^apps/' | awk -F/ '{print $2}' | sort | uniq)
+          
+          # Convert to JSON array for matrix
+          APPS_JSON=$(echo "$CHANGED_DIRS" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          
+          echo "matrix={\"app\":$APPS_JSON}" >> $GITHUB_OUTPUT
+          echo "Changed apps: $APPS_JSON"
 
-            # Convert to JSON array for metrix
-            APPS_JSON=$(echo "$CHANGED_DIRS" | jq -R -s -c "split(\n) | map(select(length > 0))")
-
-            echo "matrix={\"app\":$APPS_JSON}" >> $GITHUB_OUTPUT
-            echo "$Changed apps: $APPS_JSON"
-    
   # Job untuk linting code
   lint:
     name: Lint App
@@ -105,6 +118,3 @@ on:
         run: pnpm install
       - name: Run tests
         run: pnpm --filter ${{ matrix.app }} test
-
-
-
