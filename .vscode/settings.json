@@ -31,5 +31,35 @@
     ],
     "eslint.format.enable": true,
     "npm.packageManager": "npm",
-    "typescript.tsdk": "node_modules\\typescript\\lib",
+    "typescript.tsdk": "node_modules/typescript/lib",
+    "cSpell.words": [
+        "Akuntansi",
+        "Authform",
+        "bearcrums",
+        "bussiness",
+        "eognxxx",
+        "firebaseapp",
+        "firebasestorage",
+        "firestore",
+        "Keuangan",
+        "Laba",
+        "navbars",
+        "NEXTAUTH",
+        "OVWK",
+        "qwertyuiopasdfghjklzxcvbnm",
+        "Rugi",
+        "Semua",
+        "shadcn",
+        "ZDMGKX",
+        "zycas"
+    ],
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "denoland.vscode-deno"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
 }

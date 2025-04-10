@@ -50,20 +50,21 @@ export function DataTable<TData>({
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
-                    <TableHead
-                      key={header.id}
-                      colSpan={header.colSpan}
-                      style={{
-                        ...getCommonPinningStyles({ column: header.column }),
-                      }}
-                    >
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
-                    </TableHead>
+                    <></>
+                    // <TableHead
+                    //   key={header.id}
+                    //   colSpan={header.colSpan}
+                    //   style={{
+                    //     ...getCommonPinningStyles({ column: header.column }),
+                    //   }}
+                    // >
+                    //   {header.isPlaceholder
+                    //     ? null
+                    //     : flexRender(
+                    //         header.column.columnDef.header,
+                    //         header.getContext(),
+                    //       )}
+                    // </TableHead>
                   );
                 })}
               </TableRow>

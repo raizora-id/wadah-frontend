@@ -26,7 +26,7 @@ import {
   getYAxisDomain,
 } from "./chart-utils"
 import { useOnWindowResize } from "../../hooks/use-on-window-resize"
-import { cn } from "@/lib/utils"
+import { cn } from "@ui/lib/utils"
 
 //#region Shape
 
@@ -500,9 +500,8 @@ const ConditionalBarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                     },
                     dataKey: index,
                     interval: startEndOnly ? "preserveStartEnd" : intervalType,
-                    ticks: startEndOnly
-                      //@ts-ignore
-                      ? [data[0][index], data[data.length - 1][index]]
+                    ticks: startEndOnly && data?.length
+                      ? [data[0]?.[index], data[data.length - 1]?.[index]]
                       : undefined,
                   }
                 : {
@@ -552,9 +551,8 @@ const ConditionalBarChart = React.forwardRef<HTMLDivElement, BarChartProps>(
                   }
                 : {
                     dataKey: index,
-                    ticks: startEndOnly
-                      //@ts-expect-error
-                      ? [data[0][index], data[data.length - 1][index]]
+                    ticks: startEndOnly && data.length > 0 && data[0] && data[data.length - 1]
+                      ? [data[0]?.[index], data[data.length - 1]?.[index]]
                       : undefined,
                     type: "category",
                     interval: "equidistantPreserveStart",

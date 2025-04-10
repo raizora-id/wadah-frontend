@@ -18,7 +18,7 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "./../popover";
-import { cn, toSentenceCase } from "@/lib/utils";
+import { cn, toSentenceCase } from "@ui/lib/utils";
 
 interface DataTableViewOptionsProps<TData> {
   table: Table<TData>;

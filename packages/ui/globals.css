@@ -220,7 +220,7 @@
       stroke-dashoffset: 0;
     }
   }
-  
+
   @keyframes hover {
     0%,
     100% {
@@ -373,7 +373,7 @@ body {
     --backgroundColor: #f2f2ee;
     --backgroundColorSecondary: #282825;
     --textPrimaryColor: #2A2A2A;
-  
+
     --headlineBig: clamp(3rem, 10vw, 15rem);
     --headlineSmall: clamp(1rem, 1.2vw, 6rem);
 

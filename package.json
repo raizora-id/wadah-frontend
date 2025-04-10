@@ -1,44 +1,26 @@
 {
-    "name": "@raizora/wadah-depan-web",
-    "author": "engineering@raizora.com",
-    "private": true,
-    "scripts": {
-        "dev:lp-dihadiri": "pnpm --filter @raizora/lp-dihadiri dev",
-        "dev:lp-himajin": "pnpm --filter @raizora/lp-himajin dev",
-        "dev:lp-ketuju": "pnpm --filter @raizora/lp-ketuju dev",
-        "dev:lp-tempat-teduh": "pnpm --filter @raizora/lp-tempat-teduh dev",
-        "dev:lp-raizora": "pnpm --filter @raizora/lp-raizora dev",
-        "dev:lp-gea-tourism": "pnpm --filter @raizora/lp-gea-tourism dev",
-        "dev:ds-himajin": "pnpm --filter @raizora/ds-himajin dev",
-        "dev:lp-klolatoko": "pnpm --filter @raizora/lp-klolatoko dev",
-        "dev:lp-klolakos": "pnpm --filter @raizora/lp-klolakos dev",
-        "dev:lp-klolaform": "pnpm --filter @raizora/lp-klolaform dev",
-        "dev:lp-klolarental": "pnpm --filter @raizora/ds-klolarental dev",
-        "build:lp-dihadiri": "pnpm --filter @raizora/lp-dihadiri build",
-        "build:lp-himajin": "pnpm --filter @raizora/lp-himajin build",
-        "build:lp-ketuju": "pnpm --filter @raizora/lp-ketuju build",
-        "build:lp-tempat-teduh": "pnpm --filter @raizora/lp-tempat-teduh build",
-        "build:lp-raizora": "pnpm --filter @raizora/lp-raizora build",
-        "build:lp-gea-tourism": "pnpm --filter @raizora/lp-gea-tourism build",
-        "build:ds-himajin": "pnpm --filter @raizora/ds-himajin build",
-        "build:lp-klolatoko": "pnpm --filter @raizora/lp-klolatoko build",
-        "build:lp-klolakos": "pnpm --filter @raizora/lp-klolakos build",
-        "build:lp-klolaform": "pnpm --filter @raizora/lp-klolaform build",
-        "build:lp-klolarental": "pnpm --filter @raizora/ds-klolarental build",
-        "build": "pnpm --filter [nama-project] build",
-        "start": "pnpm --filter [nama-project] start",
-        "lint": "pnpm --filter [nama-project] lint",
-        "format": "biome format . --write",
-        "update-deps": "npm-check-updates --configFileName .ncurc.json"
-    },
-    "devDependencies": {
-        "@moonrepo/cli": "^1.33.2",
-        "@biomejs/biome": "catalog:",
-        "@t3-oss/env-nextjs": "^0.12.0",
-        "npm-check-updates": "^17.1.15"
-    },
-    "dependencies": {
-        "@svgr/webpack": "^8.1.0"
-    },
-    "packageManager": "pnpm@10.6.1"
+  "name": "@rac/frontend-monorepo",
+  "private": true,
+  "scripts": {
+    "dev:erp": "pnpm --filter @rac/erp dev",
+    "dev:zycas": "pnpm --filter @rac/zycas dev",
+    "dev:zycas-compro": "pnpm --filter @rac/zycas-compro dev",
+    "build:erp": "pnpm --filter @rac/erp build",
+    "build:zycas": "pnpm --filter @rac/zycas build",
+    "build:zycas-compro": "pnpm --filter @rac/zycas-compro build",
+    "build": "pnpm --filter [nama-project] build",
+    "start": "pnpm --filter [nama-project] start",
+    "lint": "pnpm --filter [nama-project] lint",
+    "update-deps": "npm-check-updates --configFileName .ncurc.json"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@moonrepo/cli": "^1.33.2",
+    "@t3-oss/env-nextjs": "^0.11.1",
+    "npm-check-updates": "^17.1.14"
+  },
+  "dependencies": {
+    "@svgr/webpack": "^8.1.0"
+  },
+  "packageManager": "pnpm@9.12.3"
 }

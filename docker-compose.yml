@@ -1,0 +1,67 @@
+version: '3.8'
+
+services:
+  # Traefik reverse proxy
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"      # HTTP
+      - "443:443"    # HTTPS
+      - "8080:8080"  # Dashboard (opsional, bisa dimatikan di production)
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro  # Untuk Docker provider
+      - ./traefik/config:/etc/traefik                 # Konfigurasi Traefik
+      - ./traefik/certificates:/certificates          # SSL certificates
+    networks:
+      - web
+    command:
+      - "--api.dashboard=true"                  # Enable dashboard
+      - "--api.insecure=true"                   # Akses dashboard tanpa auth (hapus di production)
+      - "--providers.docker=true"               # Enable Docker provider
+      - "--providers.docker.exposedbydefault=false"  # Tidak expose semua container secara default
+      - "--providers.file.directory=/etc/traefik"    # Konfigurasi tambahan
+      - "--entrypoints.web.address=:80"         # HTTP entrypoint
+      - "--entrypoints.websecure.address=:443"  # HTTPS entrypoint
+      - "--entrypoints.web.http.redirections.entrypoint.to=websecure"  # Redirect HTTP ke HTTPS
+      - "--entrypoints.web.http.redirections.entrypoint.scheme=https"
+      # Uncomment untuk mengaktifkan Let's Encrypt
+      # - "--certificatesresolvers.letsencrypt.acme.email=your-email@example.com"
+      # - "--certificatesresolvers.letsencrypt.acme.storage=/certificates/acme.json"
+      # - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.dashboard.rule=Host(`traefik.yourdomain.com`)"
+      - "traefik.http.routers.dashboard.service=api@internal"
+      - "traefik.http.routers.dashboard.entrypoints=websecure"
+      # Uncomment untuk mengaktifkan SSL dengan Let's Encrypt
+      # - "traefik.http.routers.dashboard.tls.certresolver=letsencrypt"
+
+  # Next.js ERP Application
+  erp:
+    build:
+      context: .
+      dockerfile: ./apps/erp/Dockerfile
+    container_name: rac-erp
+    restart: unless-stopped
+    ports:
+      - "3001:3000"      # forwarding port nextjs
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.erp.rule=Host(`erp.yourdomain.com`)"
+      - "traefik.http.services.erp.loadbalancer.server.port=3000"
+      - "traefik.http.routers.erp.entrypoints=websecure"
+      # Uncomment untuk mengaktifkan SSL dengan Let's Encrypt
+      # - "traefik.http.routers.erp.tls.certresolver=letsencrypt"
+      # Health check untuk memastikan aplikasi berjalan
+      - "traefik.http.services.erp.loadbalancer.healthcheck.path=/"
+      - "traefik.http.services.erp.loadbalancer.healthcheck.interval=10s"
+      - "traefik.http.services.erp.loadbalancer.healthcheck.timeout=5s"
+
+networks:
+  web:
+    name: traefik-web
+    external: false

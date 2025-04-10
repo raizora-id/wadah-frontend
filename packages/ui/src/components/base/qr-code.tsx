@@ -1,6 +1,6 @@
 "use client";
 import { QrCode as ArkQrCode, type QrCodeRootProps } from "@ark-ui/react";
-import { cn } from "@/lib/utils";
+import { cn } from "@ui/lib/utils";
 import { type ElementRef, forwardRef } from "react";
 
 export type QRCode = QrCodeRootProps;

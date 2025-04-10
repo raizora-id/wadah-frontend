@@ -11,7 +11,7 @@
         "typecheck": "tsc --noEmit"
     },
     "devDependencies": {
-        "typescript": "^5.8.2"
+        "typescript": "^5.5.4"
     },
     "exports": {
         ".": "./src/index.ts",
@@ -20,7 +20,6 @@
         "./delimiter": "./src/delimiter.ts"
     },
     "dependencies": {
-        "date-fns": "catalog:",
-        "@tooling/typescript-config": "workspace:"
+        "date-fns": "catalog:"
     }
 }

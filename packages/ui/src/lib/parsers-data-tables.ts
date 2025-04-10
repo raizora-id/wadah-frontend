@@ -1,10 +1,10 @@
-import type { ExtendedSortingState, Filter  } from "./../types/data-tables";
+import type { ExtendedSortingState, Filter } from "./../types/data-tables";
 
 import type { Row } from "@tanstack/react-table";
 import { createParser } from "nuqs/server";
 import { z } from "zod";
 
-import { dataTableConfig } from "@/config/data-table";
+import { dataTableConfig } from "@ui/config/data-table";
 
 export const sortingItemSchema = z.object({
   id: z.string(),

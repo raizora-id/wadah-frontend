@@ -4,12 +4,11 @@
     "upgrade": true,
     "color": true,
     "root": true,
-    "deep": true,
-    "silent": false,
+    "packageFile": "./{apps,packages}/**/package.json",
     "install": "always",
     "packageManager": "pnpm",
+    "silent": false,
     "reject": [
-        "@tailwindcss/vite",
-        "tailwindcss"
+        "typescript"
     ]
 }

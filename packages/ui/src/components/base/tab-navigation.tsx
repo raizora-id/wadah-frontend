@@ -3,7 +3,7 @@
 import * as NavigationMenuPrimitives from "@radix-ui/react-navigation-menu"
 import React from "react"
 
-import { cn, focusRing } from "@/lib/utils"
+import { cn, focusRing } from "@ui/lib/utils"
 
 export function getSubtree(
   options: {

@@ -1,5 +1,5 @@
 import { chartColors, getColorClassName } from "./chart-utils"
-import { cn, formatters } from "@/lib/utils"
+import { cn, formatters } from "@ui/lib/utils"
 import { TooltipProps } from "./bar-chart"
 import { TooltipProps as TooltipComboBarChartProps } from "./combo-chart"
 

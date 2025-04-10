@@ -27,7 +27,7 @@ import {
   hasOnlyOneValueForKey,
 } from "./chart-utils"
 import { useOnWindowResize } from "../../hooks/use-on-window-resize"
-import { cn } from "@/lib/utils"
+import { cn } from "@ui/lib/utils"
 
 //#region Shape
 function deepEqual<T>(obj1: T, obj2: T): boolean {
@@ -834,8 +834,10 @@ const ComboChart = React.forwardRef<HTMLDivElement, ComboChartProps>(
               interval={startEndOnly ? "preserveStartEnd" : intervalType}
               ticks={
                 startEndOnly
-                  //@ts-expect-error
-                  ? [data[0][index], data[data.length - 1][index]]
+                  ? [
+                      data[0]?.[index] ?? null,
+                      data[data.length - 1]?.[index] ?? null,
+                    ]
                   : undefined
               }
             >

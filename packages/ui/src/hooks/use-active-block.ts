@@ -24,9 +24,9 @@ export function useActiveBlock() {
         anchor.getKey() === "root"
           ? anchor
           : $findMatchingParent(anchor, (e) => {
-              const parent = e.getParent();
-              return parent !== null && $isRootOrShadowRoot(parent);
-            });
+            const parent = e.getParent();
+            return parent !== null && $isRootOrShadowRoot(parent);
+          });
 
       if (element === null) {
         element = anchor.getTopLevelElementOrThrow();
