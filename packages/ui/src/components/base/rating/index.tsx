@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@ui/lib/utils';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { type LucideProps, StarIcon } from 'lucide-react';
 import {

@@ -9,7 +9,7 @@ import {
 } from "@remixicon/react"
 import React from "react"
 
-import { cn, focusInput, hasErrorInput } from "@/lib/utils"
+import { cn, focusInput, hasErrorInput } from "@ui/lib/utils"
 
 const Select = SelectPrimitives.Root
 Select.displayName = "Select"

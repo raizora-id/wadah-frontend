@@ -2,7 +2,7 @@
 import * as CheckboxPrimitives from "@radix-ui/react-checkbox"
 import React from "react"
 
-import { cn, focusRing } from "@/lib/utils"
+import { cn, focusRing } from "@ui/lib/utils"
 
 const Checkbox = React.forwardRef<
   React.ComponentRef<typeof CheckboxPrimitives.Root>,

@@ -1,7 +1,7 @@
 'use client';
 
 import { Button, type ButtonProps } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { cn } from '@ui/lib/utils';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { type LucideIcon, XIcon } from 'lucide-react';
 import {

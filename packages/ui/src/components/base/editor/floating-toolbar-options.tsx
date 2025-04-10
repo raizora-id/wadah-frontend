@@ -5,7 +5,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { type MouseEventHandler, type ReactNode, useCallback, useState } from "react"
 import { $setBlocksType } from "@lexical/selection"
 import { $createHeadingNode, $createQuoteNode } from "@lexical/rich-text"
-import { useActiveBlock } from "@/hooks/use-active-block"
+import { useActiveBlock } from "@ui/hooks/use-active-block"
 import { motion } from "framer-motion"
 
 import {
@@ -232,7 +232,7 @@ export function FloatingToolbarOptions({
 
         {/* Alignment and other options */}
         <div className="flex items-center">
-          <ToolbarButton 
+          <ToolbarButton
             tooltip="Link"
             onClick={() => {
               editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "left")
@@ -241,7 +241,7 @@ export function FloatingToolbarOptions({
             <AlignLeft className="w-4 h-4" />
           </ToolbarButton>
 
-          <ToolbarButton 
+          <ToolbarButton
             tooltip="AlignCenter"
             onClick={() => {
               editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "center")
@@ -251,7 +251,7 @@ export function FloatingToolbarOptions({
           </ToolbarButton>
 
 
-          <ToolbarButton 
+          <ToolbarButton
             tooltip="AlignCenter"
             onClick={() => {
               editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, "justify")
@@ -260,7 +260,7 @@ export function FloatingToolbarOptions({
             <AlignJustify className="w-4 h-4" />
           </ToolbarButton>
 
-          <ToolbarButton 
+          <ToolbarButton
             tooltip="Table"
           >
             <Table className="w-4 h-4" />

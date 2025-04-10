@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '@ui/lib/utils';
 import { Button } from '../base/button';
 
 const EmptyState = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
@@ -62,9 +62,9 @@ const variants = {
 }
 
 const EmptyStateIcon = React.forwardRef<
-    HTMLParagraphElement, 
-    React.HTMLAttributes<HTMLHeadingElement> & { 
-        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom'; 
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLHeadingElement> & {
+        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom';
         customIcon?: React.ReactNode }>(
     ({ className, variant = 'custom', customIcon, ...props }, ref) => (
         <div ref={ref} className = {cn('w-[80px] h-[80px]', className)} {...props}>
@@ -75,35 +75,35 @@ const EmptyStateIcon = React.forwardRef<
 EmptyStateIcon.displayName = 'EmptyStateIcon';
 
 const EmptyStateTitle = React.forwardRef<
-    HTMLParagraphElement, 
-    React.HTMLAttributes<HTMLHeadingElement> & { 
-        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom'; 
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLHeadingElement> & {
+        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom';
         customTitle?: React.ReactNode }>(
     ({ className, variant = 'custom', customTitle, ...props }, ref) => (
         <div ref={ref} className = {cn('text-xl font-semibold mt-3', className)} {...props}>
-            {variant === 'custom'? customTitle : variants[variant]?.title} 
+            {variant === 'custom'? customTitle : variants[variant]?.title}
         </div>
     )
 );
 EmptyStateTitle.displayName = 'EmptyStateTitle';
 
 const EmptyStateDescription = React.forwardRef<
-    HTMLParagraphElement, 
-    React.HTMLAttributes<HTMLHeadingElement> & { 
-        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom'; 
+    HTMLParagraphElement,
+    React.HTMLAttributes<HTMLHeadingElement> & {
+        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom';
         customDescription?: React.ReactNode }>(
     ({ className, variant = 'custom', customDescription, ...props }, ref) => (
         <p ref={ref} className = {cn('text-sm text-center font-normal text-[#64748B] mt-2', className)} {...props}>
-            {variant === 'custom'? customDescription : variants[variant]?.description} 
+            {variant === 'custom'? customDescription : variants[variant]?.description}
         </p>
     )
 );
 EmptyStateDescription.displayName = 'EmptyStateDescription';
 
 const EmptyStateAction = React.forwardRef<
-    HTMLButtonElement, 
+    HTMLButtonElement,
     React.ComponentProps<typeof Button> & {
-        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom'; 
+        variant?: 'unauthorized' | 'incomplete' | 'notFound' | 'systemProblem' | 'badGateway' | 'underMaintenance' | 'gatewayTimeout' | 'incorrectAccess' | 'custom';
         customActionText?: string}>(
     ({ className, onClick, variant = 'custom', customActionText, ...props }, ref) => (
         <Button
@@ -112,7 +112,7 @@ const EmptyStateAction = React.forwardRef<
             onClick={onClick}
             {...props}
         >
-            {variant === 'custom'? customActionText : variants[variant]?.buttonText)} 
+            {variant === 'custom'? customActionText : variants[variant]?.buttonText)}
         </Button>
     )
 );

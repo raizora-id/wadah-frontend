@@ -2,7 +2,7 @@
 
 import React from "react"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@ui/lib/utils"
 
 const TableRoot = React.forwardRef<
   HTMLDivElement,
@@ -45,14 +45,16 @@ const Table = React.forwardRef<
 
 Table.displayName = "Table"
 
+type TableHeadProps = React.ComponentPropsWithoutRef<"thead">;
+
 const TableHead = React.forwardRef<
   HTMLTableSectionElement,
-  React.HTMLAttributes<HTMLTableSectionElement>
+  TableHeadProps
 >(({ className, ...props }, forwardedRef) => (
   <thead ref={forwardedRef} className={cn(className)} {...props} />
-))
+));
 
-TableHead.displayName = "TableHead"
+TableHead.displayName = "TableHead";
 
 const TableHeaderCell = React.forwardRef<
   HTMLTableCellElement,
@@ -172,6 +174,20 @@ const TableCaption = React.forwardRef<
 
 TableCaption.displayName = "TableCaption"
 
+const TableHeader = (props: React.ComponentProps<"thead">) => {
+  const { className, ...rest } = props;
+  return (
+    <thead
+      data-slot="table-header"
+      className={cn("[&_tr]:border-b", className)}
+      {...rest}
+    />
+  );
+};
+
+TableHeader.displayName = "TableHeader";
+
+
 export {
   Table,
   TableBody,
@@ -181,6 +197,7 @@ export {
   TableHead,
   TableHeaderCell,
   TableRoot,
-  TableRow
+  TableRow,
+  TableHeader
 }
 

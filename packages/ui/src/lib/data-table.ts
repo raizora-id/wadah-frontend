@@ -1,7 +1,7 @@
 import type { ColumnType, Filter, FilterOperator } from "./../types/data-tables";
 import type { Column } from "@tanstack/react-table";
 
-import { dataTableConfig } from "@/config/data-table";
+import { dataTableConfig } from "@ui/config/data-table";
 
 /**
  * Generate common pinning styles for a table column.
@@ -119,7 +119,7 @@ export function getValidFilters<TData>(
       (Array.isArray(filter.value)
         ? filter.value.length > 0
         : filter.value !== "" &&
-          filter.value !== null &&
-          filter.value !== undefined),
+        filter.value !== null &&
+        filter.value !== undefined),
   );
 }

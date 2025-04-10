@@ -9,7 +9,7 @@ import { DataTableFacetedFilter } from "./data-table-faceted-filter";
 import { DataTableViewOptions } from "./data-table-view-options";
 import { Button } from "./../button";
 import { Input } from "./../input";
-import { cn } from "@/lib/utils";
+import { cn } from "@ui/lib/utils";
 
 interface DataTableToolbarProps<TData>
   extends React.HTMLAttributes<HTMLDivElement> {

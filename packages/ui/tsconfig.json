@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "module": "NodeNext",
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "isolatedModules": true,
     "resolveJsonModule": true,
@@ -32,15 +32,18 @@
       "ui/components/ui/*": [
         "src/components/base/*"
       ],
-      "ui/hooks/*": [
-        "./hooks/*"
+      "@ui/hooks/*": [
+        "src/hooks/*"
       ],
-      "lib/*": [
+      "@ui/lib/*": [
         "src/lib/*"
+      ],
+      "@ui/config/*": [
+        "./src/config/*"
       ],
       "@/*": [
         "./src/*"
-      ]
+      ],
     }
   },
   "include": [

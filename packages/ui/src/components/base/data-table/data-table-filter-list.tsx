@@ -73,7 +73,7 @@ import { getDefaultFilterOperator, getFilterOperators } from "@/lib/data-table";
 
 import { getFiltersStateParser } from "./../../../lib/parsers-data-tables";
 
-import { cn, formatDate } from "@/lib/utils";
+import { cn, formatDate } from "@ui/lib/utils";
 
 interface DataTableFilterListProps<TData> {
   table: Table<TData>;

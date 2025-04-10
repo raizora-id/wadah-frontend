@@ -6,7 +6,7 @@ import { addDays, format } from "date-fns"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { DateRange } from "react-day-picker"
 
-import { cn } from "@/lib/utils"
+import { cn } from "@ui/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import {
@@ -88,7 +88,7 @@ export function DatePicker(props: DatePickerProps) {
 
     // Use internal state if no external value/onChange is provided
     const [date, setDate] = React.useState<Date | undefined>(value)
-    
+
     // Function to handle date selection
     const handleSelect = (selectedDate: Date | undefined) => {
       // Update internal state
@@ -147,7 +147,7 @@ export function DatePicker(props: DatePickerProps) {
 
     // Use internal state if no external value/onChange is provided
     const [dateRange, setDateRange] = React.useState<DateRange | undefined>(value)
-    
+
     // Function to handle date range selection
     const handleSelect = (selectedRange: DateRange | undefined) => {
       // Update internal state

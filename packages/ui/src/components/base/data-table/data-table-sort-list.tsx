@@ -50,7 +50,7 @@ import {
 import { dataTableConfig } from "@/config/data-table";
 import { useDebouncedCallback } from "./../../../hooks/use-debounced-callback";
 import { getSortingStateParser } from "./../../../lib/parsers-data-tables";
-import { cn, toSentenceCase } from "@/lib/utils";
+import { cn, toSentenceCase } from "@ui/lib/utils";
 
 interface DataTableSortListProps<TData> {
   table: Table<TData>;

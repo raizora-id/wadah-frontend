@@ -28,7 +28,7 @@ import {
   hasOnlyOneValueForKey,
 } from "./chart-utils"
 import { useOnWindowResize } from "../../hooks/use-on-window-resize"
-import { cn } from "@/lib/utils"
+import { cn } from "@ui/lib/utils"
 
 //#region Legend
 

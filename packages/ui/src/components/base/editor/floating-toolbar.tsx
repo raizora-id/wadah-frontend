@@ -10,8 +10,8 @@ import {
   size,
   useFloating,
 } from "@floating-ui/react-dom";
-import { useRange } from "@/hooks/use-range";
-import { useMouseListener } from "@/hooks/use-mouse-listener";
+import { useRange } from "@ui/hooks/use-range";
+import { useMouseListener } from "@ui/hooks/use-mouse-listener";
 import { FloatingToolbarOptions } from "./floating-toolbar-options";
 
 const MARGIN_X = 32;
@@ -81,7 +81,7 @@ export function FloatingToolbar() {
       ref={setFloating}
       className="pointer-events-auto bg-white rounded flex gap-2 transition-opacity duration-200 z-[1000]"
       style={{
-        position: "fixed", 
+        position: "fixed",
         top: `${y ?? 0}px`,
         left: `${x ?? 0}px`,
         transform: "translate(-50%, -10px)",
@@ -112,7 +112,7 @@ function ToolbarOptions({
       {state === "default" ? (
         <FloatingToolbarOptions
           state={state}
-          setState={setState} 
+          setState={setState}
           setFullWidth={setFullWidth}
         />
       ) : null}

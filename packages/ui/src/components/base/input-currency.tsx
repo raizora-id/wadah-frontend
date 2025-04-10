@@ -3,7 +3,7 @@
 import React from "react"
 
 import { useState, useEffect, type ComponentProps } from "react"
-import { cn } from "@/lib/utils"
+import { cn } from "@ui/lib/utils"
 import { Input } from "@/components/base/input"
 import { Label } from "@/components/base/label"
 
