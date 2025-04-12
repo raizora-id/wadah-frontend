@@ -39,4 +39,7 @@ catalog:
   "@tanstack/react-query": "^5.66.0"
   "@tanstack/react-table": "^8.20.6"
   "@tanstack/react-query-devtools": "^5.66.0"
+  "framer-motion": "^12.6.3"
+  "motion": "^12.6.5"
+  
 
