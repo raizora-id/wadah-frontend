@@ -156,6 +156,9 @@ importers:
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(next@15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)(svelte@5.25.8)(vue@3.5.13(typescript@5.7.3))
+      '@vercel/otel':
+        specifier: ^1.11.0
+        version: 1.11.0(@opentelemetry/api-logs@0.39.1)(@opentelemetry/api@1.9.0)(@opentelemetry/resources@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@1.13.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))
       '@zodios/core':
         specifier: ^10.9.6
         version: 10.9.6(axios@1.7.9)(zod@3.24.2)
@@ -207,6 +210,9 @@ importers:
       nuqs:
         specifier: 'catalog:'
         version: 2.4.1(next@15.1.6(@babel/core@7.26.8)(@opentelemetry/api@1.9.0)(react-dom@19.0.0(react@19.0.0))(react@19.0.0))(react@19.0.0)
+      pino-loki:
+        specifier: ^2.5.0
+        version: 2.5.0
       prom-client:
         specifier: ^15.1.3
         version: 15.1.3
@@ -7647,6 +7653,18 @@ packages:
     resolution: {integrity: sha512-e4kQK9mP8ntpo3dACWirGod/hHv4qO5JMj9a/0a2AZto7b4persj5YP7t1Er372gTtYFTYxNhMx34jRvHooglw==}
     engines: {node: '>=16'}
 
+  '@vercel/otel@1.11.0':
+    resolution: {integrity: sha512-cS+Yq2qfkkGyoRKhdKd81J5pVPo7ulLnqeQsISITJVynRNuun8+1FfY+DHcPT2drj9Bl/7LpG0BosULrv7yyqg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@opentelemetry/api': ^1.7.0
+      '@opentelemetry/api-logs': '>=0.46.0 && <1.0.0'
+      '@opentelemetry/instrumentation': '>=0.46.0 && <1.0.0'
+      '@opentelemetry/resources': ^1.19.0
+      '@opentelemetry/sdk-logs': '>=0.46.0 && <1.0.0'
+      '@opentelemetry/sdk-metrics': ^1.19.0
+      '@opentelemetry/sdk-trace-base': ^1.19.0
+
   '@vercel/postgres@0.5.1':
     resolution: {integrity: sha512-JKl8QOBIDnifhkxAhIKtY0A5Tb8oWBf2nzZhm0OH7Ffjsl0hGVnDL2w1/FCfpX8xna3JAWM034NGuhZfTFdmiw==}
     engines: {node: '>=14.6'}
@@ -12223,6 +12241,10 @@ packages:
 
   pino-abstract-transport@2.0.0:
     resolution: {integrity: sha512-F63x5tizV6WCh4R6RHyi2Ml+M70DNRXt/+HANowMflpgGFMAym/VKm6G7ZOQRjqN7XbGxK1Lg9t6ZrtzOaivMw==}
+
+  pino-loki@2.5.0:
+    resolution: {integrity: sha512-/QCSukecqbjXWcVB58st0bKJFQiXg4ZEGXslnnMCMbcrDr5LT36XvkS0dy0eBvZvI8bWoh3efjLYLmN+94iLSQ==}
+    hasBin: true
 
   pino-std-serializers@7.0.0:
     resolution: {integrity: sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==}
@@ -21343,6 +21365,14 @@ snapshots:
       satori: 0.12.2
       yoga-wasm-web: 0.3.3
 
+  '@vercel/otel@1.11.0(@opentelemetry/api-logs@0.39.1)(@opentelemetry/api@1.9.0)(@opentelemetry/resources@1.30.1(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-metrics@1.13.0(@opentelemetry/api@1.9.0))(@opentelemetry/sdk-trace-base@1.30.1(@opentelemetry/api@1.9.0))':
+    dependencies:
+      '@opentelemetry/api': 1.9.0
+      '@opentelemetry/api-logs': 0.39.1
+      '@opentelemetry/resources': 1.30.1(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-metrics': 1.13.0(@opentelemetry/api@1.9.0)
+      '@opentelemetry/sdk-trace-base': 1.30.1(@opentelemetry/api@1.9.0)
+
   '@vercel/postgres@0.5.1':
     dependencies:
       '@neondatabase/serverless': 0.6.0
@@ -27563,6 +27593,12 @@ snapshots:
   pino-abstract-transport@2.0.0:
     dependencies:
       split2: 4.2.0
+
+  pino-loki@2.5.0:
+    dependencies:
+      commander: 12.1.0
+      pino-abstract-transport: 2.0.0
+      pump: 3.0.2
 
   pino-std-serializers@7.0.0: {}
 
