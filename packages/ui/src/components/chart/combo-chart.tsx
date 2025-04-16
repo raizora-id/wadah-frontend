@@ -27,7 +27,7 @@ import {
   hasOnlyOneValueForKey,
 } from "./chart-utils"
 import { useOnWindowResize } from "../../hooks/use-on-window-resize"
-import { cn } from "@ui/lib/utils"
+import { cn } from "../../lib/utils"
 
 //#region Shape
 function deepEqual<T>(obj1: T, obj2: T): boolean {

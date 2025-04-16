@@ -7,7 +7,7 @@ import * as React from "react";
 import { DataTableFilterList } from "./data-table-filter-list";
 import { DataTableSortList } from "./data-table-sort-list";
 import { DataTableViewOptions } from "./data-table-view-options";
-import { cn } from "@ui/lib/utils";
+import { cn } from "../../../lib/utils";
 
 interface DataTableAdvancedToolbarProps<TData>
   extends React.HTMLAttributes<HTMLDivElement> {

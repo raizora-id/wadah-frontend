@@ -2,7 +2,7 @@
 
 import { Button } from '../button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../tabs';
-import { cn } from '@ui/lib/utils';
+import { cn } from '../../../lib/utils';
 import { CheckIcon, CopyIcon } from 'lucide-react';
 import {
   type ComponentProps,

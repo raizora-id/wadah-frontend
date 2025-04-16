@@ -4,7 +4,7 @@ import { Alert, AlertDescription, AlertTitle } from "../alert";
 import { Avatar } from '../avatar'
 
 
-import { createBuilder } from "./builder";
+import { createBuilder } from "../builder";
 
 const { Builder } = createBuilder({
     Button,

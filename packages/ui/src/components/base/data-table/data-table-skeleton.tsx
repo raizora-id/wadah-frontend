@@ -8,7 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from "./../table";
-import { cn } from "@ui/lib/utils";
+import { cn } from "../../../lib/utils";
 
 interface DataTableSkeletonProps extends React.HTMLAttributes<HTMLDivElement> {
   /**

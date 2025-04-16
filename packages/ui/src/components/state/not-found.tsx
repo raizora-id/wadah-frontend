@@ -3,7 +3,7 @@
 
 import { useRouter } from "next/navigation";
 import { buttonVariants } from "../base/button";
-import { cn } from '@ui/lib/utils'
+import { cn } from '../../lib/utils'
 
 type NotFoundProps = {
   statusCode?: number,

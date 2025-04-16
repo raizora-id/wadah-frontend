@@ -4,7 +4,7 @@
 
 import React, { createContext, useContext, useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { cn } from "@ui/lib/utils";
+import { cn } from "../../lib/utils";
 
 type TextOpacityEnum = "none" | "soft" | "medium";
 type ViewTypeEnum = "word" | "letter";
