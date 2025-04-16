@@ -1,5 +1,5 @@
 import { Badge, type BadgeProps } from '../badge';
-import { cn } from '@ui/lib/utils';
+import { cn } from '../../../lib/utils';
 import type { HTMLAttributes } from 'react';
 
 export type AnnouncementProps = BadgeProps & {

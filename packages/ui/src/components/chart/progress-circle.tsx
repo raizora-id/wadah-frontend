@@ -3,7 +3,7 @@
 import React from "react"
 import { tv, VariantProps } from "tailwind-variants"
 
-import { cn } from "@ui/lib/utils"
+import { cn } from "../../lib/utils"
 
 const progressCircleVariants = tv({
   slots: {

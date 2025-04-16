@@ -1,7 +1,7 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge, type BadgeProps } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { cn } from '@ui/lib/utils';
+import { Avatar, AvatarFallback, AvatarImage } from '../avatar';
+import { Badge, type BadgeProps } from '../badge';
+import { Button } from '../button';
+import { cn } from '../../../lib/utils';
 import { ChevronDownIcon, ChevronUpIcon, MinusIcon } from 'lucide-react';
 import type { ComponentProps, ReactNode } from 'react';
 
