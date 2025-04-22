@@ -1,17 +1,17 @@
 {
-  "name": "@rac/frontend-monorepo",
+  "name": "@raizora/wadah-frontend",
   "private": true,
   "scripts": {
-    "dev:erp": "pnpm --filter @rac/erp dev",
-    "dev:zycas": "pnpm --filter @rac/zycas dev",
-    "dev:zycas-compro": "pnpm --filter @rac/zycas-compro dev",
-    "build:erp": "pnpm --filter @rac/erp build",
-    "build:zycas": "pnpm --filter @rac/zycas build",
-    "build:zycas-compro": "pnpm --filter @rac/zycas-compro build",
-    "build": "pnpm --filter [nama-project] build",
-    "start": "pnpm --filter [nama-project] start",
-    "lint": "pnpm --filter [nama-project] lint",
-    "update-deps": "npm-check-updates --configFileName .ncurc.json"
+    "dev:erp": "bun --filter @rac/erp dev",
+    "dev:zycas": "bun --filter @rac/zycas dev",
+    "dev:zycas-compro": "bun --filter @rac/zycas-compro dev",
+    "build:erp": "bun --filter @rac/erp build",
+    "build:zycas": "bun --filter @rac/zycas build",
+    "build:zycas-compro": "bun --filter @rac/zycas-compro build",
+    "build": "bun --filter [nama-project] build",
+    "start": "bun --filter [nama-project] start",
+    "lint": "bun --filter [nama-project] lint",
+    "update-deps": "bunx npm-check-updates --configFileName .ncurc.json"
   },
   "devDependencies": {
     "@biomejs/biome": "1.8.3",
@@ -22,5 +22,5 @@
   "dependencies": {
     "@svgr/webpack": "^8.1.0"
   },
-  "packageManager": "pnpm@9.12.3"
+  "packageManager": "bun@1.0.0"
 }
