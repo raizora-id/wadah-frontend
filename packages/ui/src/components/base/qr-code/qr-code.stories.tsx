@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { QrCode } from './index';
+import { QRCode } from './index.tsx';
 
-const meta: Meta<typeof QrCode> = {
-  title: 'Components/Base/QrCode',
-  component: QrCode,
+const meta: Meta<typeof QRCode> = {
+  title: 'Components/Base/QRCode',
+  component: QRCode,
   parameters: {
     layout: 'centered',
   },
@@ -11,11 +11,11 @@ const meta: Meta<typeof QrCode> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof QrCode>;
+type Story = StoryObj<typeof QRCode>;
 
 export const Default: Story = {
   args: {
-    children: 'Default QrCode',
+    children: 'Default QRCode',
   },
 };
 

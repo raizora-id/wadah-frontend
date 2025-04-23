@@ -1,9 +1,0 @@
-[install]
-workspace = true
-frozenLockfile = true
-
-[workspace]
-packages = [
-  "apps/*",
-  "packages/*"
-] 
