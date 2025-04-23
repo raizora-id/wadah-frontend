@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { InputOtp } from './index';
+import { OTPInput } from './index.tsx';
 
-const meta: Meta<typeof InputOtp> = {
-  title: 'Components/Base/InputOtp',
-  component: InputOtp,
+const meta: Meta<typeof OTPInput> = {
+  title: 'Components/Base/OTPInput',
+  component: OTPInput,
   parameters: {
     layout: 'centered',
   },
@@ -11,7 +11,7 @@ const meta: Meta<typeof InputOtp> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof InputOtp>;
+type Story = StoryObj<typeof OTPInput>;
 
 export const Default: Story = {
   args: {
