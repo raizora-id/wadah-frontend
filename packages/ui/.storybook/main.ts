@@ -1,19 +1,31 @@
-import type { StorybookConfig } from "@storybook/react-vite";
+import type { StorybookConfig } from '@storybook/react-vite'
+import { mergeConfig } from 'vite'
+import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
-  stories: ["../src/**/*.stories.@(ts|tsx)"],
+  stories: ['./_docs/**/*.mdx', '../src/**/*.mdx', '../src/**/*.stories.@(ts|tsx)'],
   addons: [
-    "@storybook/addon-onboarding",
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
+    { name: '@storybook/addon-essentials', options: { backgrounds: false } },
+    '@storybook/addon-links',
+    '@storybook/addon-a11y',
   ],
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite',
     options: {},
   },
-  docs: {
-    autodocs: "tag",
+  core: {
+    disableTelemetry: true, // 👈 Disables telemetry
+    enableCrashReports: false, // 👈 Appends the crash reports to the telemetry events
+    disableWhatsNewNotifications: true, // 👈 Disables the whats new notification
   },
-};
-export default config;
+  async viteFinal(config) {
+    return mergeConfig(config, {
+      plugins: [tsconfigPaths()],
+      build: {
+        chunkSizeWarningLimit: 1024 * 4,
+      },
+    })
+  },
+}
+
+export default config

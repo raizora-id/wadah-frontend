@@ -1,5 +1,5 @@
 {
-  description = "Starting point for Polar development flake";
+  description = "Starting point for FE development flake";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
