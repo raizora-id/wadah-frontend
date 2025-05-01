@@ -1,61 +1,29 @@
 {
-  "extends": "@tooling/typescript-config/react-library.json",
-  "compilerOptions": {
-    "outDir": "dist",
-    "baseUrl": ".",
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
-    "jsx": "preserve",
-    "incremental": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
-    "paths": {
-      "ui/*": [
-        "./*"
-      ],
-      "ui/components/ui/*": [
-        "src/components/base/*"
-      ],
-      "@ui/hooks/*": [
-        "src/hooks/*"
-      ],
-      "@ui/lib/*": [
-        "src/lib/*"
-      ],
-      "@ui/config/*": [
-        "./src/config/*"
-      ],
-      "@/*": [
-        "./src/*"
-      ],
-    }
-  },
-  "include": [
-    "**/*.tsx",
-    "**/*.ts",
-    "**/**/*.tsx",
-    "src/lib/utils.js",
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    ".turbo"
-  ]
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "composite": true,
+        "declaration": true,
+        "declarationDir": "dist",
+        "declarationMap": true,
+        "esModuleInterop": true,
+        "inlineSources": true,
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "lib": ["DOM", "DOM.Iterable", "ES2023"],
+        "module": "ESNext",
+        "moduleResolution": "bundler",
+        "resolveJsonModule": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "strict": true,
+        "target": "ES2023",
+        "tsBuildInfoFile": "node_modules/tsconfig.tsbuildinfo",
+        "verbatimModuleSyntax": true,
+        "baseUrl": ".",
+        "types": ["vitest"]
+    },
+    "include": ["src", ".storybook", "src/types"],
+    "exclude": ["node_modules", "build", "dist", "storybook-static", "tmp"]
 }

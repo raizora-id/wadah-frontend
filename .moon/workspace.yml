@@ -1,11 +1,16 @@
 # https://moonrepo.dev/docs/config/workspace
-$schema: './cache/schemas/workspace.json'
+# yaml-language-server: $schema=https://moonrepo.dev/schemas/workspace.json
+$schema: 'https://moonrepo.dev/schemas/workspace.json'
 
-# Require a specific version of moon while running commands, otherwise fail.
-# versionConstraint: '>=1.0.0'
-
-# Extend and inherit an external configuration file. Must be a valid HTTPS URL or file system path.
-# extends: './shared/workspace.yml'
+vcs:
+  manager: 'git'
+  provider: gitlab
+  defaultBranch: 'main'
+  # @see: https://moonrepo.dev/docs/config/workspace#hooks
+  hooks:
+    pre-commit:
+      - 'moon run :format --affected --status=all'
+      - 'moon run :lint --affected --status=staged'
 
 hasher:
   optimization: performance
@@ -22,6 +27,12 @@ docker:
     installToolchainDeps: true
     deleteVendorDirectories: false
 
+# Require a specific version of moon while running commands, otherwise fail.
+# versionConstraint: '>=1.0.0'
+
+# Extend and inherit an external configuration file. Must be a valid HTTPS URL or file system path.
+# extends: './shared/workspace.yml'
+
 # REQUIRED: A map of all projects found within the workspace, or a list or file system globs.
 # When using a map, each entry requires a unique project ID as the map key, and a file system
 # path to the project folder as the map value. File paths are relative from the workspace root,
@@ -31,19 +42,14 @@ projects:
     - 'apps/*'
     - 'packages/*'
 
-# Configures the version control system to utilize within the workspace. A VCS
-# is required for determining touched (added, modified, etc) files, calculating file hashes,
-# computing affected files, and much more.
-vcs:
-  manager: 'git'
-  provider: github
-  defaultBranch: 'main'
-  # @see: https://moonrepo.dev/docs/config/workspace#hooks
-  hooks:
-    pre-commit:
-      - 'moon run :format --affected --status=all'
-      - 'moon run :lint --affected --status=staged'
-
 # When enabled, will check for a newer moon version and send anonymous usage data to the
 # moonrepo team. This data is used to improve the quality and reliability of the tool.
 telemetry: false
+
+# Monorepo package templates to use when generating new projects.
+# @see: https://moonrepo.dev/docs/config/workspace#templates
+generator:
+  templates:
+    - 'git://github.com/zero-one-group/monorepo#main'
+    # - 'file://../../Repository/ZeroOne/monorepo'
+    # - './'

@@ -1,49 +1,62 @@
-# @packages/ui
+# Shared UI Library
 
-Shared UI component library for the web monorepo.
+This is a shared UI library, a comprehensive collection of React components built with
+modern web development best practices. Under the hood, it uses Tailwind CSS, Radix UI,
+and TypeScript to deliver accessible, type-safe, and customizable components.
 
-## Installation
+The UI components leverage [shadcn/ui](https://ui.shadcn.com/) as their foundation,
+enhanced with custom modifications. The notable distinction lies in the styling
+implementation, which utilizes [Tailwind Variants](https://www.tailwind-variants.org/)
+for a more flexible approach and [tailwindcss-motion](https://rombo.co/tailwind) for
+animations and transitions effects.
 
-```bash
-pnpm add @packages/ui@workspace:*
-```
+## Enabling the package
 
-## Usage
+Add the following to your `package.json` file:
 
-```tsx
-import { Button } from '@packages/ui';
-
-export default function MyComponent() {
-  return <Button>Click me</Button>;
+```json
+{
+    "dependencies": {
+        "@repo/shared-ui": "workspace:*"
+    },
+    "devDependencies": {
+        "@tailwindcss/vite": "^4.1.4",
+        "tailwind-variants": "^1.0.0",
+        "tailwindcss-motion": "^1.1.0",
+        "tailwindcss": "^4.1.4",
+    }
 }
 ```
 
-## Components
+Add the following to your `tsconfig.json` file:
 
-- `Button`: Basic button component with variants
-- `Input`: Text input component
-- `Card`: Container component
-- More components documented in their respective stories
-
-## Development
-
-```bash
-# Run Storybook
-pnpm dev
-
-# Run tests
-pnpm test
-
-# Build package
-pnpm build
+```json
+{
+    "references": [{ "path": "../../packages/shared-ui" }]
+}
 ```
 
-## Contributing
+Exclude internal packages from optimization, add the following to your `vite.config.ts` file:
 
-1. Components should be built using React and styled with Tailwind CSS
-2. Each component should have:
-   - TypeScript types
-   - Unit tests
-   - Storybook stories
-   - Documentation
-3. Follow the project's coding standards 
+```ts
+export default defineConfig({
+  // ...
+  optimizeDeps: {
+    // Do not optimize internal workspace dependencies.
+    exclude: ['@repo/shared-ui'],
+  },
+})
+```
+
+Add `shared-ui` source list to `global.css`:
+
+```css
+@source "../../../../packages/shared-ui/**/*.{ts,tsx}";
+```
+
+Finally, add the following to your `moon.yml` file:
+
+```yaml
+dependsOn:
+  - 'shared-ui'
+```
