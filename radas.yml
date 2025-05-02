@@ -1,0 +1,54 @@
+type: monorepo
+configs:
+  - cursorrule
+  - git-hooks 
+  - better-commit
+  - editor-config
+  - flake-nix
+  - ncu
+  - commitlint
+
+apps:
+  lp-agency:
+    owners: eng-team
+    stacks: [astro,tailwind,react]
+    testing:
+      - component
+      - integration
+      - e2e
+  lp-klola:
+    owners: eng-team
+    stacks: [astro,tailwind,react]
+      - component
+      - integration
+  app-klola:
+    owners: prod-team
+    stacks: [next,tailwind,react]
+      - component
+      - integration
+      - e2e
+  app-gea:
+    owners: prod-team
+    stacks: [next,tailwind,react]
+      - component
+      - integration
+      - e2e
+  lp-dihadiri:
+    owners: prod-team
+    stacks: [next,tailwind,react]
+      - component
+  lp-tempat-teduh:
+    owners: prod-team
+    stacks: [next,tailwind,react]
+      - component
+  lp-dokukita:
+    owners: prod-team
+    stacks: [astro,tailwind,react]
+      - component
+    
+  
+
+  
+
+    
+  
