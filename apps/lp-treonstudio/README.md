@@ -1,4 +1,4 @@
-# Kotei
+# Landing Page TreonStudio
 
 ## Template Integrations
 - Tailwind CSS v4  
